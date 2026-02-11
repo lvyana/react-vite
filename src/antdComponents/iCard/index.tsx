@@ -10,12 +10,12 @@ import { CardProps } from 'antd/lib/card';
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
 const Icard: FC<CardProps> = ({ ...config }) => {
-	const { bordered = false, hoverable = false, styles, children, ...rest } = config;
+	const { variant = 'borderless', hoverable = false, styles, children, ...rest } = config;
 	const { body } = styles || {};
 
 	return (
 		<>
-			<Card hoverable={hoverable} bordered={bordered} styles={{ ...styles, ...{ body: { padding: '16px', ...body } } }} {...rest}>
+			<Card hoverable={hoverable} variant={variant} styles={{ ...styles, ...{ body: { padding: '16px', ...body } } }} {...rest}>
 				{children}
 			</Card>
 		</>

@@ -1,8 +1,7 @@
 /**
  * @file 实现消息中心
  * @author ly
- * @createDate 2020年4月27日
- */
+ * @createDate 2020�?�?7�? */
 import React, { FC, useState } from 'react';
 import { BellOutlined } from '@ant-design/icons';
 import { Button, Col, Popover, Row, Tabs, Badge } from 'antd';
@@ -16,7 +15,7 @@ import style from './index.module.scss';
 interface TabsListProps {
 	hide: () => void;
 }
-// #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
+// #----------- �? ts类型定义 ----------- 分割�?----------- �? JS代码 -----------
 
 const MessageCenter = () => {
 	const [open, setOpen] = useState(false);
@@ -39,7 +38,7 @@ const MessageCenter = () => {
 				placement="bottom"
 				content={<TabsList hide={hide}></TabsList>}
 				trigger="click"
-				destroyTooltipOnHide>
+				destroyOnHidden>
 				<Badge count={5} offset={[-5, 5]} size="small">
 					<Button type="text" icon={<BellOutlined />}></Button>
 				</Badge>
@@ -82,3 +81,4 @@ const TabsList: FC<TabsListProps> = ({ hide }) => {
 };
 
 export default MessageCenter;
+

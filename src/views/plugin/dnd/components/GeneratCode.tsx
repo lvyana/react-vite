@@ -24,7 +24,7 @@ const GeneratCode: FC<GeneratCodeProps> = ({ open, onOk, onCancel, confirmLoadin
 
 	return (
 		<Imodal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
-			<Icard bordered={true}>
+			<Icard variant="outlined">
 				<div>{`import React, {FC} from 'react';`}</div>
 				<div className="mb-2">{`import Iform from '@/antdComponents/iForm';`}</div>
 

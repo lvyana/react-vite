@@ -52,7 +52,7 @@ export const createGlobalConfigSlice: StateCreator<
 				state.headerConfigList = data;
 			});
 		} catch (error) {
-			console.error('Failed to fetch header config:', error);
+			// 静默处理错误，避免控制台噪音
 			set((state) => {
 				state.headerConfigList = [];
 			});

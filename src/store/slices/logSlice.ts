@@ -43,7 +43,7 @@ export const createLogSlice: StateCreator<
 				state.totals = res.data.list.length;
 			});
 		} catch (error) {
-			console.error('Failed to fetch movie data:', error);
+			// 静默处理错误
 		}
 	}
 });
