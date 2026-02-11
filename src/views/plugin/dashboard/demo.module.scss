@@ -1,0 +1,16 @@
+.container {
+	padding: 24px;
+
+	.controls {
+		padding: 16px;
+		background: #fff;
+		border-radius: 4px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 15%);
+	}
+
+	.dashboards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+}

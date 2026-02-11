@@ -1,0 +1,21 @@
+@import url('./dark-variables.css');
+@import url('./light-variables.css');
+
+.dark-theme {
+	--primary-color: var(--dark-primary-color);
+	--color-primary: var(--dark-color-primary);
+	--color-bg-base: var(--dark-color-bg-base);
+	--color-text-base: var(--dark-color-text-base);
+	--color-primary-text: var(--dark-color-primary-text);
+	--login-color: var(--dark-login-color);
+	--login-background: var(--dark-login-background);
+}
+
+.light-theme {
+	--color-primary: var(--light-color-primary);
+	--color-link: var(--light-color-link);
+	--color-bg-base: var(--light-color-bg-base);
+	--color-text-base: var(--light-color-text-base);
+	--login-color: var(--light-login-color);
+	--login-background: var(--light-login-background);
+}

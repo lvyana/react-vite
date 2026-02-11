@@ -1,0 +1,37 @@
+.controlGroup {
+	padding: 1rem;
+	border-bottom: 1px solid #e2e8f0;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.controlGroupTitle {
+	display: flex;
+	margin: 0 0 0.75rem;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1e293b;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.controlButtons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+
+	:global(.ant-btn) {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+
+		i {
+			margin: 0;
+			font-size: 14px;
+		}
+	}
+}

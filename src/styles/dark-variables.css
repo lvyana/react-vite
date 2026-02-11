@@ -1,0 +1,9 @@
+:root {
+  --dark-primary-color: #000;
+  --dark-color-primary: #000;
+  --dark-color-bg-base: #1f1f1f;
+  --dark-color-text-base: #ccc;
+  --dark-color-primary-text: #ccc;
+  --dark-login-color: #ccc;
+  --dark-login-background: linear-gradient(45deg, #ccc, #000);
+} 

@@ -1,0 +1,16 @@
+.canvasContainer {
+	padding: 20px;
+
+	.toolbar {
+		display: flex;
+		margin-bottom: 20px;
+		gap: 16px;
+		align-items: center;
+	}
+
+	.canvas {
+		cursor: crosshair;
+		background: #fff;
+		border: 1px solid #d9d9d9;
+	}
+}

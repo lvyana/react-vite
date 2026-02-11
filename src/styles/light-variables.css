@@ -1,0 +1,8 @@
+:root {
+  --light-color-primary: #3b79d0;
+  --light-color-link: #3b79d0;
+  --light-color-bg-base: #fff;
+  --light-color-text-base: #000;
+  --light-login-color: #03e9f4;
+  --light-login-background: linear-gradient(-45deg, #d38e79, #c9668c, #5fb7d7, #89dfcb);
+} 

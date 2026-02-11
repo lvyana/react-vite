@@ -1,0 +1,44 @@
+/**
+ * @file 团队和日期缓存
+ * @author ly
+ * @createDate 2022年12月1日
+ */
+import React, { FC, lazy, Suspense } from 'react';
+import { DateAndPersonnelProps } from './index';
+import Loading from '@/antdComponents/iLoading';
+
+const AsyncDateAndPersonnel = (Component: FC<DateAndPersonnelProps>, api: () => Promise<DateAndPersonnelProps>) => {
+	const PromiseComponent = async (): Promise<{ default: FC }> => {
+		try {
+			const res = await api();
+			const { oldUserId, oldDate } = res;
+
+			return {
+				default: () => <Component oldUserId={oldUserId} oldDate={oldDate}></Component>
+			};
+		} catch (error) {
+			return {
+				default: () => <Component oldUserId={undefined} oldDate={undefined}></Component>
+			};
+		}
+	};
+	return lazy(PromiseComponent);
+};
+
+const DateAndPersonnelHoc = (Component: FC<DateAndPersonnelProps>) => {
+	const api = () => {
+		return new Promise<DateAndPersonnelProps>((resolve, reject) => {
+			setTimeout(() => {
+				resolve({ oldUserId: undefined, oldDate: '2022-11-30' });
+			}, 300);
+		});
+	};
+	const LazyComponent = AsyncDateAndPersonnel(Component, api);
+	return (
+		<Suspense fallback={<Loading></Loading>}>
+			<LazyComponent></LazyComponent>
+		</Suspense>
+	);
+};
+
+export default DateAndPersonnelHoc;

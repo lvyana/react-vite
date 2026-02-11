@@ -1,0 +1,285 @@
+.openlayersContainer {
+	position: relative;
+	width: 100%;
+	height: 80vh;
+	overflow: hidden;
+	font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+
+	.mapContainer {
+		width: 100%;
+		height: 100%;
+	}
+
+	.loadingOverlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		display: flex;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 80%);
+		align-items: center;
+		justify-content: center;
+
+		.loadingSpinner {
+			padding: 1rem 2rem;
+			font-size: 16px;
+			color: white;
+			background: rgba(0, 0, 0, 70%);
+			border-radius: 8px;
+		}
+	}
+
+	.toggleButton {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 1001;
+	}
+
+	.mapControls {
+		position: absolute;
+		top: 1rem;
+		right: -400px;
+		z-index: 1000;
+		width: 400px;
+		max-height: 70vh;
+		min-width: 180px;
+		overflow-y: auto;
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 10%);
+		transition: right 0.3s ease-in-out;
+
+		&.show {
+			right: 1rem;
+		}
+
+		.controlGroup {
+			padding: 1rem;
+			border-bottom: 1px solid #e2e8f0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.controlGroupTitle {
+				display: flex;
+				margin: 0 0 0.75rem;
+				font-size: 14px;
+				font-weight: 600;
+				color: #1e293b;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.controlButtons {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.5rem;
+			}
+		}
+	}
+
+	.infoPanel {
+		position: absolute;
+		bottom: 1rem;
+		left: -300px;
+		z-index: 1000;
+		width: 300px;
+		padding: 1rem;
+		font-size: 14px;
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 10%);
+		transition: left 0.3s ease-in-out;
+
+		&.show {
+			left: 1rem;
+		}
+
+		.panelTitle {
+			margin: 0 0 0.5rem;
+			font-size: 18px;
+			font-weight: 600;
+			color: #1e293b;
+		}
+
+		.panelDescription {
+			margin: 0 0 1rem;
+			font-size: 14px;
+			line-height: 1.4;
+			color: #64748b;
+		}
+
+		.legendTitle {
+			margin: 0 0 0.5rem;
+			font-size: 14px;
+			font-weight: 500;
+			color: #374151;
+		}
+
+		.legendItem {
+			display: flex;
+			align-items: center;
+			margin-bottom: 0.5rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.legendColor {
+				width: 16px;
+				height: 16px;
+				margin-right: 8px;
+				border: 1px solid rgba(0, 0, 0, 10%);
+				border-radius: 3px;
+				flex-shrink: 0;
+			}
+
+			.legendText {
+				font-size: 13px;
+				color: #374151;
+			}
+		}
+	}
+}
+
+/* 图例颜色样式 */
+.legendRestricted {
+	background-color: rgba(255, 0, 0, 60%);
+}
+
+.legendSafe {
+	background-color: rgba(0, 255, 0, 40%);
+}
+
+.legendShipping {
+	background-color: rgba(0, 0, 255, 40%);
+}
+
+.legendFishing {
+	background-color: rgba(255, 255, 0, 40%);
+}
+
+/* 航线图例样式 */
+.legendRoutePreset {
+	height: 3px;
+	background-color: rgba(59, 130, 246, 70%);
+	border-radius: 0;
+}
+
+.legendRouteEditable {
+	height: 3px;
+	background-color: rgba(255, 165, 0, 80%);
+	border-radius: 0;
+}
+
+.legendRouteSelected {
+	height: 3px;
+	background-color: rgba(255, 0, 0, 100%);
+	border-radius: 0;
+}
+
+.legendRouteDrawing {
+	height: 3px;
+	background-color: rgba(0, 255, 0, 80%);
+	border-radius: 0;
+}
+
+/* OpenLayers specific styles */
+:global {
+	.ol-attribution {
+		padding: 4px 8px;
+		background: rgba(255, 255, 255, 80%) !important;
+		border-radius: 4px;
+
+		ul {
+			padding: 0;
+			margin: 0;
+			font-size: 12px;
+		}
+	}
+
+	.ol-zoom {
+		inset: auto 1rem 1rem auto;
+
+		button {
+			width: 32px;
+			height: 32px;
+			margin: 2px;
+			background: white;
+			border: 1px solid #e2e8f0;
+			border-radius: 4px;
+
+			&:hover {
+				background: #f8fafc;
+			}
+		}
+	}
+}
+
+/* 响应式设计 */
+@media (width <= 768px) {
+	.mapControls {
+		top: 0.5rem;
+		right: 0.5rem;
+		max-width: 200px;
+		min-width: 120px;
+	}
+
+	.controlGroup {
+		padding: 0.75rem;
+	}
+
+	.controlGroupTitle {
+		margin-bottom: 0.5rem;
+		font-size: 13px;
+	}
+
+	.controlBtn {
+		padding: 0.5rem 0.75rem;
+		font-size: 13px;
+	}
+
+	.infoPanel {
+		bottom: 0.5rem;
+		left: 0.5rem;
+		max-width: 250px;
+		padding: 0.75rem;
+	}
+
+	.panelTitle {
+		font-size: 16px;
+	}
+
+	.panelDescription {
+		font-size: 13px;
+	}
+}
+
+@media (width <= 480px) {
+	.mapControls {
+		right: 0.5rem;
+		left: 0.5rem;
+		width: calc(100% - 1rem);
+	}
+
+	.controlButtons {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.controlBtn {
+		padding: 0.5rem;
+		font-size: 13px;
+	}
+
+	.infoPanel {
+		position: relative;
+		bottom: auto;
+		left: auto;
+		max-width: none;
+		margin: 1rem 0.5rem;
+	}
+}

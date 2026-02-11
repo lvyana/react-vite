@@ -1,0 +1,43 @@
+/**
+ * @name 表单示例
+ * @user ly
+ * @date 2022年12月18日
+ */
+import React, { FC, useContext } from 'react';
+import Iform from '@/antdComponents/iForm';
+import Imodal from '@/antdComponents/iModal';
+import { Context } from '../context';
+import { useFormData } from '../useHooks';
+import type { FormInstance } from 'antd';
+
+type TemplateFormProps = {
+	open: boolean;
+	onOk: () => void;
+	onCancel: () => void;
+	confirmLoading: boolean;
+	form: FormInstance;
+};
+// #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
+
+const TemplateForm: FC<TemplateFormProps> = ({ form, open, onOk, onCancel, confirmLoading }) => {
+	const context = useContext(Context);
+
+	const { getFormData } = useFormData();
+
+	return (
+		<Imodal width={800} title={'示例'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
+			<div className="border-solid border-2 border-indigo-600 rounded-lg p-3">
+				<Iform
+					formProps={{ form: form }}
+					formList={
+						context?.state.formList.map((item) => {
+							return getFormData(item);
+						}) || []
+					}
+				/>
+			</div>
+		</Imodal>
+	);
+};
+
+export default TemplateForm;
