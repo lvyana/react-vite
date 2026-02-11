@@ -1,6 +1,8 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import errorBoundaryHoc from '@/hoc/errorBoundaryHoc';
 import { App as AntdApp } from 'antd';
 
@@ -8,6 +10,9 @@ import './index.css';
 
 // i18n
 import '@/config/i18n';
+
+// React Query
+import { queryClient } from '@/config/reactQuery';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -46,9 +51,13 @@ function render() {
 	root.render(
 		// Zustand不需要Provider
 		// <StrictMode>
-		<AntdConfig>
-			<RouterProvider router={router} />
-		</AntdConfig>
+		<QueryClientProvider client={queryClient}>
+			<AntdConfig>
+				<RouterProvider router={router} />
+			</AntdConfig>
+			{/* React Query DevTools - 仅在开发环境显示 */}
+			{import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+		</QueryClientProvider>
 		// </StrictMode>
 	);
 }

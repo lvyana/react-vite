@@ -6,7 +6,7 @@
 import React, { useState, useContext, useEffect, FC } from 'react';
 import { Badge, BadgeProps, Calendar } from 'antd';
 import dayjs, { Dayjs } from 'dayjs';
-import { useRequest } from 'ahooks';
+import { useMutationRequest } from '@/hooks/useQueryRequest';
 import { dateList } from '../../service';
 
 export interface DateListParams {
@@ -27,15 +27,17 @@ interface DateProps {
 const Date: FC<DateProps> = ({ userId, dateValue, onchangeDate }) => {
 	const [dateData, setDateData] = useState<DateListParams[]>([]);
 
-	const { run } = useRequest(dateList, {
-		manual: true,
+	// 使用封装的 useMutationRequest
+	const { run: fetchDateList } = useMutationRequest(dateList, {
 		onSuccess: (res) => {
-			const { data } = res;
-			setDateData(data);
+			setDateData(res.data);
 		}
 	});
+
 	useEffect(() => {
-		run(userId);
+		if (userId) {
+			fetchDateList(userId);
+		}
 	}, [userId]);
 
 	const dateCellRender = (value: Dayjs) => {

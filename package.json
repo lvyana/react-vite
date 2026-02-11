@@ -24,6 +24,8 @@
     "@antv/g2plot": "^2.4.31",
     "@logicflow/core": "^2.0.12",
     "@logicflow/extension": "^2.0.16",
+    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-query-devtools": "^5.91.3",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-react": "^1.0.6",
     "ahooks": "^3.7.7",

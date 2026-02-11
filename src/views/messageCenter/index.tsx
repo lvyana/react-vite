@@ -3,28 +3,37 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import React, { useState } from 'react';
 import Itable from '@/antdComponents/iTable';
-import { useRequest } from 'ahooks';
+import { useQuery } from '@tanstack/react-query';
 import useHeaderTable from './components/useTable';
-import { tableData, TableDataResponse } from './service';
+import { tableData, type TableDataParams } from './service';
 
 const MessgeCenter = () => {
 	const buttonEvent = () => {};
 
 	const { columns } = useHeaderTable({ buttonEvent });
 
-	const [backlogData, setbacklogData] = useState<TableDataResponse[]>([]);
+	// 默认查询参数
+	const params: TableDataParams = {
+		name: '',
+		age: '',
+		status: '1',
+		pageSize: 10,
+		pageNum: 1
+	};
 
-	useRequest(tableData, {
-		onSuccess: (res) => {
-			// console.log(res);
-			setbacklogData(res.data);
+	// 使用 React Query 获取数据
+	const { data } = useQuery({
+		queryKey: ['messageCenter', 'tableData', params],
+		queryFn: async () => {
+			const res = await tableData(params);
+			return res.data;
 		}
 	});
+
 	return (
 		<div>
-			<Itable columns={columns} dataSource={backlogData}></Itable>
+			<Itable columns={columns} dataSource={data || []}></Itable>
 		</div>
 	);
 };

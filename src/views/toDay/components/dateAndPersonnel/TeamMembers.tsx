@@ -6,10 +6,11 @@
 import { Avatar, Badge, Form, Tooltip } from 'antd';
 import React, { FC, useContext, useEffect, useMemo, useState } from 'react';
 import { EditOutlined } from '@ant-design/icons';
+import { useMutationRequest } from '@/hooks/useQueryRequest';
 import AddPersonnel, { FormParams } from './AddPersonnel';
 import EditPersonnel from '../editPersonnel';
 import { teamMembers } from '../../service';
-import { useRequest } from 'ahooks';
+
 export interface TeamMembersDataParams {
 	name: string;
 	photo: string;
@@ -25,18 +26,16 @@ interface TeamMembersProps {
 const TeamMembers: FC<TeamMembersProps> = ({ userId, onAvatar }) => {
 	const [teamMembersData, setTeamMembersData] = useState<TeamMembersDataParams[]>([]);
 
-	useEffect(() => {
-		run();
-	}, []);
-
-	const { run } = useRequest(teamMembers, {
-		manual: true,
+	// 使用封装的 useMutationRequest
+	const { run: fetchTeamMembers } = useMutationRequest(teamMembers, {
 		onSuccess: (res) => {
-			const { data } = res;
-			setTeamMembersData(data);
-		},
-		onError: (error) => {}
+			setTeamMembersData(res.data);
+		}
 	});
+
+	useEffect(() => {
+		fetchTeamMembers();
+	}, []);
 
 	// 新增人员
 	const [AddPersonnelForm] = Form.useForm<FormParams>();

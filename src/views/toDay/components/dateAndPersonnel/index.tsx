@@ -1,13 +1,11 @@
 /**
- * @file 日历和团队
- * @author ly
- * @createDate 2020年4月27日
- */
+ * @file 日历和团�? * @author ly
+ * @createDate 2020�?�?7�? */
 import React, { useState, useContext, useEffect, useMemo, FC } from 'react';
+import { useMutationRequest } from '@/hooks/useQueryRequest';
 import TeamMembers from './TeamMembers';
 import Date from './Date';
 import dayjs, { Dayjs } from 'dayjs';
-import { useRequest } from 'ahooks';
 import { taskList } from '../../service';
 import { toDayContext } from '../../context';
 import DateAndPersonnelHoc from './AsyncDateAndPersonnel';
@@ -21,16 +19,12 @@ const DateAndPersonnel: FC<DateAndPersonnelProps> = ({ oldUserId, oldDate }) => 
 
 	const toDay = useContext(toDayContext);
 
-	useEffect(() => {
-		run();
-	}, []);
-
 	// 用户列表
 	const [userId, setUserId] = useState<string>();
 
 	const onAvatar = (key: string) => {
 		setUserId(key);
-		run();
+		fetchTaskList();
 	};
 
 	// 日期
@@ -40,17 +34,15 @@ const DateAndPersonnel: FC<DateAndPersonnelProps> = ({ oldUserId, oldDate }) => 
 
 	const onchangeDate = (value: Dayjs) => {
 		setDateValue(value);
-		run();
+		fetchTaskList();
 	};
 
 	// 获取任务列表数据
-	const { loading, run, runAsync } = useRequest(taskList, {
-		manual: true,
-		onSuccess: (res) => {
-			const { data } = res;
-			toDay?.dispatch({ type: 'taskListData', value: data });
-		}
-	});
+	const { run: fetchTaskList, runAsync: fetchTaskListAsync, loading } = useMutationRequest(taskList, { onSuccess: (res) => { toDay?.dispatch({ type: 'taskListData', value: res.data }); } });
+
+	useEffect(() => {
+		fetchTaskList();
+	}, []);
 
 	useEffect(() => {
 		toDay?.dispatch({ type: 'taskListLoading', value: loading });
@@ -65,3 +57,4 @@ const DateAndPersonnel: FC<DateAndPersonnelProps> = ({ oldUserId, oldDate }) => 
 };
 
 export default () => DateAndPersonnelHoc(DateAndPersonnel);
+

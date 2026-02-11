@@ -1,11 +1,10 @@
 /**
  * @file form hooks
  * @author ly
- * @createDate 2023年1月3日
- */
+ * @createDate 2023�?�?�? */
 import { useContext, useEffect } from 'react';
 import { Form } from 'antd';
-import { useRequest } from 'ahooks';
+import { useMutation } from '@tanstack/react-query';
 import type { FormInstance } from 'antd/es/form';
 import type { ButtonOptionsParams, FormParams } from '../EditForm';
 import { Context } from '../context';
@@ -13,7 +12,7 @@ import { anyOptions } from '../service';
 import { Rule } from 'antd/es/form';
 import { FormItemParams } from '@/antdComponents/iForm/type';
 
-// 监听绑定表单的变化 修改GenerateForm
+// 监听绑定表单的变�?修改GenerateForm
 export const useEditFormItemValue = (key: keyof FormParams, form: FormInstance<FormParams>) => {
 	const context = useContext(Context);
 
@@ -33,7 +32,7 @@ export const useEditFormItemValue = (key: keyof FormParams, form: FormInstance<F
 	}, [nameValue]);
 };
 
-// 监听没有绑定表单的变化 修改GenerateForm
+// 监听没有绑定表单的变�?修改GenerateForm
 export const useEditItemValue = () => {
 	const context = useContext(Context);
 	//
@@ -57,8 +56,8 @@ export const useEditItemValue = () => {
 export const useWatchUrl = () => {
 	const context = useContext(Context);
 
-	const { run: getAnyOptions } = useRequest(anyOptions, {
-		manual: true,
+	const { mutate: getAnyOptions } = useMutation({
+		mutationFn: anyOptions,
 		onSuccess: (res) => {
 			const { data } = res;
 
@@ -157,3 +156,4 @@ export const useFormData = () => {
 	};
 	return { getFormData };
 };
+
