@@ -48,6 +48,12 @@ npm run dev
 
 服务器将在 http://localhost:3003 启动
 
+## 类型检查
+
+```bash
+yarn type-check
+```
+
 ## 构建
 
 ```bash
@@ -59,6 +65,9 @@ yarn build:sit
 
 # GitHub Pages 构建
 yarn build:github
+
+# 构建并查看分析报告
+yarn build:analyze
 ```
 
 ## 预览构建结果
@@ -86,9 +95,10 @@ yarn preview
 - React 18.3.1
 - TypeScript 5.7.3
 - Vite 6.0.11
+- React Query 5.90.21 (数据请求)
 - Zustand 5.0.11 (状态管理)
-- Ant Design 5.12.5
-- React Router 6.14.2
+- Ant Design 5.22.6
+- React Router 6.29.0
 - Tailwind CSS 3.3.2
 - Sass 1.89.2
 

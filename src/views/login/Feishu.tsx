@@ -3,7 +3,7 @@
  * @author ly
  * @createDate
  */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
@@ -24,10 +24,10 @@ const Feishu = () => {
 		window.tt.requestAuthCode({
 			appId: 'cli_a40af5fa3039500b',
 			// 获取成功后的回调
-			success(res) {
+			success(res: any) {
 				console.log(res);
 			},
-			fail(err) {
+			fail(err: any) {
 				console.log(`getAuthCode failed, err:`, JSON.stringify(err));
 			}
 		});
