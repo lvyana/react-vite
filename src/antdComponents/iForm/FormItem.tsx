@@ -3,7 +3,7 @@
  * @author ly
  * @createDate 2023年10月25日
  */
-import React, { FC } from 'react';
+import React, { FC, memo, useMemo } from 'react';
 import { Form } from 'antd';
 import FORM_ITEM_MAP from './components/formItemMap';
 import type { UploadFile } from 'antd/lib/upload/interface';
@@ -30,125 +30,50 @@ const normFile = (e: { fileList: UploadFile[] }) => {
 	return e?.fileList;
 };
 
+// 输入框 trim 处理
+const trimInputValue = (e: React.ChangeEvent<HTMLInputElement>) => e.target.value.trim();
+
+// 额外属性配置映射（避免每次渲染都创建新对象）
+const EXTRA_PROPS_MAP = {
+	input: {
+		getValueFromEvent: trimInputValue,
+	},
+	upload: {
+		valuePropName: 'fileList' as const,
+		getValueFromEvent: normFile,
+	},
+} as const;
+
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-// 通过type处理不同formItem
-const FormItem: FC<FormItemProps> = ({ item }) => {
-	if (item.type === 'input') {
-		return (
-			<Form.Item {...item.formItemProps} getValueFromEvent={(e) => e.target.value.replace(/(^\s*)|(\s*$)/g, '')}>
-				{getFormItemCom(item)}
-			</Form.Item>
-		);
-	}
-
-	if (item.type === 'upload') {
-		return (
-			<Form.Item {...item.formItemProps} valuePropName="fileList" getValueFromEvent={normFile}>
-				{getFormItemCom(item)}
-			</Form.Item>
-		);
-	}
-
-	return <Form.Item {...item.formItemProps}>{getFormItemCom(item)}</Form.Item>;
+// 获取 Form.Item 的额外属性配置
+const getFormItemExtraProps = (type: FormItemParams['type']) => {
+	return EXTRA_PROPS_MAP[type as keyof typeof EXTRA_PROPS_MAP] || {};
 };
 
-// 获取对应的formItem 子组件
-const getFormItemCom = (item: FormItemParams) => {
-	if (item.type === 'input') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
+// 通过 type 处理不同 formItem
+const FormItem: FC<FormItemProps> = memo(({ item }) => {
+	const extraProps = useMemo(() => getFormItemExtraProps(item.type), [item.type]);
 
-	if (item.type === 'select') {
+	const formItemComponent = useMemo(() => {
 		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
+		const component = FORM_ITEM_MAP[item.type];
 
-	if (item.type === 'treeSelect') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
+		if (!component) {
+			console.error(`[FormItem] Unknown form item type: ${item.type}`);
+			return null;
+		}
 
-	if (item.type === 'cascader') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
+		return component(comConfig as any);
+	}, [item.type, item.comConfig]);
 
-	if (item.type === 'datePicker') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
+	return (
+		<Form.Item {...item.formItemProps} {...extraProps}>
+			{formItemComponent}
+		</Form.Item>
+	);
+});
 
-	if (item.type === 'rangePicker') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'timePicker') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'timeRangePicker') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'inputNumber') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'switch') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'button') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'radio') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'checkboxGroup') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'checkbox') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'rate') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'textArea') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'slider') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'upload') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-
-	if (item.type === 'slot') {
-		const comConfig = item.comConfig || {};
-		return FORM_ITEM_MAP[item.type](comConfig);
-	}
-};
+FormItem.displayName = 'FormItem';
 
 export default FormItem;

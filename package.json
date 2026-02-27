@@ -23,6 +23,9 @@
   },
   "dependencies": {
     "@ant-design/happy-work-theme": "^1.0.0",
+    "@ant-design/x": "^2.2.2",
+    "@ant-design/x-markdown": "^2.2.2",
+    "@ant-design/x-sdk": "^2.2.2",
     "@antv/g2plot": "^2.4.31",
     "@logicflow/core": "^2.0.12",
     "@logicflow/extension": "^2.0.16",
@@ -31,7 +34,7 @@
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-react": "^1.0.6",
     "ahooks": "^3.7.7",
-    "antd": "^5.22.6",
+    "antd": "6.1.1",
     "axios": "^1.4.0",
     "dayjs": "^1.11.8",
     "easy-typer-js": "^2.1.0",

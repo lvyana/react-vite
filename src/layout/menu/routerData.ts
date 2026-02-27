@@ -46,6 +46,28 @@ const menuList: Router[] = [
 			}
 		]
 	},
+	{
+		title: 'menu.ai',
+		path: '/ai',
+		icon: 'icon-xinpin',
+		children: [
+			{
+				title: 'menu.aiDeepseek',
+				path: '/ai/deepseek',
+				icon: 'icon-xinpin'
+			},
+			{
+				title: 'menu.aiQianwen',
+				path: '/ai/qianwen',
+				icon: 'icon-xinpin'
+			},
+			{
+				title: 'menu.aiDoubao',
+				path: '/ai/doubao',
+				icon: 'icon-xinpin'
+			}
+		]
+	},
 
 	{
 		title: 'menu.react',

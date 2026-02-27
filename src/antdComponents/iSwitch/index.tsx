@@ -3,9 +3,9 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import React, { FC, ReactNode } from 'react';
+import React from 'react';
 import { Switch } from 'antd';
-import { SwitchChangeEventHandler, SwitchProps } from 'antd/es/switch';
+import { SwitchProps } from 'antd/es/switch';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

@@ -36,7 +36,7 @@ const menuStyle = {
 };
 
 const SHOW_FOOTER = {
-	main: { minHeight: '69px' }
+	main: { minHeight: '70px' }
 	// marginLeft: 200
 };
 

@@ -3,7 +3,7 @@
  * @author ly
  * @createDate 2023年1月1日
  */
-import React, { FC, ReactNode } from 'react';
+import React from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import { Upload } from 'antd';
 import { DraggerProps } from 'antd/es/upload';

@@ -3,9 +3,9 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import React, { ReactNode } from 'react';
-import { Checkbox, CheckboxRef } from 'antd';
-import { CheckboxOptionType, CheckboxProps } from 'antd/lib/checkbox';
+import React from 'react';
+import { Checkbox } from 'antd';
+import { CheckboxProps } from 'antd/lib/checkbox';
 import { CheckboxGroupProps } from 'antd/es/checkbox/Group';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

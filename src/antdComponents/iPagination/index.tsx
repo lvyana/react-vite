@@ -13,16 +13,18 @@ const Ipaginations: FC<PaginationProps> = ({ ...config }) => {
 	const { style, showTotal = true, ...rest } = config;
 
 	return (
-		<Pagination
-			{...rest}
-			style={{ float: 'right', ...style }}
-			// pageSizeOptions=[10, 20, 50, 100]
-			showTotal={(total) => {
-				if (showTotal) {
-					return `总 ${total} 条`;
-				}
-			}}
-		/>
+		<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+			<Pagination
+				{...rest}
+				style={{ ...style }}
+				// pageSizeOptions=[10, 20, 50, 100]
+				showTotal={(total) => {
+					if (showTotal) {
+						return `总 ${total} 条`;
+					}
+				}}
+			/>
+		</div>
 	);
 };
 

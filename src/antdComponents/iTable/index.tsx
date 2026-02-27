@@ -12,7 +12,7 @@ import { antIcon } from '@/antdComponents/iLoading';
  * @method 表格内事件
  * @param type 类型
  * @param record 选中数据
- * @retruns void
+ * @returns void
  */
 export type ItbClick<T> = (type: keyof T, record: T) => void;
 
@@ -20,18 +20,22 @@ export type AlignType = 'left' | 'right' | 'center';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Itable = <T extends object>({ ...config }: TableProps<T>) => {
-	const { loading, pagination, ...rest } = config;
-
-	return <Table {...rest} style={{ marginTop: '10px' }} loading={loadingHandler(loading)} pagination={false} />;
+const Itable = <T extends object>({ loading, pagination, style, ...rest }: TableProps<T>) => {
+	return (
+		<Table
+			{...rest}
+			style={{ marginTop: '10px', ...style }}
+			loading={loadingHandler(loading)}
+			pagination={pagination === undefined ? false : pagination}
+		/>
+	);
 };
 
 const loadingHandler = (loading?: boolean | SpinProps) => {
 	if (typeof loading === 'boolean') {
 		return { indicator: antIcon, spinning: loading };
-	} else {
-		return loading;
 	}
+	return loading;
 };
 
 export type { ColumnsType };

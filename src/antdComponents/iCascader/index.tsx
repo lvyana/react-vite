@@ -3,12 +3,10 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Cascader, CascaderProps } from 'antd';
 import { BaseOptionType } from 'antd/es/select';
 import { SingleValueType } from 'rc-cascader/lib/Cascader';
-
-type OnMultipleChange<BaseOptionType> = (value: SingleValueType[], selectOptions: BaseOptionType[][]) => void;
 
 /**
  * 联级选择

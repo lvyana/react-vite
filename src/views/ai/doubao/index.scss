@@ -1,0 +1,848 @@
+// 豆包精确还原样式
+
+.doubao-chat {
+	height: 76vh;
+	display: flex;
+	background: #ffffff;
+	overflow: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Roboto, sans-serif;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.85);
+
+	// ==================== 头像通用 ====================
+	.doubao-avatar {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		overflow: hidden;
+		background: #f0f0f0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&.fallback::after {
+			content: '豆';
+			font-size: 14px;
+			color: #666;
+		}
+		&[data-size='36'] {
+			width: 36px;
+			height: 36px;
+		}
+	}
+
+	// ==================== 侧边栏 ====================
+	.db-sidebar {
+		width: 280px;
+		min-width: 280px;
+		background: #f3f4f6;
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		padding: 12px;
+		border-right: 1px solid rgba(0, 0, 0, 0.06);
+		overflow: hidden;
+		transition:
+			width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 0.2s ease;
+
+		.db-sidebar-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 4px 0 8px;
+			white-space: nowrap;
+
+			.db-logo {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				.doubao-avatar {
+					width: 36px;
+					height: 36px;
+				}
+				span {
+					font-size: 16px;
+					font-weight: 600;
+					color: rgba(0, 0, 0, 0.85);
+				}
+			}
+
+			.db-sidebar-toggle {
+				width: 24px;
+				height: 24px;
+				border: none;
+				background: transparent;
+				color: #0057ff;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 6px;
+				transition: background 0.15s;
+				&:hover {
+					background: rgba(0, 0, 0, 0.06);
+				}
+			}
+		}
+
+		.db-new-chat {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			width: 100%;
+			height: 38px;
+			padding: 8px 6px;
+			margin-bottom: 6px;
+			background: rgba(0, 87, 255, 0.06);
+			border: 1px solid rgba(0, 87, 255, 0.15);
+			border-radius: 12px;
+			color: #0057ff;
+			font-size: 16px;
+			font-weight: 400;
+			cursor: pointer;
+			white-space: nowrap;
+			transition: background 0.15s;
+			&:hover {
+				background: rgba(0, 87, 255, 0.1);
+			}
+			.db-shortcut {
+				margin-left: auto;
+				font-size: 11px;
+				color: rgba(0, 87, 255, 0.5);
+				background: rgba(0, 87, 255, 0.08);
+				padding: 1px 6px;
+				border-radius: 4px;
+			}
+		}
+
+		.db-sidebar-menu {
+			margin-bottom: 4px;
+			.db-menu-item {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				height: 38px;
+				padding: 8px;
+				border-radius: 10px;
+				cursor: pointer;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.85);
+				white-space: nowrap;
+				transition: background 0.15s;
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+				}
+				.db-menu-badge {
+					font-size: 11px;
+					color: #0057ff;
+					background: rgba(0, 87, 255, 0.08);
+					padding: 1px 6px;
+					border-radius: 4px;
+					margin-left: 4px;
+				}
+				.db-menu-arrow {
+					margin-left: auto;
+					color: rgba(0, 0, 0, 0.3);
+					font-size: 16px;
+				}
+			}
+		}
+
+		.db-recent-section {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			min-height: 0;
+
+			.db-recent-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 8px 8px 4px;
+				cursor: pointer;
+				-webkit-user-select: none;
+				user-select: none;
+
+				.db-recent-label {
+					display: flex;
+					align-items: center;
+					gap: 6px;
+					font-size: 14px;
+					color: rgba(0, 0, 0, 0.85);
+				}
+				.db-recent-toggle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: rgba(0, 0, 0, 0.3);
+					transform: rotate(-90deg);
+					transition: transform 0.2s;
+					&.open {
+						transform: rotate(0deg);
+					}
+				}
+			}
+
+			.db-conversations-list {
+				flex: 1;
+				overflow-y: auto;
+				&::-webkit-scrollbar {
+					width: 4px;
+				}
+				&::-webkit-scrollbar-thumb {
+					background: rgba(0, 0, 0, 0.1);
+					border-radius: 2px;
+				}
+			}
+		}
+
+		.db-conv-item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 36px;
+			padding: 6px 8px;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background 0.15s;
+
+			.db-conv-label {
+				flex: 1;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.85);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.db-conv-more {
+				width: 24px;
+				height: 24px;
+				border: none;
+				background: transparent;
+				border-radius: 6px;
+				color: rgba(0, 0, 0, 0.3);
+				cursor: pointer;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				font-size: 12px;
+				flex-shrink: 0;
+				&:hover {
+					background: rgba(0, 0, 0, 0.06);
+				}
+			}
+			&:hover {
+				background: rgba(0, 0, 0, 0.04);
+				.db-conv-more {
+					display: flex;
+				}
+			}
+			&.active {
+				background: rgba(0, 87, 255, 0.06);
+				.db-conv-label {
+					color: #0057ff;
+				}
+				.db-conv-more {
+					display: flex;
+				}
+			}
+		}
+
+		.db-sidebar-footer {
+			padding: 4px 4px 0;
+			margin-top: auto;
+			border-top: 1px solid rgba(0, 0, 0, 0.08);
+			white-space: nowrap;
+
+			.db-footer-item {
+				display: flex;
+				align-items: center;
+				padding: 8px 4px;
+				font-size: 13px;
+				color: rgba(0, 0, 0, 0.45);
+				cursor: pointer;
+				&:hover {
+					color: rgba(0, 0, 0, 0.65);
+				}
+			}
+		}
+	}
+
+	&.sidebar-closed .db-sidebar {
+		width: 0;
+		min-width: 0;
+		padding: 0;
+		border-right: none;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	// ==================== 主内容区域 ====================
+	.db-main {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		background: #ffffff;
+		overflow: hidden;
+		position: relative;
+
+		.db-topbar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			padding: 12px;
+
+			.db-topbar-btn {
+				width: 34px;
+				height: 34px;
+				border: none;
+				background: transparent;
+				border-radius: 8px;
+				color: rgba(0, 0, 0, 0.45);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.15s;
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+					color: rgba(0, 0, 0, 0.85);
+				}
+			}
+		}
+
+		.db-content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+		}
+	}
+
+	// ==================== 欢迎页 ====================
+	.db-welcome {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+
+		.db-welcome-inner {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			max-width: 800px;
+			width: 100%;
+			padding: 0 32px;
+		}
+
+		.db-welcome-title {
+			font-size: 28px;
+			font-weight: 600;
+			color: #000;
+			margin: 0 0 28px;
+			text-align: center;
+		}
+
+		.db-suggestions {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			max-width: 700px;
+		}
+
+		.db-suggestion-row {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			margin-bottom: 8px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.db-suggestion-pill {
+			background: rgba(0, 0, 0, 0.04);
+			border-radius: 12px;
+			padding: 10px 16px;
+			height: 42px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			color: #000;
+			cursor: pointer;
+			transition: background 0.15s;
+			&:hover {
+				background: rgba(0, 0, 0, 0.08);
+			}
+		}
+
+		.db-bottom-input {
+			width: 100%;
+			max-width: 800px;
+			padding: 0 32px 20px;
+		}
+	}
+
+	// ==================== 消息区域 ====================
+	.db-messages-scroll {
+		flex: 1;
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: rgba(0, 0, 0, 0.1);
+			border-radius: 3px;
+		}
+	}
+
+	.db-messages-inner {
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 60px 32px 0;
+		flex: 1;
+	}
+
+	.db-conv-input-area {
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 24px 32px 20px;
+		position: -webkit-sticky;
+		position: sticky;
+		bottom: 0;
+		background: #fff;
+	}
+
+	// ==================== 消息样式 ====================
+	.db-message {
+		padding: 0 0 24px;
+		display: flex;
+		gap: 12px;
+
+		&--user {
+			justify-content: flex-end;
+
+			.db-user-bubble {
+				background: rgba(0, 87, 255, 0.08);
+				border-radius: 18px 18px 4px 18px;
+				padding: 10px 16px;
+				font-size: 15px;
+				line-height: 1.6;
+				color: rgba(0, 0, 0, 0.85);
+				max-width: 70%;
+				word-break: break-word;
+				white-space: pre-wrap;
+			}
+
+			.db-user-avatar {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				background: #e8e8e8;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 14px;
+				color: #666;
+				flex-shrink: 0;
+			}
+		}
+
+		&--ai {
+			.db-ai-avatar {
+				width: 32px;
+				height: 32px;
+				flex-shrink: 0;
+			}
+
+			.db-ai-body {
+				flex: 1;
+				min-width: 0;
+			}
+
+			.db-typing {
+				display: flex;
+				gap: 4px;
+				padding: 8px 0;
+				span {
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: rgba(0, 0, 0, 0.3);
+					animation: dbTyping 1.4s infinite;
+					&:nth-child(2) {
+						animation-delay: 0.2s;
+					}
+					&:nth-child(3) {
+						animation-delay: 0.4s;
+					}
+				}
+			}
+
+			.db-ai-content {
+				font-size: 15px;
+				line-height: 1.7;
+				color: rgba(0, 0, 0, 0.85);
+			}
+
+			.db-ai-actions {
+				display: flex;
+				gap: 4px;
+				margin-top: 8px;
+			}
+		}
+	}
+
+	.db-action-icon {
+		width: 28px;
+		height: 28px;
+		border: none;
+		background: transparent;
+		border-radius: 6px;
+		color: rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		transition: all 0.15s;
+		&:hover {
+			background: rgba(0, 0, 0, 0.04);
+			color: rgba(0, 0, 0, 0.65);
+		}
+		&.active {
+			color: #0057ff;
+		}
+	}
+
+	@keyframes dbTyping {
+		0%,
+		60%,
+		100% {
+			opacity: 0.3;
+			transform: scale(0.8);
+		}
+		30% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	// ==================== 输入框 ====================
+	.db-input-box {
+		width: 100%;
+		border-radius: 24px;
+		border: 1px solid rgba(0, 102, 255, 0.3);
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		transition:
+			border-color 0.2s,
+			box-shadow 0.2s;
+		overflow: hidden;
+
+		&:focus-within {
+			border-color: rgba(0, 87, 255, 0.5);
+			box-shadow: 0 0 0 2px rgba(0, 87, 255, 0.08);
+		}
+
+		.db-input-textarea {
+			width: 100%;
+			border: none;
+			outline: none;
+			resize: none;
+			font-size: 16px;
+			line-height: 24px;
+			color: rgba(0, 0, 0, 0.85);
+			background: transparent;
+			min-height: 24px;
+			max-height: 200px;
+			padding: 16px 20px 0;
+			font-family: inherit;
+			&::placeholder {
+				color: rgba(0, 0, 0, 0.35);
+			}
+			&:disabled {
+				color: rgba(0, 0, 0, 0.25);
+			}
+		}
+
+		.db-input-toolbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px 12px 12px;
+
+			.db-toolbar-left {
+				display: flex;
+				align-items: center;
+				gap: 2px;
+			}
+			.db-toolbar-right {
+				display: flex;
+				align-items: center;
+			}
+
+			.db-toolbar-icon {
+				width: 32px;
+				height: 32px;
+				border: none;
+				background: transparent;
+				border-radius: 8px;
+				color: rgba(0, 0, 0, 0.45);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px;
+				transition: all 0.15s;
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+					color: rgba(0, 0, 0, 0.85);
+				}
+			}
+
+			.db-toolbar-divider {
+				width: 1px;
+				height: 16px;
+				background: rgba(0, 0, 0, 0.1);
+				margin: 0 6px;
+			}
+
+			.db-skill-btn {
+				height: 32px;
+				padding: 0 8px;
+				border: none;
+				background: transparent;
+				border-radius: 12px;
+				color: rgba(0, 0, 0, 0.85);
+				font-size: 14px;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				white-space: nowrap;
+				transition: background 0.15s;
+				.anticon {
+					font-size: 14px;
+					color: rgba(0, 0, 0, 0.45);
+				}
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+				}
+				.db-skill-tag {
+					font-size: 10px;
+					color: #ff4d00;
+					font-weight: 500;
+				}
+			}
+
+			.db-voice-btn {
+				width: 36px;
+				height: 36px;
+				border: none;
+				background: transparent;
+				border-radius: 50%;
+				color: rgba(0, 0, 0, 0.45);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				transition: all 0.15s;
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+					color: rgba(0, 0, 0, 0.85);
+				}
+			}
+
+			.db-send-btn {
+				width: 36px;
+				height: 36px;
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.15s;
+
+				&.stop {
+					background: #333;
+					color: #fff;
+					&:hover {
+						background: #555;
+					}
+				}
+			}
+		}
+	}
+
+	// ==================== Markdown ====================
+	.db-markdown {
+		font-size: 15px;
+		line-height: 1.7;
+		color: rgba(0, 0, 0, 0.85);
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 16px 0 10px;
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.85);
+		}
+		h1 {
+			font-size: 22px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+		h3 {
+			font-size: 16px;
+		}
+		p,
+		div {
+			margin: 8px 0;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		blockquote {
+			margin: 12px 0;
+			padding: 10px 14px;
+			background: rgba(0, 0, 0, 0.03);
+			border-left: 3px solid #0057ff;
+			border-radius: 4px;
+			color: rgba(0, 0, 0, 0.65);
+		}
+		.db-inline-code {
+			background: rgba(0, 0, 0, 0.04);
+			padding: 2px 6px;
+			border-radius: 4px;
+			font-family: 'Consolas', 'Monaco', monospace;
+			font-size: 14px;
+			color: #c41d7f;
+		}
+		strong {
+			font-weight: 600;
+		}
+		ul,
+		ol {
+			padding-left: 24px;
+			margin: 8px 0;
+		}
+		li {
+			margin: 4px 0;
+		}
+		a {
+			color: #0057ff;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 12px 0;
+			th,
+			td {
+				border: 1px solid rgba(0, 0, 0, 0.08);
+				padding: 8px 12px;
+				text-align: left;
+			}
+			th {
+				background: rgba(0, 0, 0, 0.02);
+				font-weight: 600;
+			}
+		}
+	}
+
+	// ==================== 代码块 ====================
+	.db-code-block {
+		margin: 12px 0;
+		border-radius: 12px;
+		overflow: hidden;
+		background: #282c34;
+
+		.db-code-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 8px 16px;
+			background: #21252b;
+
+			.db-code-lang {
+				font-size: 12px;
+				color: rgba(255, 255, 255, 0.5);
+				font-family: 'Consolas', monospace;
+				text-transform: lowercase;
+			}
+			.db-code-copy {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				border: none;
+				background: transparent;
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 12px;
+				cursor: pointer;
+				padding: 2px 8px;
+				border-radius: 4px;
+				transition: all 0.15s;
+				&:hover {
+					color: rgba(255, 255, 255, 0.85);
+					background: rgba(255, 255, 255, 0.08);
+				}
+			}
+		}
+		pre {
+			margin: 0 !important;
+		}
+		code {
+			font-family: 'Consolas', 'Monaco', monospace !important;
+		}
+	}
+
+	// ==================== 响应式 ====================
+	@media (max-width: 768px) {
+		.db-main {
+			.db-messages-inner,
+			.db-conv-input-area {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+			.db-welcome .db-welcome-inner {
+				padding: 0 16px;
+			}
+			.db-welcome .db-bottom-input {
+				padding: 0 16px 20px;
+			}
+		}
+	}
+}

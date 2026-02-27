@@ -3,8 +3,8 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import React, { FC, ReactNode } from 'react';
-import { Radio, RadioChangeEvent } from 'antd';
+import React from 'react';
+import { Radio } from 'antd';
 import IconFont from '@/utils/iconfont';
 import { CheckboxOptionType } from 'antd/lib/checkbox';
 import { RadioGroupProps } from 'antd/lib/radio/interface';
@@ -14,6 +14,7 @@ export type RadioType = {
 } & Omit<RadioGroupProps, 'options'>;
 
 export type RadioOptionType = CheckboxOptionType & { icon?: string };
+
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
 const getRadio = (config: RadioType) => {
@@ -35,7 +36,7 @@ const setOption = (option?: (RadioOptionType | string | number)[]) => {
 						<IconFont type={item.icon} />
 						{item.label}
 					</>
-				)
+				),
 			};
 		}
 		return item;

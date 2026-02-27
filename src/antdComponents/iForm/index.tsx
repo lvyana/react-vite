@@ -3,8 +3,8 @@
  * @author ly
  * @createDate 2020年4月27日
  */
-import React, { Fragment } from 'react';
-import { Form, Row, Col, FormInstance, FormProps } from 'antd';
+import React, { useMemo } from 'react';
+import { Form, Row, Col, FormProps } from 'antd';
 import type { FormItemParams } from './type';
 import FormItem, { FormItemProps } from './FormItem';
 export * from './type';
@@ -16,6 +16,13 @@ type LayoutParams = {
 	formList: FormItemParams[];
 };
 
+type LayoutMode =
+	| { type?: 'default' | 'row'; self?: boolean }
+	| {
+			type: 'custom';
+			setCustom: (config: LayoutParams) => React.ReactNode;
+	  };
+
 /**
  * 表单参数
  * @param T 表单渲染数据
@@ -25,73 +32,72 @@ type LayoutParams = {
  * @param onValuesChange 表单发生变化
  * @param formLayout 表单格式
  */
-interface IformProps<F> {
+interface IFormProps<F = any> {
 	formList: FormItemParams[];
 	formProps: FormProps<F>;
-	mode?: {
-		type?: 'default' | 'custom' | 'row';
-		self?: boolean;
-		setCustom?: (config: LayoutParams) => React.ReactNode;
-	};
+	mode?: LayoutMode;
 }
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Iform = <F extends object>({ formList, mode, formProps }: IformProps<F>) => {
-	// 默认用row 也可以自定义样式
-	const getFormLayout = () => {
-		const { type = 'row', setCustom, self } = mode || {};
-		if (type === 'custom') {
-			return setCustom && setCustom({ formItem: FormItem, formList });
-		} else if (type === 'row') {
-			return setRow(FormItem, formList, self);
-		} else if (type === 'default') {
-			return getFormItemList(FormItem, formList);
+// 响应式配置常量
+const RESPONSIVE_CONFIG = {
+	self: { xxl: 6, xl: 6, lg: 8, md: 12, xs: 24 },
+	normal: (span: number) => ({ lg: span, md: span, xs: 24 }),
+};
+
+const getResponsiveProps = (span: number = 6, self: boolean = false) => {
+	if (self) {
+		return RESPONSIVE_CONFIG.self;
+	}
+	return RESPONSIVE_CONFIG.normal(span);
+};
+
+// 默认布局
+const DefaultLayout: React.FC<{ formList: FormItemParams[] }> = ({ formList }) => (
+	<>
+		{formList.map((item) => (
+			<FormItem item={item} key={item.key} />
+		))}
+	</>
+);
+
+// Row布局
+const RowLayout: React.FC<{ formList: FormItemParams[]; self?: boolean }> = ({
+	formList,
+	self = false,
+}) => (
+	<Row>
+		{formList.map((item) => (
+			<Col {...getResponsiveProps(item.span, self)} key={item.key}>
+				<FormItem item={item} />
+			</Col>
+		))}
+	</Row>
+);
+
+const IForm = <F = any,>({ formList, mode, formProps }: IFormProps<F>) => {
+	// 过滤掉不显示的项
+	const visibleFormList = useMemo(
+		() => formList.filter((item) => item.show !== false),
+		[formList]
+	);
+
+	const formLayout = useMemo(() => {
+		if (mode?.type === 'default') {
+			return <DefaultLayout formList={visibleFormList} />;
 		}
-	};
 
-	return (
-		<>
-			<Form {...formProps}>{getFormLayout()}</Form>
-		</>
-	);
-};
-
-// 表单默认样式
-const getFormItemList = (FormItem: React.FC<FormItemProps>, formList: FormItemParams[]) => {
-	return (
-		<>
-			{formList &&
-				formList.map((item) => {
-					if (item.show === false) return <Fragment key={item.key}></Fragment>;
-					return <FormItem item={item} key={item.key}></FormItem>;
-				})}
-		</>
-	);
-};
-
-// 设置表单样式
-const setRow = (FormItem: React.FC<FormItemProps>, formList: FormItemParams[], self = false) => {
-	const getSelf = (span?: number) => {
-		if (self) {
-			return { xxl: { span: span }, xl: { span: 6 }, lg: { span: 8 }, md: { span: 12 }, xs: { span: 24 } };
+		if (mode?.type === 'custom') {
+			return mode.setCustom({ formItem: FormItem, formList: visibleFormList });
 		}
-		return { lg: { span: span }, md: { span: span }, xs: { span: 24 } };
-	};
 
-	return (
-		<Row>
-			{formList &&
-				formList.map((item) => {
-					if (item.show === false) return <Fragment key={item.key}></Fragment>;
-					return (
-						<Col {...getSelf(item.span)} key={item.key}>
-							<FormItem item={item}></FormItem>
-						</Col>
-					);
-				})}
-		</Row>
-	);
+		// type === 'row' or undefined
+		return <RowLayout formList={visibleFormList} self={mode?.self} />;
+	}, [mode, visibleFormList]);
+
+	return <Form {...formProps}>{formLayout}</Form>;
 };
+
 export type { FormProps };
-export default Iform;
+export default IForm;

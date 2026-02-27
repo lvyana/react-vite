@@ -12,6 +12,7 @@ import suspenseLoad from './suspenseLoad';
 import { setRouterAuth } from './auth';
 import setRouterError from './catchError';
 import antdCom from './module/antd';
+import aiRoutes from './module/ai';
 import reactCom from './module/react';
 import routerCom from './module/router';
 import pluginCom from './module/plugin';
@@ -54,6 +55,10 @@ const routes: Routes[] = [
 			{
 				path: 'antd',
 				children: [...antdCom]
+			},
+			{
+				path: 'ai',
+				children: [...aiRoutes]
 			},
 			{
 				path: 'react',
