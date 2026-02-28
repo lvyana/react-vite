@@ -4,7 +4,7 @@
  * @createDate 2023年1月3日
  */
 import React, { useState, useContext, useMemo, memo } from 'react';
-import ContextProvider, { Context } from './Icontext';
+import ContextProvider, { Context } from './context';
 import { Button } from 'antd';
 import AppCard from '@/components/antd/AppCard';
 import Markdown from '@/components/plugin/Markdown';

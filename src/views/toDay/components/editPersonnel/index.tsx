@@ -8,7 +8,7 @@ import { Form } from 'antd';
 import AppDrawer from '@/components/antd/AppDrawer';
 import EditPersonnelTable from './EditPersonnelTable';
 import EditPersonnelSearch from './EditPersonnelSearch';
-import { useEditPersonnelTable } from './useApiHooks';
+import { useEditPersonnelTable } from './hooks/useEditPersonnel';
 import type { EditPersonnelSearchFormParmas } from './EditPersonnelSearch';
 import type { OnValuesChange } from '@/components/antd/AppForm';
 

@@ -10,7 +10,7 @@ import Sider from 'antd/es/layout/Sider';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
 import IconFont from '@/utils/iconfont';
 import { useUser } from '@/store';
-import useRouterHooks from '@/router/useHooks';
+import useRouterHooks from '@/router/hooks/useRouter';
 import { Router } from './routerData';
 import Collapsed, { useCollapsed } from './components/Collapsed';
 import { createPortal } from 'react-dom';

@@ -5,7 +5,7 @@
  */
 import React, { ReactNode, FC } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
-import useRouterHooks from './useHooks';
+import useRouterHooks from './hooks/useRouter';
 import type { Routes } from './index';
 import { getAccessToken } from '@/utils/cookie';
 export interface AuthProps {
