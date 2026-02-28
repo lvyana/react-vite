@@ -8,7 +8,7 @@ import { useDrop, useDrag, DropTargetHookSpec } from 'react-dnd';
 import { v4 as uuidv4 } from 'uuid';
 import { Button, Col, Form, Row } from 'antd';
 import { CloseCircleOutlined, CopyOutlined } from '@ant-design/icons';
-import Iform, { FormItemParams } from '@/components/antd/AppForm';
+import AppForm, { FormItemParams } from '@/components/antd/AppForm';
 import { FORM_ITEM, GENERATE_FORM_ITEM } from './type';
 import { Context } from './context';
 import { arrIndexExchange } from '@/utils/exchange';
@@ -209,7 +209,7 @@ const GenerateFormItem: FC<GenerateFormParams> = ({ formParams, index }) => {
 			data-handler-id={handlerId}
 			ref={ref}>
 			<Col flex="auto">
-				<Iform formProps={{ form: form }} formList={formList}></Iform>
+				<AppForm formProps={{ form: form }} formList={formList}></AppForm>
 			</Col>
 			<div className="absolute right-0 bottom-1 text-center">
 				<Button type="link" icon={<CloseCircleOutlined />} onClick={(e) => onDeleteFormItem(e)}></Button>

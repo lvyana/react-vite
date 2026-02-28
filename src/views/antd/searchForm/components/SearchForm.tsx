@@ -4,12 +4,12 @@
  * @createDate 2023年1月3日
  */
 import React, { FC } from 'react';
-import IsearchForm from '@/components/antd/AppSearchForm';
+import AppSearchForm from '@/components/antd/AppSearchForm';
 import { useHooksStatus } from '@/useHooks/usePublicApi';
 import type { ExpensesFormParams } from '../index';
 import type { FormInputType, FormSelectType, FormButtonType, FormItemParams } from '@/components/antd/AppForm/type';
 import { FormInstance } from 'antd';
-import type { FormProps } from '@/components/antd/AppForm';
+import type { AppFormProps } from '@/components/antd/AppForm';
 export type ButtonType = 'subimt' | 'onReset';
 
 /**
@@ -17,7 +17,7 @@ export type ButtonType = 'subimt' | 'onReset';
  * @param onFinish
  */
 interface SearchFormProps {
-	formProps: FormProps<ExpensesFormParams>;
+	formProps: AppFormProps<ExpensesFormParams>['formProps'];
 	submit: () => void;
 	reset: () => void;
 }
@@ -78,7 +78,7 @@ const SeachForm: FC<SearchFormProps> = ({ formProps, submit, reset }) => {
 		}
 	];
 
-	return <IsearchForm formProps={formProps} formList={formList}></IsearchForm>;
+	return <AppSearchForm formProps={formProps} formList={formList}></AppSearchForm>;
 };
 
 export default SeachForm;

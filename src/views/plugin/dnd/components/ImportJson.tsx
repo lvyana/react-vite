@@ -4,8 +4,8 @@
  * @createDate 2023年1月12日
  */
 import React, { FC } from 'react';
-import Imodal from '@/components/antd/AppModal';
-import Iform from '@/components/antd/AppForm';
+import AppModal from '@/components/antd/AppModal';
+import AppForm from '@/components/antd/AppForm';
 import type { FormInstance } from 'antd/lib/form/hooks/useForm';
 import type { FormTextAreaType } from '@/components/antd/AppForm/type';
 import { Rule } from 'antd/es/form';
@@ -61,9 +61,9 @@ const ImportJson: FC<ImportJsonProps> = ({ form, open, onOk, onCancel, confirmLo
 		}
 	];
 	return (
-		<Imodal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
-			<Iform formProps={{ form: form }} formList={formList} />
-		</Imodal>
+		<AppModal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
+			<AppForm formProps={{ form: form }} formList={formList} />
+		</AppModal>
 	);
 };
 

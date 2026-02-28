@@ -5,9 +5,9 @@
  */
 import React, { useSyncExternalStore } from 'react';
 import todosStore from './todosStore';
-import Icard from '@/components/antd/AppCard';
-import Ibutton, { ButtonItemProps } from '@/components/antd/AppButton';
-import Icollapse from '@/components/antd/AppCollapse';
+import AppCard from '@/components/antd/AppCard';
+import AppButton, { ButtonItemProps } from '@/components/antd/AppButton';
+import AppCollapse from '@/components/antd/AppCollapse';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
@@ -21,8 +21,8 @@ const UseSyncExternalStore = () => {
 	};
 
 	return (
-		<Icard>
-			<Ibutton {...BUTTON_ITEM}></Ibutton>
+		<AppCard>
+			<AppButton {...BUTTON_ITEM}></AppButton>
 			<hr />
 			<ul>
 				{todos.map((todo) => (
@@ -31,7 +31,7 @@ const UseSyncExternalStore = () => {
 			</ul>
 			<IuseSyncExternalStoreItem></IuseSyncExternalStoreItem>
 			<DocumentSection></DocumentSection>
-		</Icard>
+		</AppCard>
 	);
 };
 
@@ -52,8 +52,8 @@ export const IuseSyncExternalStoreItem = () => {
 	return (
 		<div>
 			<div>测试: useSyncExternalStore数据可以共享</div>
-			<Ibutton {...BUTTON_ITEM}></Ibutton>
-			<Ibutton {...BUTTON_ITEM1}></Ibutton>
+			<AppButton {...BUTTON_ITEM}></AppButton>
+			<AppButton {...BUTTON_ITEM1}></AppButton>
 
 			<hr />
 			<ul>
@@ -100,7 +100,7 @@ const DOCUMENT_LIST = [
 	}
 ];
 const DocumentSection = () => {
-	return <Icollapse items={DOCUMENT_LIST}></Icollapse>;
+	return <AppCollapse items={DOCUMENT_LIST}></AppCollapse>;
 };
 export default UseSyncExternalStore;
 

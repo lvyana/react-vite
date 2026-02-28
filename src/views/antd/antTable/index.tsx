@@ -5,9 +5,9 @@
  */
 import React, { useEffect, useRef } from 'react';
 import { Form } from 'antd';
-import Itable from '@/components/antd/AppTable';
-import Icard from '@/components/antd/AppCard';
-import Ipaginations from '@/components/antd/AppPagination';
+import AppTable from '@/components/antd/AppTable';
+import AppCard from '@/components/antd/AppCard';
+import AppPagination from '@/components/antd/AppPagination';
 import { tableData, type TableDataParams, type TableDataResponse } from './service';
 import useHeaderTable, { HeaderTableParams } from './useHooks/useTable';
 import SeachForm from './components/SearchForm';
@@ -52,15 +52,15 @@ const AntTable = () => {
 		<div>
 			<SeachForm formProps={{ form }} submit={search.submit} reset={search.reset}></SeachForm>
 			{/* <ClassCom hh={1}></ClassCom> */}
-			<Icard styles={{ body: { marginTop: '10px' } }}>
-				<Itable<TableDataResponse> rowKey="key" columns={columns} dataSource={dataSource} loading={loading} scroll={{ x: '100%' }} />
-				<Ipaginations
+			<AppCard styles={{ body: { marginTop: '10px' } }}>
+				<AppTable<TableDataResponse> rowKey="key" columns={columns} dataSource={dataSource} loading={loading} scroll={{ x: '100%' }} />
+				<AppPagination
 					className="mt-4"
 					total={total}
 					pageSize={page.pageSize}
 					current={page.pageNum}
-					onChange={onPaginationChange}></Ipaginations>
-			</Icard>
+					onChange={onPaginationChange}></AppPagination>
+			</AppCard>
 		</div>
 	);
 };

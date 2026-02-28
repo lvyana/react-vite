@@ -1,7 +1,7 @@
 import React, { DetailedHTMLProps, FC, ForwardRefRenderFunction, HTMLAttributes, ReactNode, useImperativeHandle, useState } from 'react';
 import { Row, Col } from 'antd';
 import { hocForwardRef, ComRef, forwardRefFunc } from '@/hoc/forwardRefHoc';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 
 export type RefParam = {
 	onOpen: () => void;
@@ -11,7 +11,7 @@ export type RefParam = {
 interface PreviewCodeProps {
 	content: string;
 }
-const Preview: ForwardRefRenderFunction<RefParam, Iprops> = ({ content }, ref) => {
+const Preview: ForwardRefRenderFunction<RefParam, PreviewCodeProps> = ({ content }, ref) => {
 	const onOpen = () => {
 		setOpen(true);
 	};
@@ -30,9 +30,9 @@ const Preview: ForwardRefRenderFunction<RefParam, Iprops> = ({ content }, ref) =
 	};
 
 	return (
-		<Imodal title="预览代码" width="1000px" open={open} confirmLoading={confirmLoading} onOk={onOk} onCancel={onOk}>
+		<AppModal title="预览代码" width="1000px" open={open} confirmLoading={confirmLoading} onOk={onOk} onCancel={onOk}>
 			<div>{content}</div>
-		</Imodal>
+		</AppModal>
 	);
 };
 

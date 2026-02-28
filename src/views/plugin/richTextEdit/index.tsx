@@ -12,13 +12,13 @@ import {
 	IEditorConfig, // 编辑器配置
 	IToolbarConfig // 工具栏配置
 } from '@wangeditor/editor';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 import PreviewCode, { RefParam } from './components/PreviewCode';
 import PreviewView from './components/PreviewView';
 import { Modal, Button, Space } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 const { confirm } = Modal;
 
@@ -44,7 +44,7 @@ const RichTextEdit = () => {
 	};
 
 	// 上传图片
-	(editorConfig.MENU_CONF as IMenuConfig)['uploadImage'] = {
+	(editorConfig.MENU_CONF as MenuConfig)['uploadImage'] = {
 		server: '/api/upload'
 	};
 
@@ -91,7 +91,7 @@ const RichTextEdit = () => {
 	};
 	return (
 		<div>
-			<Icard>
+			<AppCard>
 				<Toolbar editor={editor} defaultConfig={toolbarConfig} mode="default" style={{ borderBottom: '1px solid #ccc' }} />
 				<Editor defaultConfig={editorConfig} defaultHtml={defaultHtml} mode="default" style={{ height: '500px' }} />
 				<div className="mt-2">
@@ -109,7 +109,7 @@ const RichTextEdit = () => {
 				<PreviewView content={content} ref={previewViewRef}></PreviewView>
 
 				<PreviewCode content={content} ref={previewCodeRef}></PreviewCode>
-			</Icard>
+			</AppCard>
 		</div>
 	);
 };

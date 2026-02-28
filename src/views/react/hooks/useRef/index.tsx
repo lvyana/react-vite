@@ -5,7 +5,8 @@
  */
 import React, { FC, LegacyRef, useEffect, useRef, useState } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
 
 interface SonProps {
 	sonRef: LegacyRef<HTMLDivElement>;
@@ -20,10 +21,10 @@ const UseRef = () => {
 	}, []);
 
 	return (
-		<Icard>
+		<AppCard>
 			<div ref={sonRef}>son</div>
-			<Imarkdown url={'useRef.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useRef.md'}></Markdown>
+		</AppCard>
 	);
 };
 

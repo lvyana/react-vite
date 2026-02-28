@@ -6,7 +6,7 @@
 import React, { FC, ReactPortal, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useEasyTyper from '@/components/plugin/EasyTyper';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 /**
  * createPortal(child, container)的入参：
@@ -18,13 +18,13 @@ import Icard from '@/components/antd/AppCard';
 
 const CreatePortal = () => {
 	return (
-		<Icard>
+		<AppCard>
 			<DynamicText></DynamicText>
 			hello
 			<Child>
 				<div>挂载到child身上</div>
 			</Child>
-		</Icard>
+		</AppCard>
 	);
 };
 

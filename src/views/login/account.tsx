@@ -6,7 +6,7 @@
 import React, { FC, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Form, Input, Button, Checkbox, FormInstance } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { ValidateErrorEntity } from 'rc-field-form/lib/interface';
+import type { ValidateErrorEntity } from '@rc-component/form/lib/interface';
 import { useTranslation, Trans, Translation } from 'react-i18next';
 import { FromType } from './index';
 import styles from './index.module.scss';

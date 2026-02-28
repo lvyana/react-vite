@@ -1,4 +1,3 @@
-
 import { useMutationRequest } from '@/hooks/useQueryRequest';
 import { useDebounceFn } from 'ahooks';
 import { editPersonnelTableDataApi } from '../../service';
@@ -16,4 +15,3 @@ export const useEditPersonnelTable = () => {
 		run: debouncedMutate
 	};
 };
-

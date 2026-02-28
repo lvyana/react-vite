@@ -4,7 +4,7 @@
  * @createDate 2022年11月20日
  */
 import React, { FC } from 'react';
-import Iform, { OnValuesChange, FormInputType } from '@/components/antd/AppForm';
+import AppForm, { OnValuesChange, FormInputType } from '@/components/antd/AppForm';
 import type { FormInstance } from 'antd';
 
 type FormListParams = [FormInputType];
@@ -33,7 +33,7 @@ const EditPersonnelSearch: FC<EditPersonnelSearchProps> = ({ form, onValuesChang
 		}
 	];
 
-	return <Iform formProps={{ form: form, onValuesChange: onValuesChange }} formList={formList}></Iform>;
+	return <AppForm formProps={{ form: form, onValuesChange: onValuesChange }} formList={formList}></AppForm>;
 };
 
 export default EditPersonnelSearch;

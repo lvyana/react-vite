@@ -4,9 +4,9 @@
  * @createDate 2023年3月13日
  */
 import React, { FC, useContext } from 'react';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 import { Context } from '../context';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { useFormData } from '../useHooks';
 
 type GeneratCodeProps = {
@@ -23,10 +23,10 @@ const GeneratCode: FC<GeneratCodeProps> = ({ open, onOk, onCancel, confirmLoadin
 	const { getFormData } = useFormData();
 
 	return (
-		<Imodal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
-			<Icard variant="outlined">
+		<AppModal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
+			<AppCard variant="outlined">
 				<div>{`import React, {FC} from 'react';`}</div>
-				<div className="mb-2">{`import Iform from '@/components/antd/AppForm';`}</div>
+				<div className="mb-2">{`import AppForm from '@/components/antd/AppForm';`}</div>
 
 				<div className="mb-1 whitespace-pre">{`const SeachForm: FC<Iprops> = ({ form, onFinish }) => {`}</div>
 				<div style={{ whiteSpace: 'pre-line' }} className="mb-1 whitespace-pre">
@@ -39,10 +39,10 @@ const GeneratCode: FC<GeneratCodeProps> = ({ open, onOk, onCancel, confirmLoadin
 							2
 						)}
 				</div>
-				<div className="mb-1 whitespace-pre">{`  return <Iform form={form} formList={formList}></Iform>;`}</div>
+				<div className="mb-1 whitespace-pre">{`  return <AppForm form={form} formList={formList}></AppForm>;`}</div>
 				<div className="mb-1 whitespace-pre">{`};`}</div>
-			</Icard>
-		</Imodal>
+			</AppCard>
+		</AppModal>
 	);
 };
 

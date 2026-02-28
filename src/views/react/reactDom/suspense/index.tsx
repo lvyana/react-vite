@@ -4,7 +4,7 @@
  * @createDate 2022年8月3日
  */
 import React, { ComponentType, FC, LazyExoticComponent, Suspense } from 'react';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 interface TestProps {
 	age: number;
@@ -15,7 +15,7 @@ interface TestProps {
 }
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Suspense = () => {
+const SuspenseDemo = () => {
 	/* 需要每一次在组件内部声明，保证每次父组件挂载，都会重新请求数据 ，防止内存泄漏。 */
 	const LazyTest = AysncComponent(Test, getData);
 
@@ -31,11 +31,11 @@ const Test: FC<TestProps> = ({ rdata, age }) => {
 	const { name, say } = rdata;
 	// console.log('组件渲染');
 	return (
-		<Icard>
+		<AppCard>
 			<div> hello , my name is {name} </div>
 			<div>age : {age} </div>
 			<div> i want to say {say} </div>
-		</Icard>
+		</AppCard>
 	);
 };
 
@@ -69,4 +69,4 @@ const AysncComponent = (
 	};
 	return React.lazy(AysncComponentPromise);
 };
-export default Suspense;
+export default SuspenseDemo;

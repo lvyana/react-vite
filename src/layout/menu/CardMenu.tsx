@@ -8,7 +8,7 @@ import { Col, Popover, Row } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import IconFont from '@/utils/iconfont';
 import { useUser } from '@/store';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import findNode from '@/utils/findNode';
 import findParentNode from '@/utils/findParentNode';
 import Title from './components/Title';
@@ -130,10 +130,14 @@ const Menu: FC<MenuProps> = ({ onHideCardMenu }) => {
 					if (menu.show === false) return null;
 					return (
 						<Col flex="80px" className="mb-2" key={menu.path} onClick={() => onMenuClick(menu)}>
-							<Icard styles={{ body: { padding: 4 } }} style={{ ...currentPathStyle(menu.path) }} className="text-center" hoverable={true}>
+							<AppCard
+								styles={{ body: { padding: 4 } }}
+								style={{ ...currentPathStyle(menu.path) }}
+								className="text-center"
+								hoverable={true}>
 								<IconFont type={menu.icon || ''}></IconFont>
 								<div>{t(menu.title)}</div>
-							</Icard>
+							</AppCard>
 						</Col>
 					);
 				})}

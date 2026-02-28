@@ -5,7 +5,7 @@
  */
 import React, { useRef } from 'react';
 import { Button, Col, Row } from 'antd';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import VirtualScroll from './VirtualScroll';
 import scheduleSlicerHoc, { ScheduleSlicerRef } from './ScheduleSlicer';
 
@@ -44,7 +44,7 @@ const Burst = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<div>
 				<Button type="primary" onClick={onSchedule}>
 					优化渲染
@@ -75,7 +75,7 @@ const Burst = () => {
 					/>
 				</Col>
 			</Row>
-		</Icard>
+		</AppCard>
 	);
 };
 

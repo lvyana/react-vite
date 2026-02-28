@@ -4,7 +4,7 @@
  * @createDate
  */
 import React from 'react';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { Button, List } from 'antd';
 import { useLayout } from '@/store';
 
@@ -29,7 +29,7 @@ const Volta = () => {
 		'volta pin yarn@1.14 //将更新项目的package.json文件以使用工具的选定版本'
 	];
 	return (
-		<Icard>
+		<AppCard>
 			Volta官网: <Button type="link">https://docs.volta.sh/reference/install</Button>
 			<br />
 			Volta安装包: <Button type="link">https://github.com/volta-cli/volta/releases/download/v1.0.6/volta-1.0.6-windows-x86_64.msi</Button>
@@ -48,7 +48,7 @@ const Volta = () => {
 				dataSource={data}
 				renderItem={(item) => <List.Item>{item}</List.Item>}
 			/>
-		</Icard>
+		</AppCard>
 	);
 };
 

@@ -1,7 +1,7 @@
 import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, useImperativeHandle, useState } from 'react';
 import { Row, Col } from 'antd';
 import { hocForwardRef, ComRef } from '@/hoc/forwardRefHoc';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 
 export type RefParam = {
 	onOpen: () => void;
@@ -13,7 +13,7 @@ interface PreviewViewProps {
 }
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Preview: FC<Iprops> = ({ content, comRef }) => {
+const Preview: FC<PreviewViewProps> = ({ content, comRef }) => {
 	const onOpen = () => {
 		setOpen(true);
 	};
@@ -32,13 +32,13 @@ const Preview: FC<Iprops> = ({ content, comRef }) => {
 	};
 
 	return (
-		<Imodal title="预览效果" width="1000px" open={open} confirmLoading={confirmLoading} onOk={onOk} onCancel={onOk}>
+		<AppModal title="预览效果" width="1000px" open={open} confirmLoading={confirmLoading} onOk={onOk} onCancel={onOk}>
 			<div
 				dangerouslySetInnerHTML={{
 					__html: content
 				}}></div>
-		</Imodal>
+		</AppModal>
 	);
 };
 
-export default hocForwardRef<RefParam, Omit<Iprops, 'comRef'>>(Preview, 'Preview');
+export default hocForwardRef<RefParam, Omit<PreviewViewProps, 'comRef'>>(Preview, 'Preview');

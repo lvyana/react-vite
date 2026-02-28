@@ -4,11 +4,11 @@
  * @createDate 2020年4月27日
  */
 import React, { startTransition, useEffect, useState } from 'react';
-import Iform from '@/components/antd/AppForm';
+import AppForm from '@/components/antd/AppForm';
 import { Form, Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import type { FormItemParams } from '@/components/antd/AppForm/type';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { baseURL } from '@/api/request';
 import { SelectType } from '@/components/antd/AppSelect';
 import { SetChildrenDom, useFormTitle } from '@/components/antd/AppForm/useHooks';
@@ -49,7 +49,7 @@ const Dynamicform = () => {
 
 	return (
 		<div>
-			<Icard>
+			<AppCard>
 				{getRadio({
 					value: isTitle,
 					options: [
@@ -59,8 +59,8 @@ const Dynamicform = () => {
 					optionType: 'button',
 					onChange: onChange
 				})}
-				<Iform formList={formList} formProps={{ form: form }} />
-			</Icard>
+				<AppForm formList={formList} formProps={{ form: form }} />
+			</AppCard>
 		</div>
 	);
 };

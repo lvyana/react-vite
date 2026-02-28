@@ -5,14 +5,14 @@
  */
 import React, { ComponentType, lazy, ReactNode, Suspense } from 'react';
 // import Loading from '@/components/antd/AppLoading';
-import Iloading from '@/components/plugin/Loading';
+import AppLoading from '@/components/plugin/Loading';
 // import Nprogress from './Nprogress';
 // 两种均可
 
 const suspenseLoad = (element: () => Promise<{ default: ComponentType }>) => {
 	const LazyComponent = lazy(element);
 	return (
-		<Suspense fallback={<Iloading />}>
+		<Suspense fallback={<AppLoading />}>
 			<LazyComponent />
 		</Suspense>
 	);

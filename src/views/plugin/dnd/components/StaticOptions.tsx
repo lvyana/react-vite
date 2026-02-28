@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Button, Col, Form, Input, Row, Space } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { getInput } from '@/components/antd/AppInput';
-import Ibutton from '@/components/antd/AppButton';
+import AppButton from '@/components/antd/AppButton';
 import { v4 as uuidv4 } from 'uuid';
 import type { Options } from '../type';
 /**
@@ -95,7 +95,7 @@ const StaticOptions: React.FC<StaticOptionsProps> = ({ options, updateOptions })
 							{/* <Input placeholder="value" value={option.value} onChange={(value) => valueChange(value, option.id)} /> */}
 						</Col>
 						<Col span={4}>
-							<Ibutton
+							<AppButton
 								{...{
 									block: true,
 									type: 'dashed',
@@ -103,12 +103,12 @@ const StaticOptions: React.FC<StaticOptionsProps> = ({ options, updateOptions })
 									onClick: () => {
 										add(option.id);
 									}
-								}}></Ibutton>
+								}}></AppButton>
 
 							{/* <Button type="dashed" block icon={<PlusOutlined />}></Button> */}
 						</Col>
 						<Col span={4}>
-							<Ibutton
+							<AppButton
 								{...{
 									name: '',
 									block: true,
@@ -117,7 +117,7 @@ const StaticOptions: React.FC<StaticOptionsProps> = ({ options, updateOptions })
 									onClick: () => {
 										subtract(option.id);
 									}
-								}}></Ibutton>
+								}}></AppButton>
 
 							{/* <Button type="dashed" onClick={() => subtract(option.id)} block icon={<MinusOutlined />}></Button> */}
 						</Col>

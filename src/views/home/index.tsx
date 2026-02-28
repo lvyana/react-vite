@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Col, Row } from 'antd';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import DemoLine from './components/Line';
 import DemoArea from './components/Area';
 import DemoColumn from './components/Column';
@@ -23,44 +23,44 @@ const Home = () => {
 		<>
 			<Row gutter={16}>
 				<Col xs={24} sm={24} md={12} lg={12} xl={6} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoGauge divId="gauge1"></DemoGauge>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={12} lg={12} xl={6} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoLiquid divId="liquid"></DemoLiquid>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={12} lg={12} xl={6} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoWordCloud divId="wordCloud"></DemoWordCloud>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={12} lg={12} xl={6} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoMix divId="DemoMix"></DemoMix>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={24} lg={12} xl={12} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoLine></DemoLine>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={24} lg={12} xl={12} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoArea></DemoArea>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={24} lg={12} xl={12} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoColumn></DemoColumn>
-					</Icard>
+					</AppCard>
 				</Col>
 				<Col xs={24} sm={24} md={24} lg={12} xl={12} className="mb-4">
-					<Icard>
+					<AppCard>
 						<DemoPie></DemoPie>
-					</Icard>
+					</AppCard>
 				</Col>
 			</Row>
 		</>

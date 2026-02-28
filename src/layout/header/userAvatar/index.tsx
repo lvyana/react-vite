@@ -6,7 +6,7 @@
 import React from 'react';
 import { Avatar, Button } from 'antd';
 import { useUser } from '@/store';
-import Idropdown from '@/components/antd/AppDropdown';
+import AppDropdown from '@/components/antd/AppDropdown';
 import IconFont from '@/utils/iconfont';
 import { clearTokens } from '@/utils/cookie';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +50,7 @@ const UserAvatar = () => {
 	// };
 	return (
 		<div style={{ lineHeight: '32px' }}>
-			<Idropdown menu={{ items: option, onClick: onClick }} overlayStyle={{ lineHeight: '32px' }}>
+			<AppDropdown menu={{ items: option, onClick: onClick }} overlayStyle={{ lineHeight: '32px' }}>
 				<Button type="text" style={{ paddingLeft: 0, paddingRight: 0 }}>
 					<span className="absolute left-0 bottom-0">
 						<Avatar
@@ -61,7 +61,7 @@ const UserAvatar = () => {
 					</span>
 					<span className="ml-8 mr-2">admin</span>
 				</Button>
-			</Idropdown>
+			</AppDropdown>
 		</div>
 	);
 };

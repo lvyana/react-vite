@@ -5,11 +5,11 @@
  */
 import React, { useState } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
-import IcodeEditor from '@/components/plugin/CodeEditor';
+import AppCard from '@/components/antd/AppCard';
+import AppCollapse from '@/components/antd/AppCollapse';
+import CodeEditor from '@/components/plugin/CodeEditor';
 import { IuseSyncExternalStoreItem } from '../useSyncExternalStore';
-import Imarkdown from '@/components/plugin/Markdown';
+import Markdown from '@/components/plugin/Markdown';
 
 const initCode = `
 import { useState } from 'react';
@@ -79,7 +79,7 @@ const UseState = () => {
 			label: '代码示例',
 			children: (
 				<>
-					<IcodeEditor initCode={initCode}></IcodeEditor>
+					<CodeEditor initCode={initCode}></CodeEditor>
 				</>
 			),
 			key: '2'
@@ -87,16 +87,16 @@ const UseState = () => {
 	];
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
 			{value}
 			{first}
-			<Icollapse styleConfig="1" defaultActiveKey={['0']} items={list}></Icollapse>
+			<AppCollapse styleConfig="1" defaultActiveKey={['0']} items={list}></AppCollapse>
 			<IuseSyncExternalStoreItem></IuseSyncExternalStoreItem>
-			<Imarkdown url={'useState.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useState.md'}></Markdown>
+		</AppCard>
 	);
 };
 

@@ -1,6 +1,6 @@
 /**
- * @file 日历和团�? * @author ly
- * @createDate 2020�?�?7�? */
+ * @file 日历和团�? * @author ly
+ * @createDate 2020�?�?7�? */
 import React, { useState, useContext, useEffect, useMemo, FC } from 'react';
 import { useMutationRequest } from '@/hooks/useQueryRequest';
 import TeamMembers from './TeamMembers';
@@ -38,7 +38,15 @@ const DateAndPersonnel: FC<DateAndPersonnelProps> = ({ oldUserId, oldDate }) => 
 	};
 
 	// 获取任务列表数据
-	const { run: fetchTaskList, runAsync: fetchTaskListAsync, loading } = useMutationRequest(taskList, { onSuccess: (res) => { toDay?.dispatch({ type: 'taskListData', value: res.data }); } });
+	const {
+		run: fetchTaskList,
+		runAsync: fetchTaskListAsync,
+		loading
+	} = useMutationRequest(taskList, {
+		onSuccess: (res) => {
+			toDay?.dispatch({ type: 'taskListData', value: res.data });
+		}
+	});
 
 	useEffect(() => {
 		fetchTaskList();
@@ -57,4 +65,3 @@ const DateAndPersonnel: FC<DateAndPersonnelProps> = ({ oldUserId, oldDate }) => 
 };
 
 export default () => DateAndPersonnelHoc(DateAndPersonnel);
-

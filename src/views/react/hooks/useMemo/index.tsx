@@ -5,7 +5,8 @@
  */
 import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
 import dayjs from 'dayjs';
 
 const getTime = () => {
@@ -33,7 +34,7 @@ const UseMemo = () => {
 	}, [value]);
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
@@ -43,8 +44,8 @@ const UseMemo = () => {
 			{value}
 			{first}
 			{memoValue}
-			<Imarkdown url={'useMemo.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useMemo.md'}></Markdown>
+		</AppCard>
 	);
 };
 

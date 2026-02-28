@@ -393,7 +393,7 @@ const PropertyPanel: React.FC<{
 }> = ({ nodeData, updateProperty, hidePropertyPanel }) => {
 	const getApproveList = () => {
 		const approveUserOption: JSX.Element[] = [];
-		approveUser.forEach((item: IApproveUser) => {
+		approveUser.forEach((item: ApproveUser) => {
 			approveUserOption.push(<Select.Option value={item.value}>{item.label}</Select.Option>);
 		});
 		const approveSelect = (

@@ -5,10 +5,7 @@
  * @description 完全按照 DeepSeek 官网精确还原的 AI 对话界面
  */
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { XMarkdown } from '@ant-design/x-markdown';
-import type { ComponentProps } from '@ant-design/x-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Markdown from '@/components/plugin/Markdown';
 import {
 	UserOutlined,
 	PlusOutlined,
@@ -80,44 +77,6 @@ const groupByDate = (list: Conversation[]) => {
 	return g;
 };
 
-// ---- 代码块高亮组件 ----
-const CodeBlock: React.FC<ComponentProps> = ({ lang, block, children }) => {
-	const codeStr = String(children).replace(/\n$/, '');
-	if (!block) {
-		return <code className="ds-inline-code">{children}</code>;
-	}
-	const language = lang || 'text';
-	return (
-		<div className="ds-code-block">
-			<div className="ds-code-header">
-				<span className="ds-code-lang">{language}</span>
-				<button
-					type="button"
-					className="ds-code-copy"
-					onClick={() => {
-						navigator.clipboard.writeText(codeStr);
-					}}>
-					<CopyOutlined />
-					<span>复制</span>
-				</button>
-			</div>
-			<SyntaxHighlighter
-				language={language}
-				style={oneDark}
-				customStyle={{
-					margin: 0,
-					borderRadius: '0 0 12px 12px',
-					padding: '16px',
-					fontSize: '14px',
-					lineHeight: '1.6'
-				}}
-				wrapLongLines>
-				{codeStr}
-			</SyntaxHighlighter>
-		</div>
-	);
-};
-
 // ---- 用户消息组件 ----
 const UserMessage: React.FC<{ msg: Message; onCopy: (c: string) => void }> = ({ msg, onCopy }) => (
 	<div className="ds-message ds-message--user">
@@ -153,13 +112,7 @@ const AiMessage: React.FC<{
 			</div>
 		) : (
 			<div className="ds-ai-content">
-				<XMarkdown
-					className="ds-markdown"
-					paragraphTag="div"
-					components={{ code: CodeBlock }}
-					streaming={msg.status === 'loading' ? { hasNextChunk: true, enableAnimation: true } : undefined}>
-					{msg.content}
-				</XMarkdown>
+				<Markdown initContent={msg.content} streaming={msg.status === 'loading'} className="ds-markdown" />
 			</div>
 		)}
 		{msg.status !== 'loading' && (

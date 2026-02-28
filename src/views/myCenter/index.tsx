@@ -4,13 +4,13 @@
  * @createDate 2022年12月11日
  */
 import React, { FC, useState } from 'react';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { useUser } from '@/store';
 import { Avatar } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 import EditPhoto from './components/EditPhoto';
 import ResetPassword from './components/ResetPassword';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 
 const MyCenter: FC = () => {
 	const { photo, setPhoto } = useUser();
@@ -40,7 +40,7 @@ const MyCenter: FC = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<div>
 				<div style={{ marginBottom: '20px', textAlign: 'center' }}>
 					<span onClick={openPhoto}>
@@ -49,10 +49,10 @@ const MyCenter: FC = () => {
 				</div>
 				<ResetPassword></ResetPassword>
 			</div>
-			<Imodal title="修改头像" open={isModalOpen} confirmLoading={confirmLoading} onOk={handleOk} onCancel={handleCancel} width={800}>
+			<AppModal title="修改头像" open={isModalOpen} confirmLoading={confirmLoading} onOk={handleOk} onCancel={handleCancel} width={800}>
 				<EditPhoto photoFinish={photoFinish} setPhotoFinish={setPhotoFinish}></EditPhoto>
-			</Imodal>
-		</Icard>
+			</AppModal>
+		</AppCard>
 	);
 };
 

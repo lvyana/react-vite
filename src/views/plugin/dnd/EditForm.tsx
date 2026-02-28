@@ -4,7 +4,7 @@
  * @createDate 2022年12月17日
  */
 import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
-import Iform, { OnValuesChange } from '@/components/antd/AppForm';
+import AppForm, { OnValuesChange } from '@/components/antd/AppForm';
 import { Button, Form, Tabs, TabsProps } from 'antd';
 import { Context } from './context';
 import { useEditFormItemValue, useEditItemValue, useWatchUrl } from './useHooks';
@@ -324,7 +324,7 @@ const EditForm = memo(() => {
 	// // urlValue
 	// useEditFormItemValue('urlValue', form);
 
-	const onValuesChange = (changedValues: keyof FormParams, allValues: FormParams) => {
+	const onValuesChange = (changedValues: Partial<FormParams>, allValues: FormParams) => {
 		if (context?.state.selectFormItemKey) {
 			const newFormList = context.state.formList.map((item) => {
 				if (context?.state.selectFormItemKey === item.key) {
@@ -339,7 +339,7 @@ const EditForm = memo(() => {
 
 	return context?.state.selectFormItemKey ? (
 		<div className="rounded-lg p-2 border-2 border-solid" style={{ borderColor: token.colorPrimaryBorder }}>
-			<Iform formProps={{ form: form, onValuesChange }} formList={newFormList}></Iform>
+			<AppForm formProps={{ form: form, onValuesChange }} formList={newFormList}></AppForm>
 		</div>
 	) : (
 		<></>

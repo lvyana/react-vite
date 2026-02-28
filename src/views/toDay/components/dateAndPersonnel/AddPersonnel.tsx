@@ -5,8 +5,8 @@
  */
 import React, { FC, useState } from 'react';
 import { Form, FormInstance } from 'antd';
-import Imodal from '@/components/antd/AppModal';
-import Iform from '@/components/antd/AppForm';
+import AppModal from '@/components/antd/AppModal';
+import AppForm from '@/components/antd/AppForm';
 import type { FormInputType, FormSelectType } from '@/components/antd/AppForm/type';
 
 interface AddPersonnelProps {
@@ -74,9 +74,9 @@ const AddPersonnel: FC<AddPersonnelProps> = ({ form, addPersonnelOpen, addPerson
 	];
 
 	return (
-		<Imodal title="新增人员" open={addPersonnelOpen} confirmLoading={addPersonnelLoading} onOk={onOk} onCancel={onCancel}>
-			<Iform formProps={{ form: form }} formList={formList}></Iform>
-		</Imodal>
+		<AppModal title="新增人员" open={addPersonnelOpen} confirmLoading={addPersonnelLoading} onOk={onOk} onCancel={onCancel}>
+			<AppForm formProps={{ form: form }} formList={formList}></AppForm>
+		</AppModal>
 	);
 };
 

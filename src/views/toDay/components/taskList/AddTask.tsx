@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { FloatButton } from 'antd';
 import { AppstoreAddOutlined } from '@ant-design/icons';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 
 const AddTask = () => {
 	const onOpenTask = () => {
@@ -25,9 +25,9 @@ const AddTask = () => {
 	return (
 		<div>
 			<FloatButton icon={<AppstoreAddOutlined />} onClick={onOpenTask}></FloatButton>
-			<Imodal title="新增任务" open={addTaskOpen} confirmLoading={addTaskLoading} onOk={onOkOrCancelTask} onCancel={onOkOrCancelTask}>
+			<AppModal title="新增任务" open={addTaskOpen} confirmLoading={addTaskLoading} onOk={onOkOrCancelTask} onCancel={onOkOrCancelTask}>
 				123
-			</Imodal>
+			</AppModal>
 		</div>
 	);
 };

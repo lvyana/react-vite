@@ -1,19 +1,18 @@
 /**
  * @file pdf
  * @author ly
- * @createDate 2022年6月3日
- * https://www.5axxw.com/wiki/content/n0gokf 文档说明
+ * @createDate 2022�?�?�? * https://www.5axxw.com/wiki/content/n0gokf 文档说明
  */
 import React, { useState, useEffect, useRef, useTransition } from 'react';
 import { pdfjs, Document, Page } from 'react-pdf';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import styles from './index.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import Iloading from '@/components/antd/AppLoading';
+import AppLoading from '@/components/plugin/Loading';
 import useResize from '@/useHooks/useResize';
 import pdffile from './title.pdf';
-import Ipaginations, { PaginationProps } from '@/components/antd/AppPagination';
+import AppPagination, { PaginationProps } from '@/components/antd/AppPagination';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -40,14 +39,14 @@ const Pdf = () => {
 	const { resize } = useResize(document.getElementById('pdfCard'));
 
 	return (
-		<Icard>
+		<AppCard>
 			<div id="pdfCard" className={styles.pdf} onContextMenu={(e) => onPreventDefault(e)}>
-				<Document className={'w-full'} file={pdffile} onLoadSuccess={onDocumentLoadSuccess} loading={<Iloading></Iloading>}>
+				<Document className={'w-full'} file={pdffile} onLoadSuccess={onDocumentLoadSuccess} AppLoading={<AppLoading></AppLoading>}>
 					<Page pageNumber={page.current.pageNum} width={resize?.width} />
 				</Document>
 			</div>
 			<div>
-				<Ipaginations
+				<AppPagination
 					current={page.current.pageNum}
 					pageSize={page.current.pageSize}
 					onChange={onPaginationChange}
@@ -55,9 +54,9 @@ const Pdf = () => {
 					showTotal={undefined}
 					showSizeChanger={false}
 					showQuickJumper={false}
-					className="mt-4"></Ipaginations>
+					className="mt-4"></AppPagination>
 			</div>
-		</Icard>
+		</AppCard>
 	);
 };
 

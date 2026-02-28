@@ -5,11 +5,11 @@
  */
 import React, { useState } from 'react';
 import { Button, Tag, Space } from 'antd';
-import Itooltip from '@/components/antd/AppTooltip';
+import AppTooltip from '@/components/antd/AppTooltip';
 import { TableClick, AlignType } from '@/components/antd/AppTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataResponse } from '../service';
-import Idropdown from '@/components/antd/AppDropdown';
+import AppDropdown from '@/components/antd/AppDropdown';
 import { MenuProps } from 'antd/lib/menu';
 interface UseHeaderTableParams {
 	buttonEvent: (type: string | number, value: TableDataResponse) => void;
@@ -42,11 +42,11 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 			width: 100,
 			align: 'center' as AlignType,
 			render: (text: string, record: TableDataResponse) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: 200 }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: 200 }} title={<>{text}</>}>
 					<div className="truncate" style={{ width: 100 }} onClick={() => tbClick('name', record)}>
 						{text}
 					</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -56,9 +56,9 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 			width: 100,
 			align: 'center' as AlignType,
 			render: (text: string) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -67,9 +67,9 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 			key: 'weight',
 			align: 'center' as AlignType,
 			render: (text: string) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -78,9 +78,9 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 			key: 'height',
 			align: 'center' as AlignType,
 			render: (text: string) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -91,7 +91,7 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 			render: (text: unknown, record: TableDataResponse) => {
 				return (
 					<>
-						<Idropdown menu={{ items: buttonOption }} onOpenChange={(open) => onOpenChange(open)}></Idropdown>
+						<AppDropdown menu={{ items: buttonOption }} onOpenChange={(open) => onOpenChange(open)}></AppDropdown>
 					</>
 				);
 			}

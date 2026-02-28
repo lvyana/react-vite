@@ -5,8 +5,8 @@
  */
 import React, { Key, useRef, useState } from 'react';
 import { Button, Tag, Space } from 'antd';
-import Itooltip from '@/components/antd/AppTooltip';
-import Idropdown from '@/components/antd/AppDropdown';
+import AppTooltip from '@/components/antd/AppTooltip';
+import AppDropdown from '@/components/antd/AppDropdown';
 import { ColumnsType } from '@/components/antd/AppTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataParams, TableDataResponse } from '../service';
@@ -88,13 +88,13 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 			width: 100,
 			align: 'center',
 			render: (text, record) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: 200 }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: 200 }} title={<>{text}</>}>
 					<Button type="link" style={{ width: 100 }} onClick={() => tbClick('name', record)}>
 						<div className="truncate" style={{ width: 70 }}>
 							{text}
 						</div>
 					</Button>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -105,9 +105,9 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 			align: 'center',
 
 			render: (text) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -116,9 +116,9 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 			key: 'weight',
 			align: 'center',
 			render: (text) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -135,9 +135,9 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 				}
 			}),
 			render: (text) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '100px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -146,9 +146,9 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 			key: 'remark',
 			align: 'center',
 			render: (text) => (
-				<Itooltip placement="top" overlayInnerStyle={{ width: '180px' }} title={<>{text}</>}>
+				<AppTooltip placement="top" overlayInnerStyle={{ width: '180px' }} title={<>{text}</>}>
 					<div className="truncate">{text}</div>
-				</Itooltip>
+				</AppTooltip>
 			)
 		},
 		{
@@ -158,9 +158,9 @@ const useHeaderTable = ({ buttonEvent, columnsSeachValue }: HeaderTableParams) =
 			align: 'center',
 			render: (text, record) => {
 				return (
-					<Idropdown
+					<AppDropdown
 						menu={{ items: buttonOption, onClick: (info) => tbClick(info.key, record) }}
-						onOpenChange={(open) => onOpenChange(open, record)}></Idropdown>
+						onOpenChange={(open) => onOpenChange(open, record)}></AppDropdown>
 				);
 			}
 		}

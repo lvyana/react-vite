@@ -6,7 +6,7 @@
 import { Suspense, lazy, FC } from 'react';
 import { useUser } from '@/store';
 import menuList, { Router } from '@/layout/menu/routerData';
-import Iloading from '@/components/plugin/Loading';
+import AppLoading from '@/components/plugin/Loading';
 
 // 异步路由
 const AysncComponentHoc = (Component: React.FC, api: () => Promise<Router[]>, setRedux: (data: Router[]) => void) => {
@@ -49,7 +49,7 @@ const useAysncComponent = (LayoutComponent: React.FC) => {
 	const LazyComponent = AysncComponentHoc(LayoutComponent, router, setRedux);
 
 	return (
-		<Suspense fallback={<Iloading></Iloading>}>
+		<Suspense fallback={<AppLoading></AppLoading>}>
 			<LazyComponent></LazyComponent>
 		</Suspense>
 	);

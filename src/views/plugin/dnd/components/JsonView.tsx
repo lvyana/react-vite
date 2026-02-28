@@ -4,7 +4,7 @@
  * @date 2023年3月13日
  */
 import React, { FC, useContext, useEffect, useState } from 'react';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 import ReactJson, { ReactJsonViewProps } from 'react-json-view';
 import { Context } from '../context';
 import { Segmented } from 'antd';
@@ -67,10 +67,10 @@ const JsonView: FC<JsonViewProps> = ({ open, onOk, onCancel, confirmLoading }) =
 	};
 
 	return (
-		<Imodal title={'json'} width={800} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
+		<AppModal title={'json'} width={800} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
 			<Segmented options={JSON_OPTIONS} value={selectJsonType} onChange={onJsonChange} />
 			<ReactJson {...propsVal} />
-		</Imodal>
+		</AppModal>
 	);
 };
 

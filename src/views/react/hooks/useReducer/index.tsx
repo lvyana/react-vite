@@ -5,12 +5,29 @@
  */
 import React, { useReducer } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
+import AppCollapse from '@/components/antd/AppCollapse';
 
 type ActionFuncType = (state: number, action: { type: string; value: number }) => number;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
+
+// Reducer 函数
+const reducer = (state: number, action: { type: string; value: number }): number => {
+	switch (action.type) {
+		case 'add':
+			return state + action.value;
+		case 'sub':
+			return state - action.value;
+		case 'mul':
+			return state * action.value;
+		case 'div':
+			return state / action.value;
+		default:
+			return state;
+	}
+};
 
 const UseReducer = () => {
 	// reduce实现加减乘除
@@ -18,7 +35,7 @@ const UseReducer = () => {
 	const [value, dispatch] = useReducer(reducer, 0);
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={() => dispatch({ type: 'add', value: 1 })}>
 				+1
 			</Button>
@@ -32,8 +49,8 @@ const UseReducer = () => {
 				/2
 			</Button>
 			{value}
-			<Imarkdown url={'useReducer.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useReducer.md'}></Markdown>
+		</AppCard>
 	);
 };
 

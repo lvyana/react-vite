@@ -4,8 +4,9 @@
  * @createDate 2023年1月3日
  */
 import React, { useState, useLayoutEffect, useEffect } from 'react';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
+import AppCollapse from '@/components/antd/AppCollapse';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router';
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
@@ -18,12 +19,12 @@ const UseLayoutEffect = () => {
 	}, []);
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={() => navigate('/react/hooks/useEffect')}>
 				useEffect
 			</Button>
-			<Imarkdown url={'useLayoutEffect.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useLayoutEffect.md'}></Markdown>
+		</AppCard>
 	);
 };
 

@@ -5,9 +5,10 @@
  */
 import React, { FC, useState, useEffect } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
-import IcodeEditor from '@/components/plugin/CodeEditor';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
+import CodeEditor from '@/components/plugin/CodeEditor';
+import AppCollapse from '@/components/antd/AppCollapse';
 
 type SonProps = {
 	value: number;
@@ -83,7 +84,7 @@ const list = [
 		label: '示例代码',
 		children: (
 			<>
-				<IcodeEditor initCode={initCode}></IcodeEditor>
+				<CodeEditor initCode={initCode}></CodeEditor>
 			</>
 		),
 		key: '5'
@@ -239,7 +240,7 @@ const UseEffect = () => {
 			label: '代码示例',
 			children: (
 				<>
-					<IcodeEditor initCode={initCode}></IcodeEditor>
+					<CodeEditor initCode={initCode}></CodeEditor>
 				</>
 			),
 			key: '2'
@@ -247,14 +248,14 @@ const UseEffect = () => {
 	];
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
 			{value}
-			<Icollapse styleConfig="1" defaultActiveKey={['0']} items={list}></Icollapse>
-			<Imarkdown url={'useEffect.md'}></Imarkdown>
-		</Icard>
+			<AppCollapse styleConfig="1" defaultActiveKey={['0']} items={list}></AppCollapse>
+			<Markdown url={'useEffect.md'}></Markdown>
+		</AppCard>
 	);
 };
 

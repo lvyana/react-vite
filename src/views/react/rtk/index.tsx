@@ -5,7 +5,7 @@
  */
 import React, { useEffect } from 'react';
 import { useLog } from '@/store';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 const Rtk = () => {
 	const { list, getMovieData } = useLog();
@@ -15,11 +15,11 @@ const Rtk = () => {
 	}, [getMovieData]);
 
 	return (
-		<Icard>
+		<AppCard>
 			{list.map((item) => {
 				return <div key={item.name}>{item.name}</div>;
 			})}
-		</Icard>
+		</AppCard>
 	);
 };
 

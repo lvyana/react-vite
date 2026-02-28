@@ -4,8 +4,8 @@
  * @date 2022年12月18日
  */
 import React, { FC, useContext } from 'react';
-import Iform from '@/components/antd/AppForm';
-import Imodal from '@/components/antd/AppModal';
+import AppForm from '@/components/antd/AppForm';
+import AppModal from '@/components/antd/AppModal';
 import { Context } from '../context';
 import { useFormData } from '../useHooks';
 import type { FormInstance } from 'antd';
@@ -25,9 +25,9 @@ const TemplateForm: FC<TemplateFormProps> = ({ form, open, onOk, onCancel, confi
 	const { getFormData } = useFormData();
 
 	return (
-		<Imodal width={800} title={'示例'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
+		<AppModal width={800} title={'示例'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
 			<div className="border-solid border-2 border-indigo-600 rounded-lg p-3">
-				<Iform
+				<AppForm
 					formProps={{ form: form }}
 					formList={
 						context?.state.formList.map((item) => {
@@ -36,7 +36,7 @@ const TemplateForm: FC<TemplateFormProps> = ({ form, open, onOk, onCancel, confi
 					}
 				/>
 			</div>
-		</Imodal>
+		</AppModal>
 	);
 };
 

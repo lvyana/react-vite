@@ -5,7 +5,7 @@
  */
 import React, { useState, memo, useCallback } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import dayjs from 'dayjs';
 
 interface MyUseCallbackItemProps {
@@ -34,14 +34,12 @@ const UseCallback = () => {
 	}, [count]);
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
 			{value}
-			<Son getCount={getCount}></Son>
-			<Imarkdown url={'useCallback.md'}></Imarkdown>
-		</Icard>
+		</AppCard>
 	);
 };
 

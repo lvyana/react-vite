@@ -3,8 +3,9 @@
  * @author ly
  * @createDate
  */
-import React, { FC, useDeferredValue, useMemo, useState } from 'react';
-import Icard from '@/components/antd/AppCard';
+import React, { Suspense, useDeferredValue, useState, memo, FC, useMemo } from 'react';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
 import { Input } from 'antd';
 
 type ListProps = {
@@ -19,13 +20,11 @@ const UseDeferredValue = () => {
 	const deferredQuery = useDeferredValue(query);
 
 	return (
-		<Icard>
+		<AppCard>
 			<Input value={query} onChange={(e) => setQuery(e.target.value)} />
-			<Suspense fallback={<div>Loading...</div>}>
-				<SearchResults query={deferredQuery} />
-			</Suspense>
-			<Imarkdown url={'useDeferredValue.md'}></Imarkdown>
-		</Icard>
+			<Suspense fallback={<div>Loading...</div>}>{/* <SearchResults query={deferredQuery} /> */}</Suspense>
+			<Markdown url={'useDeferredValue.md'}></Markdown>
+		</AppCard>
 	);
 };
 

@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { useNavigate, Outlet, useLoaderData } from 'react-router-dom';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { Button } from 'antd';
 
 const RouterDemo = () => {
@@ -20,7 +20,7 @@ const RouterDemo = () => {
 		}
 	};
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={() => onRender(0)}>
 				RouterCom
 			</Button>
@@ -32,7 +32,7 @@ const RouterDemo = () => {
 				加载list react-router-dom V6
 			</Button>
 			<Outlet />
-		</Icard>
+		</AppCard>
 	);
 };
 

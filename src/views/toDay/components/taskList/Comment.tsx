@@ -4,7 +4,7 @@
  * @createDate 2020年11月10日
  */
 import React, { FC } from 'react';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 
 interface CommentProps {
 	openComment: boolean;
@@ -16,9 +16,9 @@ interface CommentProps {
 
 const Comment: FC<CommentProps> = ({ openComment, loadingComment, onOk, onCancel }) => {
 	return (
-		<Imodal open={openComment} title={'评论'} confirmLoading={loadingComment} onOk={onOk} onCancel={onCancel}>
+		<AppModal open={openComment} title={'评论'} confirmLoading={loadingComment} onOk={onOk} onCancel={onCancel}>
 			Comment
-		</Imodal>
+		</AppModal>
 	);
 };
 

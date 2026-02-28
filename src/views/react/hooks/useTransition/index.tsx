@@ -5,7 +5,8 @@
  */
 import React, { useState, useTransition, useCallback } from 'react';
 import { debounce } from 'lodash';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
 import { Input } from 'antd';
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
@@ -26,7 +27,7 @@ const UseTransition = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<Input value={input} onChange={handleChange} />
 			{isPending ? (
 				<div>Loading...</div>
@@ -37,8 +38,8 @@ const UseTransition = () => {
 					))}
 				</div>
 			)}
-			<Imarkdown url={'useTransition.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useTransition.md'}></Markdown>
+		</AppCard>
 	);
 };
 

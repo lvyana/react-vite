@@ -4,8 +4,8 @@
  * @createDate
  */
 import React from 'react';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
+import AppCard from '@/components/antd/AppCard';
+import AppCollapse from '@/components/antd/AppCollapse';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
@@ -203,9 +203,9 @@ const Markdown = () => {
 		}
 	];
 	return (
-		<Icard>
-			<Icollapse items={list} defaultActiveKey={['1']} styleConfig="1"></Icollapse>
-		</Icard>
+		<AppCard>
+			<AppCollapse items={list} defaultActiveKey={['1']} styleConfig="1"></AppCollapse>
+		</AppCard>
 	);
 };
 

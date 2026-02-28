@@ -5,7 +5,7 @@
  */
 import React, { FC, useEffect } from 'react';
 import { Form } from 'antd';
-import Idrawer from '@/components/antd/AppDrawer';
+import AppDrawer from '@/components/antd/AppDrawer';
 import EditPersonnelTable from './EditPersonnelTable';
 import EditPersonnelSearch from './EditPersonnelSearch';
 import { useEditPersonnelTable } from './useApiHooks';
@@ -35,10 +35,10 @@ const EditPersonnel: FC<EditPersonnelProps> = ({ open, onClose }) => {
 	};
 	return (
 		<>
-			<Idrawer title="调整团队" onClose={onClose} open={open} width={800}>
+			<AppDrawer title="调整团队" onClose={onClose} open={open} width={800}>
 				<EditPersonnelSearch form={EditPersonnelSearchForm} onValuesChange={onEditPersonnelSearchFrom}></EditPersonnelSearch>
 				<EditPersonnelTable data={editPersonnelTableData} loading={editPersonnelTableLoading}></EditPersonnelTable>
-			</Idrawer>
+			</AppDrawer>
 		</>
 	);
 };

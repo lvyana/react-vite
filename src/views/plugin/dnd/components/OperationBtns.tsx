@@ -5,7 +5,7 @@
  */
 import React, { useContext, useState } from 'react';
 import { Form } from 'antd';
-import Ibutton, { ButtonItemParams } from '@/components/antd/AppButton/List';
+import AppButtonList, { ButtonItemParams } from '@/components/antd/AppButton/List';
 import JsonView from './JsonView';
 import ImportJson from './ImportJson';
 import { Context } from '../context';
@@ -120,7 +120,7 @@ const OperationBtns = () => {
 
 	return (
 		<div className="mb-2">
-			<Ibutton options={buttonList}></Ibutton>
+			<AppButtonList options={buttonList}></AppButtonList>
 			<JsonView open={jsonViewOpen} onOk={jsonViewModalOk} onCancel={jsonViewModalCancel} confirmLoading={jsonViewLoading} />
 			<ImportJson
 				open={importJsonOpen}

@@ -6,7 +6,8 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
-import { Rule, ValidateErrorEntity } from 'rc-field-form/lib/interface';
+import type { Rule } from 'antd/es/form';
+import type { ValidateErrorEntity } from '@rc-component/form/lib/interface';
 
 interface FormType {
 	userName: string;

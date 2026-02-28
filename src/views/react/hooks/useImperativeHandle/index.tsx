@@ -5,7 +5,8 @@
  */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
 import { Button } from 'antd';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
@@ -17,12 +18,12 @@ const UseImperativeHandle = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={onToForwardRef}>
 				forwardRef
 			</Button>
-			<Imarkdown url={'useImperativeHandle.md'}></Imarkdown>
-		</Icard>
+			<Markdown url={'useImperativeHandle.md'}></Markdown>
+		</AppCard>
 	);
 };
 

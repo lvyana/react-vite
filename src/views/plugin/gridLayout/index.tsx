@@ -6,7 +6,7 @@
 import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useResize from '@/useHooks/useResize';
 import { v4 as uuidv4 } from 'uuid';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import IgridLayout, { LayoutsParams } from '@/components/plugin/GridLayout';
 
 const urlArr = [
@@ -197,11 +197,11 @@ const GridLayout = () => {
 	const [readerUrlArr, setreaderUrlArr] = useState<ReaderUrlArrParams[]>([]);
 
 	return (
-		<Icard className="overflow-x-auto">
+		<AppCard className="overflow-x-auto">
 			<div id="DemoGridLayout" style={{ width: 1000 }}>
 				<IgridLayout layout={readerUrlArr} width={width}></IgridLayout>
 			</div>
-		</Icard>
+		</AppCard>
 	);
 };
 export default GridLayout;

@@ -4,14 +4,14 @@
  * @createDate 2023年5月10日
  */
 import React from 'react';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { Descriptions } from 'antd';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
 const CreateReactApp = () => {
 	return (
-		<Icard>
+		<AppCard>
 			<Descriptions title="我已经用create-react-app创建了一个项目,我怎么升级项目版本?" layout="vertical" bordered column={1}>
 				<Descriptions.Item label="1. 首先，您需要运行以下命令来更新 create-react-app 本身：">
 					npm install -g create-react-app //这将会更新全局安装的 create-react-app 版本。
@@ -47,7 +47,7 @@ const CreateReactApp = () => {
 				<Descriptions.Item label="然后使用以下命令来检查并更新依赖项">ncu -u</Descriptions.Item>
 				<Descriptions.Item label="重新安装依赖">npm install</Descriptions.Item>
 			</Descriptions>
-		</Icard>
+		</AppCard>
 	);
 };
 

@@ -4,7 +4,7 @@
  * @createDate 2020年11月7日
  */
 import React, { FC, forwardRef, Ref, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import Button from 'antd/es/button';
 
 type OnLoginHandler = {
@@ -34,7 +34,7 @@ const ForwardRef = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="primary" onClick={onOrdinary}>
 				普通转发ref
 			</Button>
@@ -43,7 +43,7 @@ const ForwardRef = () => {
 				登录
 			</Button>
 			<LoginHoc ref={onLoginHandler}></LoginHoc>
-		</Icard>
+		</AppCard>
 	);
 };
 

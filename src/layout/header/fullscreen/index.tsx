@@ -4,9 +4,9 @@
  * @createDate 2020年4月27日
  */
 import React from 'react';
-import Ifullscreen from '@/components/plugin/Fullscreen';
+import Fullscreen from '@/components/plugin/Fullscreen';
 
-const Fullscreen = () => {
-	return <Ifullscreen id="root"></Ifullscreen>;
+const FullscreenWrapper = () => {
+	return <Fullscreen id="root"></Fullscreen>;
 };
-export default Fullscreen;
+export default FullscreenWrapper;

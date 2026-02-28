@@ -12,13 +12,13 @@ import GenerateForm from './GenerateForm';
 import EditForm from './EditForm';
 import DndContext from './context';
 import OperationBtns from './components/OperationBtns';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
 const Dnd = () => {
 	return (
-		<Icard>
+		<AppCard>
 			<DndContext>
 				<OperationBtns />
 				<Row gutter={8}>
@@ -35,7 +35,7 @@ const Dnd = () => {
 					</Col>
 				</Row>
 			</DndContext>
-		</Icard>
+		</AppCard>
 	);
 };
 

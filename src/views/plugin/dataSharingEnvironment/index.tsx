@@ -15,7 +15,7 @@ import React, {
 	useCallback
 } from 'react';
 import todosStore from './store';
-import Ibutton from '@/components/antd/AppButton';
+import AppButton from '@/components/antd/AppButton';
 import { forwardRefFunc } from '@/hoc/forwardRefHoc';
 import { createPortal } from 'react-dom';
 import { useSearchParams } from 'react-router-dom';
@@ -102,11 +102,11 @@ const DataSharingEnvironment: React.FC = () => {
 			<>
 				{a === '1' ? (
 					<>
-						<Ibutton onClick={createBall} name="初始化小球" disabled={!!com}></Ibutton>
-						<Ibutton onClick={clearBall} name="删除小球" disabled={!com}></Ibutton>
-						<Ibutton onClick={onStop} name="停止"></Ibutton>
+						<AppButton onClick={createBall} name="初始化小球" disabled={!!com}></AppButton>
+						<AppButton onClick={clearBall} name="删除小球" disabled={!com}></AppButton>
+						<AppButton onClick={onStop} name="停止"></AppButton>
 
-						<Ibutton onClick={onStart} name="开始" disabled={!com}></Ibutton>
+						<AppButton onClick={onStart} name="开始" disabled={!com}></AppButton>
 					</>
 				) : null}
 			</>

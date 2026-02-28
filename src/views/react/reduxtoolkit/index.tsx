@@ -5,8 +5,8 @@
  */
 import { useEffect } from 'react';
 import { useLog } from '@/store';
-import Icard from '@/components/antd/AppCard';
-import Ibutton from '@/components/antd/AppButton';
+import AppCard from '@/components/antd/AppCard';
+import AppButton from '@/components/antd/AppButton';
 
 const ReduxToolkit = () => {
 	const { list, setList, getMovieData } = useLog();
@@ -22,12 +22,12 @@ const ReduxToolkit = () => {
 	};
 
 	return (
-		<Icard>
-			<Ibutton onClick={onReadux} name={'zustand 赋值'}></Ibutton>
+		<AppCard>
+			<AppButton onClick={onReadux} name={'zustand 赋值'}></AppButton>
 			{list.map((item) => {
 				return <div key={item.name}>{item.name}</div>;
 			})}
-		</Icard>
+		</AppCard>
 	);
 };
 

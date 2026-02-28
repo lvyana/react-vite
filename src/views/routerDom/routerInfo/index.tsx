@@ -16,7 +16,7 @@ import img5 from '@/assets/images/55.png';
 import img6 from '@/assets/images/66.png';
 import img7 from '@/assets/images/77.png';
 import img8 from '@/assets/images/88.png';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 const RouterInfo = () => {
 	const [img88, setimg88] = useState('');
@@ -26,7 +26,7 @@ const RouterInfo = () => {
 		}, 4000);
 	}, []);
 	return (
-		<Icard>
+		<AppCard>
 			<div>useParams()</div>
 			<div>1. 作用：回当前匹配路由的`params`参数，类似于5.x中的`match.params`。</div>
 			<LazyLoadImage
@@ -60,7 +60,7 @@ const RouterInfo = () => {
 			<div>useMatch()</div>
 			<div>1. 作用：返回当前匹配信息，对标5.x中的路由组件的`match`属性。</div>
 			<img src={img8} alt="" className="w-full" />
-		</Icard>
+		</AppCard>
 	);
 };
 

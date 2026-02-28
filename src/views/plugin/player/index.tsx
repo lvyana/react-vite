@@ -5,7 +5,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 const Player = () => {
 	const [playing, setplaying] = useState(false);
@@ -16,7 +16,7 @@ const Player = () => {
 	}, []);
 
 	return (
-		<Icard>
+		<AppCard>
 			<div className="player-wrapper overflow-x-auto overflow-y-hidden">
 				<ReactPlayer
 					className="react-player"
@@ -39,7 +39,7 @@ const Player = () => {
 					}}
 				/>
 			</div>
-		</Icard>
+		</AppCard>
 	);
 };
 

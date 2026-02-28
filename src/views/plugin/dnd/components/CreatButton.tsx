@@ -5,7 +5,7 @@
  */
 import React, { FC, useState } from 'react';
 import { Button, Col, Form, Input, Row, Space } from 'antd';
-import Ibutton from '@/components/antd/AppButton';
+import AppButton from '@/components/antd/AppButton';
 import { getInput, getNumber } from '@/components/antd/AppInput';
 import getSelect, { SelectType } from '@/components/antd/AppSelect';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
@@ -138,7 +138,7 @@ const CreatButton: FC<CreatButtonProps> = ({ options, updateOptions }) => {
 							{getNumber({ placeholder: 'span', value: option.span, onChange: (value) => onInputNumberChange(value, 'span', option.tag) })}
 						</Col>
 						<Col span={12}>
-							<Ibutton
+							<AppButton
 								{...{
 									name: '',
 									block: true,
@@ -147,12 +147,12 @@ const CreatButton: FC<CreatButtonProps> = ({ options, updateOptions }) => {
 									onClick: () => {
 										add(option.tag);
 									}
-								}}></Ibutton>
+								}}></AppButton>
 
 							{/* <Button type="dashed" block icon={<PlusOutlined />}></Button> */}
 						</Col>
 						<Col span={12}>
-							<Ibutton
+							<AppButton
 								{...{
 									name: '',
 									block: true,
@@ -161,7 +161,7 @@ const CreatButton: FC<CreatButtonProps> = ({ options, updateOptions }) => {
 									onClick: () => {
 										subtract(option.tag);
 									}
-								}}></Ibutton>
+								}}></AppButton>
 
 							{/* <Button type="dashed" onClick={() => subtract(option.id)} block icon={<MinusOutlined />}></Button> */}
 						</Col>

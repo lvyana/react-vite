@@ -8,9 +8,9 @@ import Highlighter from 'react-highlight-words';
 import { Input, Button, Dropdown, InputRef, Empty, Skeleton } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import Imodal from '@/components/antd/AppModal';
+import AppModal from '@/components/antd/AppModal';
 import { getInput } from '@/components/antd/AppInput';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 import { useRequest } from 'ahooks';
 
 /**
@@ -113,7 +113,7 @@ const HeaderSearch = () => {
 				onClick={onSearchOpen}
 				icon={suffix}></Button>
 
-			<Imodal open={searchOpen} onOk={onOk} onCancel={onOk} footer={null} maskClosable={true} closeIcon={null}>
+			<AppModal open={searchOpen} onOk={onOk} onCancel={onOk} footer={null} maskClosable={true} closeIcon={null}>
 				{getInput({
 					value: searchValue,
 					prefix: suffix,
@@ -127,7 +127,7 @@ const HeaderSearch = () => {
 						<SearchList searchValue={searchValue} searchList={searchList} onToRouter={onToRouter}></SearchList>
 					</div>
 				)}
-			</Imodal>
+			</AppModal>
 		</>
 	);
 };
@@ -140,7 +140,7 @@ const SearchList: FC<SearchListProps> = ({ searchValue, searchList, onToRouter }
 			{searchList.length ? (
 				searchList?.map((item) => {
 					return (
-						<Icard key={item.key} onClick={() => onToRouter(item.url)} className="mt-2" hoverable={true}>
+						<AppCard key={item.key} onClick={() => onToRouter(item.url)} className="mt-2" hoverable={true}>
 							<div>
 								<Highlighter
 									highlightClassName="YourHighlightClass"
@@ -149,7 +149,7 @@ const SearchList: FC<SearchListProps> = ({ searchValue, searchList, onToRouter }
 									textToHighlight={item.label}
 								/>
 							</div>
-						</Icard>
+						</AppCard>
 					);
 				})
 			) : (

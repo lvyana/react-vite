@@ -6,9 +6,10 @@
 import React, { useState, useContext, useMemo, memo } from 'react';
 import ContextProvider, { Context } from './Icontext';
 import { Button } from 'antd';
-import Icard from '@/components/antd/AppCard';
-import Icollapse from '@/components/antd/AppCollapse';
-import IcodeEditor from '@/components/plugin/CodeEditor';
+import AppCard from '@/components/antd/AppCard';
+import Markdown from '@/components/plugin/Markdown';
+import CodeEditor from '@/components/plugin/CodeEditor';
+import AppCollapse from '@/components/antd/AppCollapse';
 
 /**
  * tips: 可以结合useReduce实现redux
@@ -30,16 +31,14 @@ const UseContext = () => {
 	};
 
 	return (
-		<Icard>
+		<AppCard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
 			{parentValue}
-			<ContextProvider>
-				<Son></Son>
-			</ContextProvider>
-			<Imarkdown url={'useContext.md'}></Imarkdown>
-		</Icard>
+			<ContextProvider></ContextProvider>
+			<Markdown url={'useContext.md'}></Markdown>
+		</AppCard>
 	);
 };
 
@@ -139,12 +138,12 @@ function Button({ children }) {
 			label: '代码示例',
 			children: (
 				<>
-					<IcodeEditor initCode={initCode}></IcodeEditor>
+					<CodeEditor initCode={initCode}></CodeEditor>
 				</>
 			),
 			key: '2'
 		}
 	];
 
-	return <Icollapse styleConfig="1" defaultActiveKey={['0']} items={list}></Icollapse>;
+	return <AppCollapse styleConfig="1" defaultActiveKey={['0']} items={list}></AppCollapse>;
 };

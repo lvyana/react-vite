@@ -5,13 +5,13 @@
  */
 import React from 'react';
 import { useTranslation, Trans, Translation } from 'react-i18next';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 const I18n = () => {
 	const { t, i18n } = useTranslation();
 
 	return (
-		<Icard>
+		<AppCard>
 			<div>
 				<button onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')}>{i18n.language === 'en' ? 'zh' : 'en'}</button>
 			</div>
@@ -22,7 +22,7 @@ const I18n = () => {
 				<Trans>home</Trans>
 			</h2>
 			<Translation>{(t) => <h3>{t('home')}</h3>}</Translation>
-		</Icard>
+		</AppCard>
 	);
 };
 

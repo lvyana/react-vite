@@ -6,10 +6,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Form } from 'antd';
 import useHeaderTable, { ButtonEvent, HeaderTableParams } from './useHooks/useTable';
-import Itable from '@/components/antd/AppTable';
-import Icard from '@/components/antd/AppCard';
+import AppTable from '@/components/antd/AppTable';
+import AppCard from '@/components/antd/AppCard';
 import SeachForm from './components/SearchForm';
-import Ipaginations from '@/components/antd/AppPagination';
+import AppPagination from '@/components/antd/AppPagination';
 import HeaderEdit from '@/components/antd/AppEditHeader/Modal';
 import { useTableData } from './useHooksApi';
 import useKeepAlive, { KeepAliveKeys } from '@/useHooks/useKeepAlive';
@@ -98,16 +98,22 @@ const Expenses = () => {
 		<div>
 			<SeachForm formProps={{ form }} reset={reset} submit={submit}></SeachForm>
 			{/* <ClassCom hh={1}></ClassCom> */}
-			<Icard styles={{ body: { marginTop: '10px' } }}>
+			<AppCard styles={{ body: { marginTop: '10px' } }}>
 				<HeaderEdit type={'seachForm'}></HeaderEdit>
-				<Itable<TableDataResponse> rowKey="key" columns={columns} dataSource={expensesTableData} loading={loading} scroll={{ x: '100%' }} />
-				<Ipaginations
+				<AppTable<TableDataResponse>
+					rowKey="key"
+					columns={columns}
+					dataSource={expensesTableData}
+					loading={loading}
+					scroll={{ x: '100%' }}
+				/>
+				<AppPagination
 					className="mt-4"
 					total={total}
 					pageSize={page.current.pageSize}
 					current={page.current.pageNum}
-					onChange={onPaginationChange}></Ipaginations>
-			</Icard>
+					onChange={onPaginationChange}></AppPagination>
+			</AppCard>
 		</div>
 	);
 };

@@ -3,13 +3,13 @@
  * @author ly
  * @createDate 2023年6月12日
  */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Col, Form, RadioChangeEvent, Row } from 'antd';
 import layout from '@/assets/images/layout.jpg';
 import layout1 from '@/assets/images/layout1.jpg';
 import { useLayout } from '@/store';
 import style from './index.module.scss';
-import Iform, { FormItemParams, FormRadioType } from '@/components/antd/AppForm';
+import AppForm, { FormItemParams } from '@/components/antd/AppForm';
 import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '../useHooks/styleLayoutConfig';
 
 const TABSMAIN_LAYOUT = [
@@ -116,7 +116,7 @@ const StyleLayout = () => {
 				</Col>
 			</Row>
 			<h2 className="mt-2 mb-2 text-base">组件显示</h2>
-			<Iform formProps={{ form: form }} formList={formList}></Iform>
+			<AppForm formProps={{ form: form }} formList={formList}></AppForm>
 		</div>
 	);
 };

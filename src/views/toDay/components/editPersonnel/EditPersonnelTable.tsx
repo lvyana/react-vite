@@ -4,8 +4,8 @@
  * @createDate 2022年11月20日
  */
 import React, { FC } from 'react';
-import Itable, { ColumnsType } from '@/components/antd/AppTable';
-import Idropdown, { DropdownProps } from '@/components/antd/AppDropdown';
+import AppTable, { ColumnsType } from '@/components/antd/AppTable';
+import AppDropdown, { DropdownProps } from '@/components/antd/AppDropdown';
 import { MenuProps } from 'antd/es/menu';
 export interface EditPersonnelTableDataParams {
 	key: string;
@@ -50,14 +50,14 @@ const EditPersonnelTable: FC<EditPersonnelTableProps> = ({ loading, data }) => {
 			dataIndex: 'operation',
 			key: 'operation',
 			render: (value, record) => {
-				return <Idropdown menu={{ items: buttonOption }} onOpenChange={onOpenChange}></Idropdown>;
+				return <AppDropdown menu={{ items: buttonOption }} onOpenChange={onOpenChange}></AppDropdown>;
 			}
 		}
 	];
 
 	return (
 		<div>
-			<Itable rowKey="key" columns={columns} dataSource={data} loading={loading}></Itable>
+			<AppTable rowKey="key" columns={columns} dataSource={data} loading={loading}></AppTable>
 		</div>
 	);
 };
