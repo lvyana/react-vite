@@ -12,7 +12,7 @@ import GenerateForm from './GenerateForm';
 import EditForm from './EditForm';
 import DndContext from './context';
 import OperationBtns from './components/OperationBtns';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

@@ -4,7 +4,7 @@
  * @createDate
  */
 import React, { FC, useDeferredValue, useMemo, useState } from 'react';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import { Input } from 'antd';
 
 type ListProps = {

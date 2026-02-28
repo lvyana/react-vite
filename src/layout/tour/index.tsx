@@ -4,7 +4,7 @@
  * @createDate 2023年5月16日
  */
 import React, { useEffect, useState } from 'react';
-import Itour from '@/components/antd/iTour';
+import Itour from '@/components/antd/AppTour';
 import { getIsItour, setIsItour } from '@/utils/storage';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

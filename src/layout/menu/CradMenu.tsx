@@ -8,7 +8,7 @@ import { Col, Popover, Row } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import IconFont from '@/utils/iconfont';
 import { useUser } from '@/store';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import findNode from '@/utils/findNode';
 import findParentNode from '@/utils/findParentNode';
 import Title from './components/Title';

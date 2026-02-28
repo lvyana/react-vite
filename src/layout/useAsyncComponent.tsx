@@ -6,7 +6,7 @@
 import { Suspense, lazy, FC } from 'react';
 import { useUser } from '@/store';
 import menuList, { Router } from '@/layout/menu/routerData';
-import Iloading from '@/components/plugin/iLoading';
+import Iloading from '@/components/plugin/Loading';
 
 // 异步路由
 const AysncComponentHoc = (Component: React.FC, api: () => Promise<Router[]>, setRedux: (data: Router[]) => void) => {

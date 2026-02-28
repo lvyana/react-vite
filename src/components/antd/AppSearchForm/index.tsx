@@ -4,10 +4,10 @@
  * @createDate 2020年4月27日
  */
 import React from 'react';
-import Iform, { FormItemParams, FormProps } from '@/components/antd/iForm';
-import AnimateComponent from '@/components/plugin/iAnimateComponent';
-import { IresponsiveMin, IresponsiveMax } from '@/components/plugin/iResponsive';
-import Icard from '@/components/antd/iCard';
+import Iform, { FormItemParams, FormProps } from '@/components/antd/AppForm';
+import AnimateComponent from '@/components/plugin/AnimateComponent';
+import { IresponsiveMin, IresponsiveMax } from '@/components/plugin/Responsive';
+import Icard from '@/components/antd/AppCard';
 
 /**
  * 响应式表单props

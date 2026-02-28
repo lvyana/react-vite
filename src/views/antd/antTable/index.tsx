@@ -5,9 +5,9 @@
  */
 import React, { useEffect, useRef } from 'react';
 import { Form } from 'antd';
-import Itable from '@/components/antd/iTable';
-import Icard from '@/components/antd/iCard';
-import Ipaginations from '@/components/antd/iPagination';
+import Itable from '@/components/antd/AppTable';
+import Icard from '@/components/antd/AppCard';
+import Ipaginations from '@/components/antd/AppPagination';
 import { tableData, type TableDataParams, type TableDataResponse } from './service';
 import useHeaderTable, { HeaderTableParams } from './useHooks/useTable';
 import SeachForm from './components/SearchForm';

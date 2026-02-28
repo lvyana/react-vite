@@ -5,7 +5,7 @@
  */
 import React, { FC, LegacyRef, useEffect, useRef, useState } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 
 interface SonProps {
 	sonRef: LegacyRef<HTMLDivElement>;

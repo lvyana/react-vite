@@ -5,7 +5,7 @@
  */
 import React, { useState, useEffect, Key } from 'react';
 import { useGlobalConfig } from '@/store';
-import type { ColumnsType } from '@/components/antd/iTable';
+import type { ColumnsType } from '@/components/antd/AppTable';
 import type { HeaderConfigListParam, HeaderFieldParam } from '@/store/slices/globalConfigSlice';
 /**
  * @param type 表格类型

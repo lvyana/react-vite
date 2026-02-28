@@ -4,8 +4,8 @@
  * @createDate
  */
 import React from 'react';
-import Icard from '@/components/antd/iCard';
-import Icollapse from '@/components/antd/iCollapse';
+import Icard from '@/components/antd/AppCard';
+import Icollapse from '@/components/antd/AppCollapse';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

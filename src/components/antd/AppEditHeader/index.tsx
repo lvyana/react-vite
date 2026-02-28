@@ -8,7 +8,7 @@ import TreeMenu from './TreeMenu';
 import { useHeaderConfigItem } from '@/useHooks/useHeaderConfig';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { HeaderFieldParam } from '@/store/slices/globalConfigSlice';
-import { getCheckbox } from '../iCheckbox';
+import { getCheckbox } from '../AppCheckbox';
 
 export type HeaderType = 'seachForm';
 

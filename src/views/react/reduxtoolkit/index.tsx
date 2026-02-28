@@ -5,8 +5,8 @@
  */
 import { useEffect } from 'react';
 import { useLog } from '@/store';
-import Icard from '@/components/antd/iCard';
-import Ibutton from '@/components/antd/iButton';
+import Icard from '@/components/antd/AppCard';
+import Ibutton from '@/components/antd/AppButton';
 
 const Ireduxtoolkit = () => {
 	const { list, setList, getMovieData } = useLog();

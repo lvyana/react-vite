@@ -16,7 +16,7 @@ import img5 from '@/assets/images/55.png';
 import img6 from '@/assets/images/66.png';
 import img7 from '@/assets/images/77.png';
 import img8 from '@/assets/images/88.png';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 
 const RouterInfo = () => {
 	const [img88, setimg88] = useState('');

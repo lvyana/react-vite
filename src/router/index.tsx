@@ -29,7 +29,7 @@ const Layouts = () => import(/* webpackChunkName: "Layouts" */ '@/layout');
 // 首页
 const Home = () => import(/* webpackChunkName: "Home" */ '@/views/home');
 // 404
-const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/antd/notFound');
+const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/antd/NotFound');
 // 个人中心
 const MyCenter = () => import(/* webpackChunkName: "MyCenter" */ '@/views/myCenter');
 // 消息中心

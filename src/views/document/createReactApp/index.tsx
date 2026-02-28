@@ -4,7 +4,7 @@
  * @createDate 2023年5月10日
  */
 import React from 'react';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import { Descriptions } from 'antd';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

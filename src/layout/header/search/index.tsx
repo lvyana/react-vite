@@ -8,9 +8,9 @@ import Highlighter from 'react-highlight-words';
 import { Input, Button, Dropdown, InputRef, Empty, Skeleton } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import Imodal from '@/components/antd/iModal';
-import { getInput } from '@/components/antd/iInput';
-import Icard from '@/components/antd/iCard';
+import Imodal from '@/components/antd/AppModal';
+import { getInput } from '@/components/antd/AppInput';
+import Icard from '@/components/antd/AppCard';
 import { useRequest } from 'ahooks';
 
 /**

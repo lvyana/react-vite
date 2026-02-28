@@ -5,16 +5,16 @@
  */
 import React, { Key, useRef, useState } from 'react';
 import { Button, Tag, Space } from 'antd';
-import Itooltip from '@/components/antd/iTooltip';
-import Idropdown from '@/components/antd/iDropdown';
-import { ColumnsType } from '@/components/antd/iTable';
+import Itooltip from '@/components/antd/AppTooltip';
+import Idropdown from '@/components/antd/AppDropdown';
+import { ColumnsType } from '@/components/antd/AppTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataParams, TableDataResponse } from '../service';
-import getColumnSearchProps from '@/components/antd/iTable/components/headSearch';
+import getColumnSearchProps from '@/components/antd/AppTable/components/headSearch';
 import { ColumnsSeachValue } from '../index';
 import { MenuProps } from 'antd/lib/menu';
-import { TreeSelectProps } from '@/components/antd/iTreeSelect';
-import { InputProps } from '@/components/antd/iInput';
+import { TreeSelectProps } from '@/components/antd/AppTreeSelect';
+import { InputProps } from '@/components/antd/AppInput';
 
 /**
  * @method 按钮回调事件

@@ -4,7 +4,7 @@
  * @createDate 2020年4月27日
  */
 import React from 'react';
-import Ifullscreen from '@/components/plugin/iFullscreen';
+import Ifullscreen from '@/components/plugin/Fullscreen';
 
 const Fullscreen = () => {
 	return <Ifullscreen id="root"></Ifullscreen>;

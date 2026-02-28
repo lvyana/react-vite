@@ -5,19 +5,19 @@
  */
 import React from 'react';
 import { FormItemMap } from '../type';
-import getCascader from '../../iCascader';
-import { getCheckbox, getCheckboxGroup } from '../../iCheckbox';
-import { getDatePicker, getRangePicker, getTimePicker, getTimeRangePicker } from '../../iPicker';
-import { getInput, getTextArea, getNumber } from '../../iInput';
-import getRadio from '../../iRadio';
-import getRate from '../../iRate';
-import getSelect from '../../iSelect';
-import getSwitch from '../../iSwitch';
-import getTreeSelect from '../../iTreeSelect';
-import getSlider from '../../iSlider';
+import getCascader from '../../AppCascader';
+import { getCheckbox, getCheckboxGroup } from '../../AppCheckbox';
+import { getDatePicker, getRangePicker, getTimePicker, getTimeRangePicker } from '../../AppPicker';
+import { getInput, getTextArea, getNumber } from '../../AppInput';
+import getRadio from '../../AppRadio';
+import getRate from '../../AppRate';
+import getSelect from '../../AppSelect';
+import getSwitch from '../../AppSwitch';
+import getTreeSelect from '../../AppTreeSelect';
+import getSlider from '../../AppSlider';
 import setSlot from './Slot';
-import getUpload from '../../iUpload';
-import IbuttonList from '@/components/antd/iButton/List';
+import getUpload from '../../AppUpload';
+import IbuttonList from '@/components/antd/AppButton/List';
 
 // 策略模式
 const FORM_ITEM_MAP: FormItemMap = {

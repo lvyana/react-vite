@@ -4,7 +4,7 @@
  * @createDate 2022年11月20日
  */
 import React, { FC } from 'react';
-import Iform, { OnValuesChange, FormInputType } from '@/components/antd/iForm';
+import Iform, { OnValuesChange, FormInputType } from '@/components/antd/AppForm';
 import type { FormInstance } from 'antd';
 
 type FormListParams = [FormInputType];

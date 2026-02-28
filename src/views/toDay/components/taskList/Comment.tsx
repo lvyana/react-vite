@@ -4,7 +4,7 @@
  * @createDate 2020年11月10日
  */
 import React, { FC } from 'react';
-import Imodal from '@/components/antd/iModal';
+import Imodal from '@/components/antd/AppModal';
 
 interface CommentProps {
 	openComment: boolean;

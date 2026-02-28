@@ -6,8 +6,8 @@
 import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useResize from '@/useHooks/useResize';
 import { v4 as uuidv4 } from 'uuid';
-import Icard from '@/components/antd/iCard';
-import IgridLayout, { LayoutsParams } from '@/components/plugin/iGridLayout';
+import Icard from '@/components/antd/AppCard';
+import IgridLayout, { LayoutsParams } from '@/components/plugin/GridLayout';
 
 const urlArr = [
 	'http://114.132.242.253:81/1.jpg',

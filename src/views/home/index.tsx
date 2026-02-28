@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Col, Row } from 'antd';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import DemoLine from './components/Line';
 import DemoArea from './components/Area';
 import DemoColumn from './components/Column';

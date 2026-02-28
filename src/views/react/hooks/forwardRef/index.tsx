@@ -4,7 +4,7 @@
  * @createDate 2020年11月7日
  */
 import React, { FC, forwardRef, Ref, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import Button from 'antd/es/button';
 
 type OnLoginHandler = {

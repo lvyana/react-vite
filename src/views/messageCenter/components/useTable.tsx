@@ -5,11 +5,11 @@
  */
 import React, { useState } from 'react';
 import { Button, Tag, Space } from 'antd';
-import Itooltip from '@/components/antd/iTooltip';
-import { ItbClick, AlignType } from '@/components/antd/iTable';
+import Itooltip from '@/components/antd/AppTooltip';
+import { ItbClick, AlignType } from '@/components/antd/AppTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataResponse } from '../service';
-import Idropdown from '@/components/antd/iDropdown';
+import Idropdown from '@/components/antd/AppDropdown';
 import { MenuProps } from 'antd/lib/menu';
 interface UseHeaderTableParams {
 	buttonEvent: (type: string | number, value: TableDataResponse) => void;

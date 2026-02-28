@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
-import Imarkdown from '@/components/plugin/iMarkdown';
+import Imarkdown from '@/components/plugin/Markdown';
 
 const List = () => {
 	const location = useLocation();

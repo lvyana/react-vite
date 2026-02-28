@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { useNavigate, Outlet, useLoaderData } from 'react-router-dom';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 import { Button } from 'antd';
 
 const RouterDemo = () => {

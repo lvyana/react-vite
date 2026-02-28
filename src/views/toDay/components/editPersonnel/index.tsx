@@ -5,12 +5,12 @@
  */
 import React, { FC, useEffect } from 'react';
 import { Form } from 'antd';
-import Idrawer from '@/components/antd/iDrawer';
+import Idrawer from '@/components/antd/AppDrawer';
 import EditPersonnelTable from './EditPersonnelTable';
 import EditPersonnelSearch from './EditPersonnelSearch';
 import { useEditPersonnelTable } from './useApiHooks';
 import type { EditPersonnelSearchFormParmas } from './EditPersonnelSearch';
-import type { OnValuesChange } from '@/components/antd/iForm';
+import type { OnValuesChange } from '@/components/antd/AppForm';
 
 interface EditPersonnelProps {
 	open: boolean;

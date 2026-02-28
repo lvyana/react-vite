@@ -4,10 +4,10 @@
  * @createDate 2023年1月12日
  */
 import React, { FC } from 'react';
-import Imodal from '@/components/antd/iModal';
-import Iform from '@/components/antd/iForm';
+import Imodal from '@/components/antd/AppModal';
+import Iform from '@/components/antd/AppForm';
 import type { FormInstance } from 'antd/lib/form/hooks/useForm';
-import type { FormTextAreaType } from '@/components/antd/iForm/type';
+import type { FormTextAreaType } from '@/components/antd/AppForm/type';
 import { Rule } from 'antd/es/form';
 
 type ImportJsonProps = {

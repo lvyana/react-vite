@@ -10,7 +10,7 @@ import type { ButtonOptionsParams, FormParams } from '../EditForm';
 import { Context } from '../context';
 import { anyOptions } from '../service';
 import { Rule } from 'antd/es/form';
-import { FormItemParams } from '@/components/antd/iForm/type';
+import { FormItemParams } from '@/components/antd/AppForm/type';
 
 // 监听绑定表单的变�?修改GenerateForm
 export const useEditFormItemValue = (key: keyof FormParams, form: FormInstance<FormParams>) => {

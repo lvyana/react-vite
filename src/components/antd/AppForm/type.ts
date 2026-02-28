@@ -4,20 +4,20 @@
  * @createDate 2023年12月27日
  */
 import React, { ReactNode } from 'react';
-import type { DatePickerProps, RangePickerProps } from '../iPicker';
-import type { RadioType } from '../iRadio';
-import type { InputNumberProps, InputProps, TextAreaProps } from '../iInput';
-import type { SelectType } from '../iSelect';
-import type { CascaderType } from '../iCascader';
-import type { SwitchProps } from '../iSwitch';
-import type { IbuttonListProps } from '../iButton/List';
-import type { CheckboxGroupProps, CheckboxProps } from '../iCheckbox';
-import type { RateType } from '../iRate';
-import type { SliderSingleProps, SliderRangeProps } from '../iSlider';
-import type { DraggerProps } from '../iUpload';
+import type { DatePickerProps, RangePickerProps } from '../AppPicker';
+import type { RadioType } from '../AppRadio';
+import type { InputNumberProps, InputProps, TextAreaProps } from '../AppInput';
+import type { SelectType } from '../AppSelect';
+import type { CascaderType } from '../AppCascader';
+import type { SwitchProps } from '../AppSwitch';
+import type { IbuttonListProps } from '../AppButton/List';
+import type { CheckboxGroupProps, CheckboxProps } from '../AppCheckbox';
+import type { RateType } from '../AppRate';
+import type { SliderSingleProps, SliderRangeProps } from '../AppSlider';
+import type { DraggerProps } from '../AppUpload';
 import type { TimePickerProps, TimeRangePickerProps } from 'antd/lib/time-picker';
 import type { FormItemProps } from 'antd/lib/form';
-import type { TreeSelectProps } from '../iTreeSelect';
+import type { TreeSelectProps } from '../AppTreeSelect';
 
 /**
  * 表单item参数

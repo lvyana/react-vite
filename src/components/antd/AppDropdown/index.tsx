@@ -7,7 +7,7 @@ import React, { createElement, FC, isValidElement, Key } from 'react';
 import type { MenuProps } from 'antd';
 import { Dropdown, Button } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
-import Ibutton from '@/components/antd/iButton';
+import Ibutton from '@/components/antd/AppButton';
 import { DropdownProps } from 'antd/lib';
 
 const defaultButton = <Ibutton {...{ type: 'link', icon: <EllipsisOutlined /> }} />;

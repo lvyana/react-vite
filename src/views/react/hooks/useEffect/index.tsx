@@ -5,9 +5,9 @@
  */
 import React, { FC, useState, useEffect } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/iCard';
-import Icollapse from '@/components/antd/iCollapse';
-import IcodeEditor from '@/components/plugin/iCodeEditor';
+import Icard from '@/components/antd/AppCard';
+import Icollapse from '@/components/antd/AppCollapse';
+import IcodeEditor from '@/components/plugin/CodeEditor';
 
 type SonProps = {
 	value: number;

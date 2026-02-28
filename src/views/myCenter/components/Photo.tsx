@@ -7,7 +7,7 @@ import React, { useRef, FC, useState } from 'react';
 import Cropper, { ReactCropperElement } from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
 // https://www.npmjs.com/package/react-cropper 地址
-import Loading from '@/components/antd/iLoading';
+import Loading from '@/components/antd/AppLoading';
 
 interface Props {
 	updatepPhoto: string;

@@ -7,7 +7,7 @@ import React, { FC, Key } from 'react';
 import { arrIndexExchange } from '@/utils/exchange';
 import type { TreeProps } from 'antd/es/tree';
 import type { HeaderFieldParam } from '@/store/slices/globalConfigSlice';
-import Itree from '../iTree';
+import Itree from '../AppTree';
 
 /**
  * @param initData 初始化数据

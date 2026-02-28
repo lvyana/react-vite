@@ -3,7 +3,7 @@
  * @author ly
  * @createDate 2023年1月3日
  */
-import Itable from '@/components/antd/iTable';
+import Itable from '@/components/antd/AppTable';
 import { useQuery } from '@tanstack/react-query';
 import useHeaderTable from './components/useTable';
 import { tableData, type TableDataParams } from './service';

@@ -6,8 +6,8 @@
 import React, { FC, ReactNode, useCallback, useState } from 'react';
 import { Button, Col, Row } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
-import IheaderConfig, { CallbackDataType, HeaderType } from '@/components/antd/iEditHeader';
-import Imodal from '../iModal';
+import IheaderConfig, { CallbackDataType, HeaderType } from '@/components/antd/AppEditHeader';
+import Imodal from '../AppModal';
 
 /**
  * @param children 子级

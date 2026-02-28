@@ -4,15 +4,15 @@
  * @createDate 2020年4月27日
  */
 import React, { startTransition, useEffect, useState } from 'react';
-import Iform from '@/components/antd/iForm';
+import Iform from '@/components/antd/AppForm';
 import { Form, Upload, message, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import type { FormItemParams } from '@/components/antd/iForm/type';
-import Icard from '@/components/antd/iCard';
+import type { FormItemParams } from '@/components/antd/AppForm/type';
+import Icard from '@/components/antd/AppCard';
 import { baseURL } from '@/api/request';
-import { SelectType } from '@/components/antd/iSelect';
-import { SetChildrenDom, useFormTitle } from '@/components/antd/iForm/useHooks';
-import getRadio from '@/components/antd/iRadio';
+import { SelectType } from '@/components/antd/AppSelect';
+import { SetChildrenDom, useFormTitle } from '@/components/antd/AppForm/useHooks';
+import getRadio from '@/components/antd/AppRadio';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import dayjs from 'dayjs';
 

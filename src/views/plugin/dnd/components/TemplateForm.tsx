@@ -4,8 +4,8 @@
  * @date 2022年12月18日
  */
 import React, { FC, useContext } from 'react';
-import Iform from '@/components/antd/iForm';
-import Imodal from '@/components/antd/iModal';
+import Iform from '@/components/antd/AppForm';
+import Imodal from '@/components/antd/AppModal';
 import { Context } from '../context';
 import { useFormData } from '../useHooks';
 import type { FormInstance } from 'antd';

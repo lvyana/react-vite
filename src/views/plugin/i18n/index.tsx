@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { useTranslation, Trans, Translation } from 'react-i18next';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 
 const I18n = () => {
 	const { t, i18n } = useTranslation();

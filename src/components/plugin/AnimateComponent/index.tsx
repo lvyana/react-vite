@@ -8,7 +8,7 @@ import { Button, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Point, motion } from 'framer-motion';
 import { UpOutlined } from '@ant-design/icons';
-import Icard from '@/components/antd/iCard';
+import Icard from '@/components/antd/AppCard';
 
 /**
  * @param children 子组件

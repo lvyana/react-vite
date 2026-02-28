@@ -5,11 +5,11 @@
  */
 import React, { useState } from 'react';
 import { Button } from 'antd';
-import Icard from '@/components/antd/iCard';
-import Icollapse from '@/components/antd/iCollapse';
-import IcodeEditor from '@/components/plugin/iCodeEditor';
+import Icard from '@/components/antd/AppCard';
+import Icollapse from '@/components/antd/AppCollapse';
+import IcodeEditor from '@/components/plugin/CodeEditor';
 import { IuseSyncExternalStoreItem } from '../useSyncExternalStore';
-import Imarkdown from '@/components/plugin/iMarkdown';
+import Imarkdown from '@/components/plugin/Markdown';
 
 const initCode = `
 import { useState } from 'react';

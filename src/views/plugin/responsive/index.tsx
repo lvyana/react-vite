@@ -4,8 +4,8 @@
  * @createDate 2023年1月3日
  */
 import React from 'react';
-import { IresponsiveMax, IresponsiveMin } from '@/components/plugin/iResponsive';
-import Icard from '@/components/antd/iCard';
+import { IresponsiveMax, IresponsiveMin } from '@/components/plugin/Responsive';
+import Icard from '@/components/antd/AppCard';
 
 const Responsive = () => {
 	return (

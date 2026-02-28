@@ -4,7 +4,7 @@
  * @createDate 2022年12月17日
  */
 import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
-import Iform, { OnValuesChange } from '@/components/antd/iForm';
+import Iform, { OnValuesChange } from '@/components/antd/AppForm';
 import { Button, Form, Tabs, TabsProps } from 'antd';
 import { Context } from './context';
 import { useEditFormItemValue, useEditItemValue, useWatchUrl } from './useHooks';
@@ -12,10 +12,10 @@ import StaticOptions from './components/StaticOptions';
 import CreatButton from './components/CreatButton';
 import { isPassword } from '@/utils/rules';
 import { v4 as uuidv4 } from 'uuid';
-import type { FormItemMapType, FormItemParams } from '@/components/antd/iForm/type';
+import type { FormItemMapType, FormItemParams } from '@/components/antd/AppForm/type';
 import type { ItemTypes, Options } from './type';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
-import { ButtonItemParams } from '@/components/antd/iButton/List';
+import { ButtonItemParams } from '@/components/antd/AppButton/List';
 
 type FormListParam = {
 	staticPattern: string;

@@ -7,9 +7,9 @@ import React, { Key, useEffect, useMemo, useRef, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import SeachStyle from './SearchStyle';
 import { FilterDropdownProps } from 'antd/es/table/interface';
-import getTreeSelect, { TreeSelectProps } from '@/components/antd/iTreeSelect';
-import { getInput, InputProps } from '@/components/antd/iInput';
-import { FormItemMapType } from '@/components/antd/iForm';
+import getTreeSelect, { TreeSelectProps } from '@/components/antd/AppTreeSelect';
+import { getInput, InputProps } from '@/components/antd/AppInput';
+import { FormItemMapType } from '@/components/antd/AppForm';
 
 /**
  * 表格表头参数配置
