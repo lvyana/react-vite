@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @name 表单示例
  * @user ly
  * @date 2022年12月18日
@@ -7,7 +7,7 @@ import React, { FC, useContext } from 'react';
 import AppForm from '@/components/antd/AppForm';
 import AppModal from '@/components/antd/AppModal';
 import { Context } from '../context';
-import { useFormData } from '../useHooks';
+import { useFormData } from '../hooks';
 import type { FormInstance } from 'antd';
 
 type TemplateFormProps = {

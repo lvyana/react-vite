@@ -1,10 +1,10 @@
-/**
+﻿/**
  * @file GridLayout 布局
  * @author ly
  * @createDate 2020年11月10日
  */
 import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import useResize from '@/useHooks/useResize';
+import useResize from '@/hooks/useResize';
 import { v4 as uuidv4 } from 'uuid';
 import AppCard from '@/components/antd/AppCard';
 import IgridLayout, { LayoutsParams } from '@/components/plugin/GridLayout';

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 生成代码
  * @author ly
  * @createDate 2023年3月13日
@@ -7,7 +7,7 @@ import React, { FC, useContext } from 'react';
 import AppModal from '@/components/antd/AppModal';
 import { Context } from '../context';
 import AppCard from '@/components/antd/AppCard';
-import { useFormData } from '../useHooks';
+import { useFormData } from '../hooks';
 
 type GeneratCodeProps = {
 	open: boolean;

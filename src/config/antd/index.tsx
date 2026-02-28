@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file antd组件定制
  * @author ly
  * @createDate 2022年11月19日
@@ -8,7 +8,7 @@ import { ConfigProvider } from 'antd';
 import useAntdSize from './size';
 import useTheme from './theme';
 import useLanguage from './language';
-import { useTheme as useHooksTheme } from '@/useHooks/theme';
+import { useTheme as useHooksTheme } from '@/hooks/theme';
 
 // 全局注入antd组件调用方法
 import ContextMethod from './context';

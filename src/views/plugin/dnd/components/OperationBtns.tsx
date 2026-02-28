@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @name 上方按钮操作
  * @user ly
  * @date 2022年12月30日
@@ -12,7 +12,7 @@ import { Context } from '../context';
 import type { ImportJsonForm } from './ImportJson';
 import TemplateForm from './TemplateForm';
 import GeneratCode from './GeneratCode';
-import useModal from '@/components/antd/AppModal/useHooks';
+import useModal from '@/components/antd/AppModal/hooks/useModal';
 
 type ButtonType = 'JSON' | 'import' | 'template' | 'generatCode';
 

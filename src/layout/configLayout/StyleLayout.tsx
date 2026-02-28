@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 布局
  * @author ly
  * @createDate 2023年6月12日
@@ -10,7 +10,7 @@ import layout1 from '@/assets/images/layout1.jpg';
 import { useLayout } from '@/store';
 import style from './index.module.scss';
 import AppForm, { FormItemParams } from '@/components/antd/AppForm';
-import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '../useHooks/styleLayoutConfig';
+import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '../hooks/styleLayoutConfig';
 
 const TABSMAIN_LAYOUT = [
 	{

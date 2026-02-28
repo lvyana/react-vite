@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 实现表单集合demo
  * @author ly
  * @createDate 2020年4月27日
@@ -11,7 +11,7 @@ import type { FormItemParams } from '@/components/antd/AppForm/type';
 import AppCard from '@/components/antd/AppCard';
 import { baseURL } from '@/api/request';
 import { SelectType } from '@/components/antd/AppSelect';
-import { SetChildrenDom, useFormTitle } from '@/components/antd/AppForm/useHooks';
+import { SetChildrenDom, useFormTitle } from '@/components/antd/AppForm/hooks/useForm';
 import getRadio from '@/components/antd/AppRadio';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import dayjs from 'dayjs';

@@ -1,11 +1,11 @@
-/**
+﻿/**
  * @file 编辑表头
  * @author ly
  * @createDate 2022年7月30日
  */
 import React, { FC, useState, useEffect, Key, memo } from 'react';
 import TreeMenu from './TreeMenu';
-import { useHeaderConfigItem } from '@/useHooks/useHeaderConfig';
+import { useHeaderConfigItem } from '@/hooks/useHeaderConfig';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { HeaderFieldParam } from '@/store/slices/globalConfigSlice';
 import { getCheckbox } from '../AppCheckbox';

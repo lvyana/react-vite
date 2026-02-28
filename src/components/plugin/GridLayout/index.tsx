@@ -1,10 +1,10 @@
-/**
+﻿/**
  * @file GridLayout 布局
  * @author ly
  * @createDate 2020年11月10日
  */
 import React, { createElement, FC, useEffect, useMemo, useRef, useState } from 'react';
-import useResize from '@/useHooks/useResize';
+import useResize from '@/hooks/useResize';
 import GridLayout from 'react-grid-layout';
 import type { Layout } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';

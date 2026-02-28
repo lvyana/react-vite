@@ -1,7 +1,7 @@
-/**
+﻿/**
  * @file pdf
  * @author ly
- * @createDate 2022�?�?�? * https://www.5axxw.com/wiki/content/n0gokf 文档说明
+ * @createDate 2022�?�?�? * https://www.5axxw.com/wiki/content/n0gokf 文档说明
  */
 import React, { useState, useEffect, useRef, useTransition } from 'react';
 import { pdfjs, Document, Page } from 'react-pdf';
@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import AppLoading from '@/components/plugin/Loading';
-import useResize from '@/useHooks/useResize';
+import useResize from '@/hooks/useResize';
 import pdffile from './title.pdf';
 import AppPagination, { PaginationProps } from '@/components/antd/AppPagination';
 

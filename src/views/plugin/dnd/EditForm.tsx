@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 右侧编辑表单
  * @author ly
  * @createDate 2022年12月17日
@@ -7,7 +7,7 @@ import React, { memo, useContext, useEffect, useMemo, useState } from 'react';
 import AppForm, { OnValuesChange } from '@/components/antd/AppForm';
 import { Button, Form, Tabs, TabsProps } from 'antd';
 import { Context } from './context';
-import { useEditFormItemValue, useEditItemValue, useWatchUrl } from './useHooks';
+import { useEditFormItemValue, useEditItemValue, useWatchUrl } from './hooks';
 import StaticOptions from './components/StaticOptions';
 import CreatButton from './components/CreatButton';
 import { isPassword } from '@/utils/rules';

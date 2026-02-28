@@ -1,18 +1,18 @@
-/**
+﻿/**
  * @file searchForm
  * @author ly
  * @createDate 2023年1月3日
  */
 import React, { useEffect, useRef } from 'react';
 import { Form } from 'antd';
-import useHeaderTable, { ButtonEvent, HeaderTableParams } from './useHooks/useTable';
+import useHeaderTable, { ButtonEvent, HeaderTableParams } from './hooks/useTable';
 import AppTable from '@/components/antd/AppTable';
 import AppCard from '@/components/antd/AppCard';
 import SeachForm from './components/SearchForm';
 import AppPagination from '@/components/antd/AppPagination';
 import HeaderEdit from '@/components/antd/AppEditHeader/Modal';
-import { useTableData } from './useHooksApi';
-import useKeepAlive, { KeepAliveKeys } from '@/useHooks/useKeepAlive';
+import { useTableData } from './hooks/useApi';
+import useKeepAlive, { KeepAliveKeys } from '@/hooks/useKeepAlive';
 import type { TableDataParams, TableDataResponse } from './service';
 import type { ButtonType } from './components/SearchForm';
 

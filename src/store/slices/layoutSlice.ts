@@ -1,11 +1,11 @@
-/**
+﻿/**
  * @file Layout状态切片
  * @author ly
  * @createDate 2020年4月27日
  */
 import type { StateCreator } from 'zustand';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
-import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '@/layout/useHooks/styleLayoutConfig';
+import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '@/layout/hooks/styleLayoutConfig';
 import type { StoreState } from '../index';
 
 export enum ThemeType {

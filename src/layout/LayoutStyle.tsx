@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 排版配置处理后的页面
  * @author ly
  * @createDate 2023年6月13日
@@ -11,8 +11,8 @@ import Logo from './header/logo';
 import CradMenu from './menu/CardMenu';
 import LeftMenu from './menu/LeftMenu';
 import TabsMain from './tabsMain';
-import useLayout from './useHooks/useLayout';
-import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from './useHooks/styleLayoutConfig';
+import useLayout from './hooks/useLayout';
+import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from './hooks/styleLayoutConfig';
 
 const LayoutStyle = () => {
 	const { menuLayout, tabsMainLayout, footerLayout, marginLeft, footerMinHeight } = useLayout();

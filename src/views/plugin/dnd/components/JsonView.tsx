@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @name 生成json
  * @user ly
  * @date 2023年3月13日
@@ -8,7 +8,7 @@ import AppModal from '@/components/antd/AppModal';
 import ReactJson, { ReactJsonViewProps } from 'react-json-view';
 import { Context } from '../context';
 import { Segmented } from 'antd';
-import { useFormData } from '../useHooks';
+import { useFormData } from '../hooks';
 import type { SegmentedValue } from 'antd/es/segmented';
 import type { FormItemParams } from '@/components/antd/AppForm/type';
 

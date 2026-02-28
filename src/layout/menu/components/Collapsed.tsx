@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 左侧菜单缩放
  * @author ly
  * @createDate 2023年6月17日
@@ -8,7 +8,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { useLayout } from '@/store';
 import { createPortal } from 'react-dom';
-import { MenuLayoutEnum } from '@/layout/useHooks/styleLayoutConfig';
+import { MenuLayoutEnum } from '@/layout/hooks/styleLayoutConfig';
 
 type CollapsedProps = {
 	collapsed: boolean;

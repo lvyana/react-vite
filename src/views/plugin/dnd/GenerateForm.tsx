@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file 中间 生成表单
  * @author ly
  * @createDate 2022年12月17日
@@ -12,7 +12,7 @@ import AppForm, { FormItemParams } from '@/components/antd/AppForm';
 import { FORM_ITEM, GENERATE_FORM_ITEM } from './type';
 import { Context } from './context';
 import { arrIndexExchange } from '@/utils/exchange';
-import { useFormData } from './useHooks';
+import { useFormData } from './hooks';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
 import { FormParams } from './EditForm';
 

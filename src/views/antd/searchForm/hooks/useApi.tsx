@@ -1,12 +1,12 @@
-/**
+﻿/**
  * @file searchForm hooks
  * @author ly
  * @createDate 2023年1月3日
  */
 import React, { useState } from 'react';
-import { tableData } from './service';
-import type { TableDataResponse, TableDataParams } from './service';
-import useRequest from '@/useHooks/useApi';
+import { tableData } from '../service';
+import type { TableDataResponse, TableDataParams } from '../service';
+import useRequest from '@/hooks/useApi';
 
 // 查询表格数据
 const useTableData = () => {

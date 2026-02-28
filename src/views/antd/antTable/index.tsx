@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file
  * @author
  * @createDate
@@ -9,9 +9,9 @@ import AppTable from '@/components/antd/AppTable';
 import AppCard from '@/components/antd/AppCard';
 import AppPagination from '@/components/antd/AppPagination';
 import { tableData, type TableDataParams, type TableDataResponse } from './service';
-import useHeaderTable, { HeaderTableParams } from './useHooks/useTable';
+import useHeaderTable, { HeaderTableParams } from './hooks/useTable';
 import SeachForm from './components/SearchForm';
-import useFusionTable from '@/useHooks/useTableApi';
+import useFusionTable from '@/hooks/useTableApi';
 
 export type ExpensesFormParams = Omit<TableDataParams, 'pageSize' | 'pageNum' | 'name'>;
 

@@ -4,7 +4,7 @@
  * @createDate
  */
 import React from 'react';
-import { FormItemMap, FormItemParams, FormSlotType, SlotType } from './type';
+import { FormItemMap, FormItemParams, FormSlotType, SlotType } from '../type';
 
 /**
  * @method 回调处理formItem comConfig数据
