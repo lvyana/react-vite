@@ -4,7 +4,7 @@
  * @createDate
  */
 import React from 'react';
-import useEasyTyper from '@/pluginComponents/iEasyTyper';
+import useEasyTyper from '@/components/plugin/iEasyTyper';
 import Icard from '@/components/antd/iCard';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

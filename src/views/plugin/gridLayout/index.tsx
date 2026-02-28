@@ -7,7 +7,7 @@ import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useS
 import useResize from '@/useHooks/useResize';
 import { v4 as uuidv4 } from 'uuid';
 import Icard from '@/components/antd/iCard';
-import IgridLayout, { LayoutsParams } from '@/pluginComponents/iGridLayout';
+import IgridLayout, { LayoutsParams } from '@/components/plugin/iGridLayout';
 
 const urlArr = [
 	'http://114.132.242.253:81/1.jpg',

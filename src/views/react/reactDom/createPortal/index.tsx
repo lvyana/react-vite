@@ -5,7 +5,7 @@
  */
 import React, { FC, ReactPortal, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import useEasyTyper from '@/pluginComponents/iEasyTyper';
+import useEasyTyper from '@/components/plugin/iEasyTyper';
 import Icard from '@/components/antd/iCard';
 
 /**

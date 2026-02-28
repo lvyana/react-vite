@@ -5,7 +5,7 @@
  */
 import React, { ComponentType, lazy, ReactNode, Suspense } from 'react';
 // import Loading from '@/components/antd/iLoading';
-import Iloading from '@/pluginComponents/iLoading';
+import Iloading from '@/components/plugin/iLoading';
 // import Nprogress from './Nprogress';
 // 两种均可
 

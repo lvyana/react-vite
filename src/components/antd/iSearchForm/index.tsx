@@ -5,8 +5,8 @@
  */
 import React from 'react';
 import Iform, { FormItemParams, FormProps } from '@/components/antd/iForm';
-import AnimateComponent from '@/pluginComponents/iAnimateComponent';
-import { IresponsiveMin, IresponsiveMax } from '@/pluginComponents/iResponsive';
+import AnimateComponent from '@/components/plugin/iAnimateComponent';
+import { IresponsiveMin, IresponsiveMax } from '@/components/plugin/iResponsive';
 import Icard from '@/components/antd/iCard';
 
 /**

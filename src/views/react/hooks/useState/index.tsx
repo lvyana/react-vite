@@ -7,9 +7,9 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import Icard from '@/components/antd/iCard';
 import Icollapse from '@/components/antd/iCollapse';
-import IcodeEditor from '@/pluginComponents/iCodeEditor';
+import IcodeEditor from '@/components/plugin/iCodeEditor';
 import { IuseSyncExternalStoreItem } from '../useSyncExternalStore';
-import Imarkdown from '@/pluginComponents/iMarkdown';
+import Imarkdown from '@/components/plugin/iMarkdown';
 
 const initCode = `
 import { useState } from 'react';

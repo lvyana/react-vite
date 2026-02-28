@@ -7,7 +7,7 @@ import React, { CSSProperties, FC, memo } from 'react';
 import { Row, Col } from 'antd';
 import { Header as AntHeader } from 'antd/es/layout/layout';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
-import { IresponsiveMin } from '@/pluginComponents/iResponsive';
+import { IresponsiveMin } from '@/components/plugin/iResponsive';
 import Fullscreen from './fullscreen';
 import ComponentSize from './componentSize';
 import Crumb from './crumb';
