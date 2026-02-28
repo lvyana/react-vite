@@ -1,7 +1,7 @@
 import request from '@/api/request';
 
 /**
- * 接口参数(/seachForm/tableData)
+ * 接口参数(/searchForm/tableData)
  * @param name 姓名
  * @param age 年龄
  * @param height
@@ -19,7 +19,7 @@ export interface TableDataParams {
 }
 
 /**
- * 接口返回(/seachForm/tableData)
+ * 接口返回(/searchForm/tableData)
  * @param name 姓名
  * @param age 年龄
  * @param weight 体重
@@ -38,7 +38,7 @@ export interface TableDataResponse {
 // 查询表格数据
 export const tableData = (data: TableDataParams) => {
 	return request<TableDataParams, TableDataResponse[]>({
-		url: '/seachForm/tableData',
+		url: '/searchForm/tableData',
 		method: 'post',
 		data
 	});

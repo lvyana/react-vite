@@ -1,5 +1,5 @@
 /**
- * @file seachForm
+ * @file searchForm
  * @author ly
  * @createDate 2023年1月3日
  */
@@ -99,7 +99,7 @@ const Expenses = () => {
 			<SeachForm formProps={{ form }} reset={reset} submit={submit}></SeachForm>
 			{/* <ClassCom hh={1}></ClassCom> */}
 			<AppCard styles={{ body: { marginTop: '10px' } }}>
-				<HeaderEdit type={'seachForm'}></HeaderEdit>
+				<HeaderEdit type={'searchForm'}></HeaderEdit>
 				<AppTable<TableDataResponse>
 					rowKey="key"
 					columns={columns}

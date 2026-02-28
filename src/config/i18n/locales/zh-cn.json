@@ -10,7 +10,7 @@
 	"menu": {
 		"home": "首页",
 		"antd": "antd",
-		"seachForm": "搜索表单",
+		"searchForm": "搜索表单",
 		"antdTable": "antd表格",
 		"dynamicform": "动态表单",
 		"ai": "AI",

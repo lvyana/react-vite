@@ -30,8 +30,8 @@ const menuList: Router[] = [
 		icon: 'icon-antdesign',
 		children: [
 			{
-				title: 'menu.seachForm',
-				path: '/antd/seachForm',
+				title: 'menu.searchForm',
+				path: '/antd/searchForm',
 				icon: 'icon-yinle'
 			},
 			{

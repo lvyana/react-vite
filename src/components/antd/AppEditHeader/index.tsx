@@ -10,7 +10,7 @@ import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { HeaderFieldParam } from '@/store/slices/globalConfigSlice';
 import { getCheckbox } from '../AppCheckbox';
 
-export type HeaderType = 'seachForm';
+export type HeaderType = 'searchForm';
 
 /**
  * @param type 判断开关方法类型

@@ -10,7 +10,7 @@
 	"menu": {
 		"home": "home",
 		"antd": "antd",
-		"seachForm": "seachForm",
+		"searchForm": "searchForm",
 		"antdTable": "antdTable",
 		"dynamicform": "dynamicform",
 		"ai": "AI",
