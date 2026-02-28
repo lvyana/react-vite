@@ -5,7 +5,7 @@
  */
 import React, { useRef } from 'react';
 import { Button, Col, Row } from 'antd';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import VirtualScroll from './VirtualScroll';
 import scheduleSlicerHoc, { ScheduleSlicerRef } from './ScheduleSlicer';
 

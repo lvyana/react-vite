@@ -6,7 +6,7 @@
 import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useResize from '@/useHooks/useResize';
 import { v4 as uuidv4 } from 'uuid';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import IgridLayout, { LayoutsParams } from '@/pluginComponents/iGridLayout';
 
 const urlArr = [

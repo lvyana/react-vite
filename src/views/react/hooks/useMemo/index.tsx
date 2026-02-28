@@ -5,7 +5,7 @@
  */
 import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from 'antd';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import dayjs from 'dayjs';
 
 const getTime = () => {

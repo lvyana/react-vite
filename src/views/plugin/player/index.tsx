@@ -5,7 +5,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 const Player = () => {
 	const [playing, setplaying] = useState(false);

@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import { Button } from 'antd';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

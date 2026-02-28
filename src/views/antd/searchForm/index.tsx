@@ -6,11 +6,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Form } from 'antd';
 import useHeaderTable, { ButtonEvent, HeaderTableParams } from './useHooks/useTable';
-import Itable from '@/antdComponents/iTable';
-import Icard from '@/antdComponents/iCard';
+import Itable from '@/components/antd/iTable';
+import Icard from '@/components/antd/iCard';
 import SeachForm from './components/SearchForm';
-import Ipaginations from '@/antdComponents/iPagination';
-import HeaderEdit from '@/antdComponents/iEditHeader/Modal';
+import Ipaginations from '@/components/antd/iPagination';
+import HeaderEdit from '@/components/antd/iEditHeader/Modal';
 import { useTableData } from './useHooksApi';
 import useKeepAlive, { KeepAliveKeys } from '@/useHooks/useKeepAlive';
 import type { TableDataParams, TableDataResponse } from './service';

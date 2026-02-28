@@ -6,7 +6,7 @@
 import React from 'react';
 import { SpinProps, Table } from 'antd';
 import { ColumnsType, TableProps } from 'antd/es/table';
-import { antIcon } from '@/antdComponents/iLoading';
+import { antIcon } from '@/components/antd/iLoading';
 
 /**
  * @method 表格内事件

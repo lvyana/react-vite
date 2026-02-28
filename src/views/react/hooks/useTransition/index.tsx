@@ -5,7 +5,7 @@
  */
 import React, { useState, useTransition, useCallback } from 'react';
 import { debounce } from 'lodash';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import { Input } from 'antd';
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

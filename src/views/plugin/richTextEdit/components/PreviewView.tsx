@@ -1,7 +1,7 @@
 import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, useImperativeHandle, useState } from 'react';
 import { Row, Col } from 'antd';
 import { hocForwardRef, ComRef } from '@/hoc/forwardRefHoc';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 
 export type RefParam = {
 	onOpen: () => void;

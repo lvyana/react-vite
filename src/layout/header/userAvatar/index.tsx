@@ -6,7 +6,7 @@
 import React from 'react';
 import { Avatar, Button } from 'antd';
 import { useUser } from '@/store';
-import Idropdown from '@/antdComponents/iDropdown';
+import Idropdown from '@/components/antd/iDropdown';
 import IconFont from '@/utils/iconfont';
 import { clearTokens } from '@/utils/cookie';
 import { useNavigate } from 'react-router-dom';

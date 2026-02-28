@@ -4,13 +4,13 @@
  * @date 2023年3月13日
  */
 import React, { FC, useContext, useEffect, useState } from 'react';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 import ReactJson, { ReactJsonViewProps } from 'react-json-view';
 import { Context } from '../context';
 import { Segmented } from 'antd';
 import { useFormData } from '../useHooks';
 import type { SegmentedValue } from 'antd/es/segmented';
-import type { FormItemParams } from '@/antdComponents/iForm/type';
+import type { FormItemParams } from '@/components/antd/iForm/type';
 
 interface JsonViewProps {
 	open: boolean;

@@ -5,8 +5,8 @@
  */
 import React, { useReducer } from 'react';
 import { Button } from 'antd';
-import Icard from '@/antdComponents/iCard';
-import Icollapse from '@/antdComponents/iCollapse';
+import Icard from '@/components/antd/iCard';
+import Icollapse from '@/components/antd/iCollapse';
 
 type ActionFuncType = (state: number, action: { type: string; value: number }) => number;
 

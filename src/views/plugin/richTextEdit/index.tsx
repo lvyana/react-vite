@@ -12,13 +12,13 @@ import {
 	IEditorConfig, // 编辑器配置
 	IToolbarConfig // 工具栏配置
 } from '@wangeditor/editor';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 import PreviewCode, { RefParam } from './components/PreviewCode';
 import PreviewView from './components/PreviewView';
 import { Modal, Button, Space } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 const { confirm } = Modal;
 

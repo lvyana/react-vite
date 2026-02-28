@@ -5,7 +5,7 @@
  */
 import React, { useEffect } from 'react';
 import { useLog } from '@/store';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 const Ireduxtoolkit = () => {
 	const { list, getMovieData } = useLog();

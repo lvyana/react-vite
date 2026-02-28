@@ -5,7 +5,7 @@
  */
 import React, { FC, ReactElement } from 'react';
 import { Button } from 'antd';
-import IconFont from '../../utils/iconfont';
+import IconFont from '../../../utils/iconfont';
 import Wrapper, { WaveType } from './Wrapper';
 import { ButtonProps } from 'antd/lib/button';
 

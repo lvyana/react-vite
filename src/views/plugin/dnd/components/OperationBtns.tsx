@@ -5,14 +5,14 @@
  */
 import React, { useContext, useState } from 'react';
 import { Form } from 'antd';
-import Ibutton, { ButtonItemParams } from '@/antdComponents/iButton/List';
+import Ibutton, { ButtonItemParams } from '@/components/antd/iButton/List';
 import JsonView from './JsonView';
 import ImportJson from './ImportJson';
 import { Context } from '../context';
 import type { ImportJsonForm } from './ImportJson';
 import TemplateForm from './TemplateForm';
 import GeneratCode from './GeneratCode';
-import useModal from '@/antdComponents/iModal/useHooks';
+import useModal from '@/components/antd/iModal/useHooks';
 
 type ButtonType = 'JSON' | 'import' | 'template' | 'generatCode';
 

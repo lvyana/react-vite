@@ -8,7 +8,7 @@ import { useDrop, useDrag, DropTargetHookSpec } from 'react-dnd';
 import { v4 as uuidv4 } from 'uuid';
 import { Button, Col, Form, Row } from 'antd';
 import { CloseCircleOutlined, CopyOutlined } from '@ant-design/icons';
-import Iform, { FormItemParams } from '@/antdComponents/iForm';
+import Iform, { FormItemParams } from '@/components/antd/iForm';
 import { FORM_ITEM, GENERATE_FORM_ITEM } from './type';
 import { Context } from './context';
 import { arrIndexExchange } from '@/utils/exchange';

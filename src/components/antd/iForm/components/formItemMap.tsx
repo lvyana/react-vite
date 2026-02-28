@@ -17,7 +17,7 @@ import getTreeSelect from '../../iTreeSelect';
 import getSlider from '../../iSlider';
 import setSlot from './Slot';
 import getUpload from '../../iUpload';
-import IbuttonList from '@/antdComponents/iButton/List';
+import IbuttonList from '@/components/antd/iButton/List';
 
 // 策略模式
 const FORM_ITEM_MAP: FormItemMap = {

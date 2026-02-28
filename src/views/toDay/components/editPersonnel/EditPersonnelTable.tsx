@@ -4,8 +4,8 @@
  * @createDate 2022年11月20日
  */
 import React, { FC } from 'react';
-import Itable, { ColumnsType } from '@/antdComponents/iTable';
-import Idropdown, { DropdownProps } from '@/antdComponents/iDropdown';
+import Itable, { ColumnsType } from '@/components/antd/iTable';
+import Idropdown, { DropdownProps } from '@/components/antd/iDropdown';
 import { MenuProps } from 'antd/es/menu';
 export interface EditPersonnelTableDataParams {
 	key: string;

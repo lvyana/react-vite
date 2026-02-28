@@ -4,7 +4,7 @@
  * @createDate 日期：2020年4月27日
  */
 import React, { ComponentType, lazy, ReactNode, Suspense } from 'react';
-// import Loading from '@/antdComponents/iLoading';
+// import Loading from '@/components/antd/iLoading';
 import Iloading from '@/pluginComponents/iLoading';
 // import Nprogress from './Nprogress';
 // 两种均可

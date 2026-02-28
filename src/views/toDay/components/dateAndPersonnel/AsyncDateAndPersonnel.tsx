@@ -5,7 +5,7 @@
  */
 import React, { FC, lazy, Suspense } from 'react';
 import { DateAndPersonnelProps } from './index';
-import Loading from '@/antdComponents/iLoading';
+import Loading from '@/components/antd/iLoading';
 
 const AsyncDateAndPersonnel = (Component: FC<DateAndPersonnelProps>, api: () => Promise<DateAndPersonnelProps>) => {
 	const PromiseComponent = async (): Promise<{ default: FC }> => {

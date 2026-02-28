@@ -1,7 +1,7 @@
 /**
  * @file form hooks
  * @author ly
- * @createDate 2023�?�?�? */
+ * @createDate 2023�?�?�? */
 import { useContext, useEffect } from 'react';
 import { Form } from 'antd';
 import { useMutation } from '@tanstack/react-query';
@@ -10,9 +10,9 @@ import type { ButtonOptionsParams, FormParams } from '../EditForm';
 import { Context } from '../context';
 import { anyOptions } from '../service';
 import { Rule } from 'antd/es/form';
-import { FormItemParams } from '@/antdComponents/iForm/type';
+import { FormItemParams } from '@/components/antd/iForm/type';
 
-// 监听绑定表单的变�?修改GenerateForm
+// 监听绑定表单的变�?修改GenerateForm
 export const useEditFormItemValue = (key: keyof FormParams, form: FormInstance<FormParams>) => {
 	const context = useContext(Context);
 
@@ -32,7 +32,7 @@ export const useEditFormItemValue = (key: keyof FormParams, form: FormInstance<F
 	}, [nameValue]);
 };
 
-// 监听没有绑定表单的变�?修改GenerateForm
+// 监听没有绑定表单的变�?修改GenerateForm
 export const useEditItemValue = () => {
 	const context = useContext(Context);
 	//

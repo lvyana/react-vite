@@ -6,8 +6,8 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Input, Row, Space } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { getInput } from '@/antdComponents/iInput';
-import Ibutton from '@/antdComponents/iButton';
+import { getInput } from '@/components/antd/iInput';
+import Ibutton from '@/components/antd/iButton';
 import { v4 as uuidv4 } from 'uuid';
 import type { Options } from '../type';
 /**

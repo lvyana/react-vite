@@ -4,7 +4,7 @@
  * @createDate
  */
 import React from 'react';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import { Button, List } from 'antd';
 import { useLayout } from '@/store';
 

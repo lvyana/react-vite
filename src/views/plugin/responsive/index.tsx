@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { IresponsiveMax, IresponsiveMin } from '@/pluginComponents/iResponsive';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 const Responsive = () => {
 	return (

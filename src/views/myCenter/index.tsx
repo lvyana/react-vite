@@ -4,13 +4,13 @@
  * @createDate 2022年12月11日
  */
 import React, { FC, useState } from 'react';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import { useUser } from '@/store';
 import { Avatar } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 import EditPhoto from './components/EditPhoto';
 import ResetPassword from './components/ResetPassword';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 
 const MyCenter: FC = () => {
 	const { photo, setPhoto } = useUser();

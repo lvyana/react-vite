@@ -5,9 +5,9 @@
  */
 import React, { FC, useState } from 'react';
 import { Button, Col, Form, Input, Row, Space } from 'antd';
-import Ibutton from '@/antdComponents/iButton';
-import { getInput, getNumber } from '@/antdComponents/iInput';
-import getSelect, { SelectType } from '@/antdComponents/iSelect';
+import Ibutton from '@/components/antd/iButton';
+import { getInput, getNumber } from '@/components/antd/iInput';
+import getSelect, { SelectType } from '@/components/antd/iSelect';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { v4 as uuidv4 } from 'uuid';
 import type { ButtonOptionsParams } from '../EditForm';

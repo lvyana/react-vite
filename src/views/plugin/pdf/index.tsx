@@ -6,14 +6,14 @@
  */
 import React, { useState, useEffect, useRef, useTransition } from 'react';
 import { pdfjs, Document, Page } from 'react-pdf';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import styles from './index.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import Iloading from '@/antdComponents/iLoading';
+import Iloading from '@/components/antd/iLoading';
 import useResize from '@/useHooks/useResize';
 import pdffile from './title.pdf';
-import Ipaginations, { PaginationProps } from '@/antdComponents/iPagination';
+import Ipaginations, { PaginationProps } from '@/components/antd/iPagination';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 

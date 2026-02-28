@@ -15,7 +15,7 @@ import React, {
 	useCallback
 } from 'react';
 import todosStore from './store';
-import Ibutton from '@/antdComponents/iButton';
+import Ibutton from '@/components/antd/iButton';
 import { forwardRefFunc } from '@/hoc/forwardRefHoc';
 import { createPortal } from 'react-dom';
 import { useSearchParams } from 'react-router-dom';

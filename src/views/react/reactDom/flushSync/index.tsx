@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import { flushSync } from 'react-dom';
 import useEasyTyper from '@/pluginComponents/iEasyTyper';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 /**
  * flushSync：可以将回调函数中的更新任务，

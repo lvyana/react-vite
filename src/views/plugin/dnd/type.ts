@@ -1,7 +1,7 @@
 /**
  * @param 左侧有哪些表单类型
  */
-import { InputProps } from '@/antdComponents/iInput';
+import { InputProps } from '@/components/antd/iInput';
 import { Button } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { ButtonOptionsParams } from './EditForm';

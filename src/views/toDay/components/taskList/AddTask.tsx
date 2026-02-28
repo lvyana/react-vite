@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { FloatButton } from 'antd';
 import { AppstoreAddOutlined } from '@ant-design/icons';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 
 const AddTask = () => {
 	const onOpenTask = () => {

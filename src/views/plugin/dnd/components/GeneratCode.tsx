@@ -4,9 +4,9 @@
  * @createDate 2023年3月13日
  */
 import React, { FC, useContext } from 'react';
-import Imodal from '@/antdComponents/iModal';
+import Imodal from '@/components/antd/iModal';
 import { Context } from '../context';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 import { useFormData } from '../useHooks';
 
 type GeneratCodeProps = {
@@ -26,7 +26,7 @@ const GeneratCode: FC<GeneratCodeProps> = ({ open, onOk, onCancel, confirmLoadin
 		<Imodal width={1000} title={'导入dnd-json'} open={open} onOk={onOk} onCancel={onCancel} confirmLoading={confirmLoading}>
 			<Icard variant="outlined">
 				<div>{`import React, {FC} from 'react';`}</div>
-				<div className="mb-2">{`import Iform from '@/antdComponents/iForm';`}</div>
+				<div className="mb-2">{`import Iform from '@/components/antd/iForm';`}</div>
 
 				<div className="mb-1 whitespace-pre">{`const SeachForm: FC<Iprops> = ({ form, onFinish }) => {`}</div>
 				<div style={{ whiteSpace: 'pre-line' }} className="mb-1 whitespace-pre">

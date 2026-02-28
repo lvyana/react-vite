@@ -9,7 +9,7 @@ import layout from '@/assets/images/layout.jpg';
 import layout1 from '@/assets/images/layout1.jpg';
 import { useLayout } from '@/store';
 import style from './index.module.scss';
-import Iform, { FormItemParams, FormRadioType } from '@/antdComponents/iForm';
+import Iform, { FormItemParams, FormRadioType } from '@/components/antd/iForm';
 import { FooterLayoutType, MenuLayoutEnum, TabsMainLayoutType } from '../useHooks/styleLayoutConfig';
 
 const TABSMAIN_LAYOUT = [

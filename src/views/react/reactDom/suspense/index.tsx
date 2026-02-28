@@ -4,7 +4,7 @@
  * @createDate 2022年8月3日
  */
 import React, { ComponentType, FC, LazyExoticComponent, Suspense } from 'react';
-import Icard from '@/antdComponents/iCard';
+import Icard from '@/components/antd/iCard';
 
 interface TestProps {
 	age: number;

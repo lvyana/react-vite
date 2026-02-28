@@ -11,7 +11,7 @@ import { ItemTypes, FORM_ITEM, getDefaultValue } from './type';
 import { Context } from './context';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
 import hoverEvenHoc from '@/hoc/hoverEvenHoc';
-import { FormItemMapType } from '@/antdComponents/iForm';
+import { FormItemMapType } from '@/components/antd/iForm';
 
 export const FORM_TYPE_LIST = [
 	{
