@@ -11,11 +11,11 @@ import { ButtonProps } from 'antd/lib/button';
 
 /**
  * @interface
- * @param {IbuttonItemProps} config 单个按钮
+ * @param {ButtonItemProps} config 单个按钮
  * @param {boolean} loading 动画
  * @method onClick 点击事件
  */
-export type IbuttonItemProps = {
+export type ButtonItemProps = {
 	name?: string;
 	waveType?: WaveType;
 	icon?: string | ReactElement;
@@ -23,7 +23,7 @@ export type IbuttonItemProps = {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Ibutton: FC<IbuttonItemProps> = ({ ...config }) => {
+const Ibutton: FC<ButtonItemProps> = ({ ...config }) => {
 	const { waveType, icon, name, onClick, ...rest } = config;
 
 	return (

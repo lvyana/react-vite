@@ -10,13 +10,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import style from './index.module.scss';
 
-type ImarkdownProps = {
+type MarkdownProps = {
 	url?: string;
 	initContent?: string;
 };
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Imarkdown: FC<ImarkdownProps> = ({ url = '', initContent = '' }) => {
+const Imarkdown: FC<MarkdownProps> = ({ url = '', initContent = '' }) => {
 	const [content, setContent] = useState(initContent);
 
 	useEffect(() => {

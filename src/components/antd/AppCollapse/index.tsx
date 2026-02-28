@@ -4,16 +4,16 @@
  * @createDate 2023年4月5日
  */
 import React, { FC, ReactNode } from 'react';
-import { Collapse, CollapseProps } from 'antd';
+import { Collapse, CollapseProps as AntdCollapseProps } from 'antd';
 import useStyleHooks from './useStyleHooks';
 
-export type IcollapseProps = {
+export type AppCollapseProps = {
 	styleConfig?: '1';
-} & CollapseProps;
+} & AntdCollapseProps;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Icollapse: FC<IcollapseProps> = ({ ...config }) => {
+const Icollapse: FC<AppCollapseProps> = ({ ...config }) => {
 	const { items, styleConfig, style, bordered, ...rest } = config;
 	// 折叠面板样式配置
 	const styleConfigParams = useStyleHooks({ items, styleConfig, style, bordered });

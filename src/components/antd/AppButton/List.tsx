@@ -6,7 +6,7 @@
 import React, { Fragment } from 'react';
 import { Col, Row } from 'antd';
 import authButtonPermissionHoc from '@/hoc/authButtonPermissionHoc';
-import Ibutton, { IbuttonItemProps } from './index';
+import Ibutton, { ButtonItemProps } from './index';
 
 /**
  * 按钮集合
@@ -32,12 +32,12 @@ export type ButtonItemParams<T> = {
 	tag: T;
 	permission?: string;
 	span?: number;
-	comConfig: IbuttonItemProps;
+	comConfig: ButtonItemProps;
 };
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IbuttonList = <T = string,>({ options, loadingName, style }: IbuttonListProps<T>) => {
+const IbuttonList = <T = string,>({ options, loadingName, style }: ButtonListProps<T>) => {
 	const buttonListCol = options?.map((item, i) => {
 		const { tag, comConfig } = item;
 		const loading = loadingName === tag;

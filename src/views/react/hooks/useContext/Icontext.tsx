@@ -31,7 +31,7 @@ export const Context = React.createContext<MyContextParam | null>(null);
 
 const ContextProvider: FC<UseContextComProps> = ({ children }) => {
 	const [sum, dispatch] = useContextReducer();
-	console.log('Icontext');
+	console.log('ContextProvider');
 
 	const value = useMemo(() => ({ sum, dispatch }), [sum]);
 

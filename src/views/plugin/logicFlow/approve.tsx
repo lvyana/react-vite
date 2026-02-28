@@ -18,7 +18,7 @@ import '@logicflow/extension/lib/style/index.css';
 import { DndPanel } from '@logicflow/extension';
 
 import './index.scss';
-type IApproveUser = {
+type ApproveUser = {
 	label: string;
 	value: string;
 };

@@ -6,7 +6,7 @@
 import React, { useSyncExternalStore } from 'react';
 import todosStore from './todosStore';
 import Icard from '@/components/antd/AppCard';
-import Ibutton, { IbuttonItemProps } from '@/components/antd/AppButton';
+import Ibutton, { ButtonItemProps } from '@/components/antd/AppButton';
 import Icollapse from '@/components/antd/AppCollapse';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
@@ -14,7 +14,7 @@ import Icollapse from '@/components/antd/AppCollapse';
 const UseSyncExternalStore = () => {
 	const todos = useSyncExternalStore(todosStore.subscribe, todosStore.getSnapshot);
 
-	const BUTTON_ITEM: IbuttonItemProps = {
+	const BUTTON_ITEM: ButtonItemProps = {
 		name: 'Add todo',
 		type: 'primary',
 		onClick: () => todosStore.addTodo()
@@ -38,13 +38,13 @@ const UseSyncExternalStore = () => {
 export const IuseSyncExternalStoreItem = () => {
 	const todos = useSyncExternalStore(todosStore.subscribe, todosStore.getSnapshot);
 
-	const BUTTON_ITEM: IbuttonItemProps = {
+	const BUTTON_ITEM: ButtonItemProps = {
 		name: 'Add todo',
 		type: 'primary',
 		onClick: () => todosStore.addTodo()
 	};
 
-	const BUTTON_ITEM1: IbuttonItemProps = {
+	const BUTTON_ITEM1: ButtonItemProps = {
 		name: 'delete todo',
 		type: 'primary',
 		onClick: () => todosStore.deleteTodo()

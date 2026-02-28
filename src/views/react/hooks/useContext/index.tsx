@@ -4,7 +4,7 @@
  * @createDate 2023年1月3日
  */
 import React, { useState, useContext, useMemo, memo } from 'react';
-import Icontext, { Context } from './Icontext';
+import ContextProvider, { Context } from './Icontext';
 import { Button } from 'antd';
 import Icard from '@/components/antd/AppCard';
 import Icollapse from '@/components/antd/AppCollapse';
@@ -16,7 +16,7 @@ import IcodeEditor from '@/components/plugin/CodeEditor';
  * 优化context更新
  * 不处理的情况下 外部组件更新会导致context内部组件都更新
  * 优化
- * 点击+1 导致Icontext更新 导致state dispatch更新 用useMemo缓存
+ * 点击+1 导致 ContextProvider 更新 导致state dispatch更新 用useMemo缓存
  * 被包裹的组件ChildMemo 用memo在包裹一下 这样即使子组件内部引用了context也不会更新。
  */
 
@@ -35,9 +35,9 @@ const UseContext = () => {
 				+1
 			</Button>
 			{parentValue}
-			<Icontext>
+			<ContextProvider>
 				<Son></Son>
-			</Icontext>
+			</ContextProvider>
 			<Imarkdown url={'useContext.md'}></Imarkdown>
 		</Icard>
 	);

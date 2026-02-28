@@ -4,10 +4,10 @@
  * @createDate 2023年5月12日
  */
 import React from 'react';
-import type { IcollapseProps } from './index';
+import type { AppCollapseProps } from './index';
 import useThemeHooks from '@/config/antd/theme/useThemeHooks';
 
-type UseStyleHooksProps = Pick<IcollapseProps, 'items' | 'styleConfig' | 'style' | 'bordered'>;
+type UseStyleHooksProps = Pick<AppCollapseProps, 'items' | 'styleConfig' | 'style' | 'bordered'>;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

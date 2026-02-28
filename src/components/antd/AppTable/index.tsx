@@ -14,7 +14,7 @@ import { antIcon } from '@/components/antd/AppLoading';
  * @param record 选中数据
  * @returns void
  */
-export type ItbClick<T> = (type: keyof T, record: T) => void;
+export type TableClick<T> = (type: keyof T, record: T) => void;
 
 export type AlignType = 'left' | 'right' | 'center';
 

@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 import Layout, { Content, Footer } from 'antd/es/layout/layout';
 import Header from '@/layout/header';
 import Logo from './header/logo';
-import CradMenu from './menu/CradMenu';
+import CradMenu from './menu/CardMenu';
 import LeftMenu from './menu/LeftMenu';
 import TabsMain from './tabsMain';
 import useLayout from './useHooks/useLayout';

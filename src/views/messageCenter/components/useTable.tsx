@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { Button, Tag, Space } from 'antd';
 import Itooltip from '@/components/antd/AppTooltip';
-import { ItbClick, AlignType } from '@/components/antd/AppTable';
+import { TableClick, AlignType } from '@/components/antd/AppTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataResponse } from '../service';
 import Idropdown from '@/components/antd/AppDropdown';
@@ -23,7 +23,7 @@ const useHeaderTable = ({ buttonEvent }: UseHeaderTableParams) => {
 	const navigate = useNavigate();
 
 	//表格单元里面的功能回调
-	const tbClick: ItbClick<TableDataResponse> = (type, record) => {
+	const tbClick: TableClick<TableDataResponse> = (type, record) => {
 		if (type === 'name') {
 			navigate('/mycenter', { state: { name: record.name } });
 		}
