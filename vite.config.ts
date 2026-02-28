@@ -132,7 +132,7 @@ export default defineConfig(({ mode }) => {
 		build: {
 			outDir: 'dist',
 			// 生产环境关闭 sourcemap，开发调试时可以开启
-			sourcemap: mode === 'development' ? true : false,
+			sourcemap: mode === 'development',
 			// 警告阈值（调整为 500KB）
 			chunkSizeWarningLimit: 500,
 			// Rollup 配置

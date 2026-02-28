@@ -3,7 +3,7 @@
  * @author ly
  * @createData 2020年4月27日
  */
-import { Rule } from 'rc-field-form/lib/interface';
+import type { Rule } from 'antd/es/form';
 
 interface Rules {
 	(rule: Rule, value: string): Promise<void>;

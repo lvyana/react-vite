@@ -78,7 +78,7 @@ export class DragPolygons extends MapInit {
 							color: this.drawStyleConfig.textStrokeColor || '#ffffff',
 							width: 2
 						})
-				  })
+					})
 				: undefined
 		});
 	}
