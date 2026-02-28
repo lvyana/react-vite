@@ -7,16 +7,16 @@ import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import suspenseLoad from '../suspenseLoad';
 
-const SeachForm = () => import(/* webpackChunkName: "seachForm" */ '@/views/antd/seachForm');
+const SearchForm = () => import(/* webpackChunkName: "searchForm" */ '@/views/antd/searchForm');
 const AntTable = () => import(/* webpackChunkName: "antTable" */ '@/views/antd/antTable'); //antTabled表格封装
 const Dynamicform = () => import(/* webpackChunkName: "dynamicform" */ '@/views/antd/dynamicform'); //动态表单
 
 // antd组件封装
 const antdCom = [
-	{ index: true, element: <Navigate to="seachForm" /> },
+	{ index: true, element: <Navigate to="searchForm" /> },
 	{
-		path: 'seachForm',
-		element: suspenseLoad(SeachForm)
+		path: 'searchForm',
+		element: suspenseLoad(SearchForm)
 	},
 	{
 		path: 'antdTable',

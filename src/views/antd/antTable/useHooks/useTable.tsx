@@ -10,7 +10,7 @@ import Idropdown from '@/antdComponents/iDropdown';
 import { ColumnsType } from '@/antdComponents/iTable';
 import { useNavigate } from 'react-router-dom';
 import { TableDataParams, TableDataResponse } from '../service';
-import getColumnSearchProps from '@/antdComponents/iTable/components/headSeach';
+import getColumnSearchProps from '@/antdComponents/iTable/components/headSearch';
 import { ColumnsSeachValue } from '../index';
 import { MenuProps } from 'antd/lib/menu';
 import { TreeSelectProps } from '@/antdComponents/iTreeSelect';

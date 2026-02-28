@@ -10,7 +10,7 @@ import Icard from '@/antdComponents/iCard';
 import Ipaginations from '@/antdComponents/iPagination';
 import { tableData, type TableDataParams, type TableDataResponse } from './service';
 import useHeaderTable, { HeaderTableParams } from './useHooks/useTable';
-import SeachForm from './components/SeachForm';
+import SeachForm from './components/SearchForm';
 import useFusionTable from '@/useHooks/useTableApi';
 
 export type ExpensesFormParams = Omit<TableDataParams, 'pageSize' | 'pageNum' | 'name'>;

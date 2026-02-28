@@ -5,7 +5,7 @@
  */
 import React, { Key, useEffect, useMemo, useRef, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import SeachStyle from './SeachStyle';
+import SeachStyle from './SearchStyle';
 import { FilterDropdownProps } from 'antd/es/table/interface';
 import getTreeSelect, { TreeSelectProps } from '@/antdComponents/iTreeSelect';
 import { getInput, InputProps } from '@/antdComponents/iInput';

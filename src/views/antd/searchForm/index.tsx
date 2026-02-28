@@ -8,13 +8,13 @@ import { Form } from 'antd';
 import useHeaderTable, { ButtonEvent, HeaderTableParams } from './useHooks/useTable';
 import Itable from '@/antdComponents/iTable';
 import Icard from '@/antdComponents/iCard';
-import SeachForm from './components/SeachForm';
+import SeachForm from './components/SearchForm';
 import Ipaginations from '@/antdComponents/iPagination';
 import HeaderEdit from '@/antdComponents/iEditHeader/Modal';
 import { useTableData } from './useHooksApi';
 import useKeepAlive, { KeepAliveKeys } from '@/useHooks/useKeepAlive';
 import type { TableDataParams, TableDataResponse } from './service';
-import type { ButtonType } from './components/SeachForm';
+import type { ButtonType } from './components/SearchForm';
 
 export type ExpensesFormParams = Omit<TableDataParams, 'pageSize' | 'pageNum' | 'name'>;
 
