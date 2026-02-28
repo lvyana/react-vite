@@ -22,11 +22,11 @@ import Icard from '@/components/antd/AppCard';
 
 const { confirm } = Modal;
 
-export interface ISingleMenuConfig {
+export interface SingleMenuConfig {
 	server: string;
 }
-export interface IMenuConfig {
-	uploadImage?: ISingleMenuConfig;
+export interface MenuConfig {
+	uploadImage?: SingleMenuConfig;
 }
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

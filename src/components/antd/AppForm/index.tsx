@@ -32,7 +32,7 @@ type LayoutMode =
  * @param onValuesChange 表单发生变化
  * @param formLayout 表单格式
  */
-interface IFormProps<F = any> {
+interface FormProps<F = any> {
 	formList: FormItemParams[];
 	formProps: FormProps<F>;
 	mode?: LayoutMode;
@@ -43,7 +43,7 @@ interface IFormProps<F = any> {
 // 响应式配置常量
 const RESPONSIVE_CONFIG = {
 	self: { xxl: 6, xl: 6, lg: 8, md: 12, xs: 24 },
-	normal: (span: number) => ({ lg: span, md: span, xs: 24 }),
+	normal: (span: number) => ({ lg: span, md: span, xs: 24 })
 };
 
 const getResponsiveProps = (span: number = 6, self: boolean = false) => {
@@ -63,10 +63,7 @@ const DefaultLayout: React.FC<{ formList: FormItemParams[] }> = ({ formList }) =
 );
 
 // Row布局
-const RowLayout: React.FC<{ formList: FormItemParams[]; self?: boolean }> = ({
-	formList,
-	self = false,
-}) => (
+const RowLayout: React.FC<{ formList: FormItemParams[]; self?: boolean }> = ({ formList, self = false }) => (
 	<Row>
 		{formList.map((item) => (
 			<Col {...getResponsiveProps(item.span, self)} key={item.key}>
@@ -78,10 +75,7 @@ const RowLayout: React.FC<{ formList: FormItemParams[]; self?: boolean }> = ({
 
 const IForm = <F = any,>({ formList, mode, formProps }: IFormProps<F>) => {
 	// 过滤掉不显示的项
-	const visibleFormList = useMemo(
-		() => formList.filter((item) => item.show !== false),
-		[formList]
-	);
+	const visibleFormList = useMemo(() => formList.filter((item) => item.show !== false), [formList]);
 
 	const formLayout = useMemo(() => {
 		if (mode?.type === 'default') {

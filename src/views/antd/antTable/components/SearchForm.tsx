@@ -16,7 +16,7 @@ export type ButtonType = 'subimt' | 'onReset';
  * @param form 表单实例
  * @param onFinish
  */
-interface Iprops {
+interface SearchFormProps {
 	formProps: FormProps<ExpensesFormParams>;
 	submit: () => void;
 	reset: () => void;
@@ -24,7 +24,7 @@ interface Iprops {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const SeachForm: FC<Iprops> = ({ formProps, submit, reset }) => {
+const SeachForm: FC<SearchFormProps> = ({ formProps, submit, reset }) => {
 	const { statusData } = useHooksStatus();
 
 	const formList: FormItemParams[] = [

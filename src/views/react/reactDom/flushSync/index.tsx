@@ -15,7 +15,7 @@ import Icard from '@/components/antd/AppCard';
  */
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IflushSync = () => {
+const FlushSync = () => {
 	const { output } = useEasyTyper(
 		'flushSync：可以将回调函数中的更新任务， 放到一个较高级的优先级中，适用于强制刷新，同时确保了DOM会被立即更新'
 	);
@@ -45,4 +45,4 @@ const IflushSync = () => {
 	);
 };
 
-export default IflushSync;
+export default FlushSync;

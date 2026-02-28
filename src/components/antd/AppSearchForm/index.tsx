@@ -14,7 +14,7 @@ import Icard from '@/components/antd/AppCard';
  * @param form 表单实例
  * @param formList 表单集合类型
  */
-interface IsearchFormProps<P> {
+interface SearchFormProps<P> {
 	formProps: FormProps<P>;
 	formList: FormItemParams[];
 }

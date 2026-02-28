@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
  * @param MaxWidth 最大宽度
  * @return 响应式 大于最大宽度 隐藏
  */
-interface IresponsiveMaxProps {
+interface ResponsiveMaxProps {
 	children: ReactElement;
 	maxWidth: number;
 }
@@ -19,19 +19,19 @@ interface IresponsiveMaxProps {
  * @param MinWidth 最大宽度
  * @return 响应式 小于最小宽度 隐藏
  */
-interface IresponsiveMinProps {
+interface ResponsiveMinProps {
 	children: ReactElement;
 	minWidth: number;
 }
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IresponsiveMax: FC<IresponsiveMaxProps> = ({ children, maxWidth }) => {
+const ResponsiveMax: FC<ResponsiveMaxProps> = ({ children, maxWidth }) => {
 	const isShow = useMediaQuery({ query: `(max-width: ${maxWidth}px)` });
 	return isShow ? children : null;
 };
 
-const IresponsiveMin: FC<IresponsiveMinProps> = ({ children, minWidth }) => {
+const ResponsiveMin: FC<ResponsiveMinProps> = ({ children, minWidth }) => {
 	const isShow = useMediaQuery({ query: `(min-width: ${minWidth}px)` });
 	return isShow ? children : null;
 };
@@ -54,4 +54,4 @@ const useResponsiveMin = (MinWidth: number) => {
 	return { isShow };
 };
 
-export { IresponsiveMax, useResponsiveMax, IresponsiveMin, useResponsiveMin };
+export { ResponsiveMax, useResponsiveMax, ResponsiveMin, useResponsiveMin };

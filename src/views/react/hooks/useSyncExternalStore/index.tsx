@@ -11,7 +11,7 @@ import Icollapse from '@/components/antd/AppCollapse';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseSyncExternalStore = () => {
+const UseSyncExternalStore = () => {
 	const todos = useSyncExternalStore(todosStore.subscribe, todosStore.getSnapshot);
 
 	const BUTTON_ITEM: IbuttonItemProps = {
@@ -30,7 +30,7 @@ const IuseSyncExternalStore = () => {
 				))}
 			</ul>
 			<IuseSyncExternalStoreItem></IuseSyncExternalStoreItem>
-			<Idocment></Idocment>
+			<DocumentSection></DocumentSection>
 		</Icard>
 	);
 };
@@ -99,10 +99,10 @@ const DOCUMENT_LIST = [
 		key: '1'
 	}
 ];
-const Idocment = () => {
+const DocumentSection = () => {
 	return <Icollapse items={DOCUMENT_LIST}></Icollapse>;
 };
-export default IuseSyncExternalStore;
+export default UseSyncExternalStore;
 
 // https://juejin.cn/post/7217743118324858938
 // useSyncExternalStore(todosStore.subscribe, todosStore.getSnapshot);

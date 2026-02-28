@@ -8,7 +8,7 @@ export type RefParam = {
 };
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-interface Iprops {
+interface PreviewCodeProps {
 	content: string;
 }
 const Preview: ForwardRefRenderFunction<RefParam, Iprops> = ({ content }, ref) => {

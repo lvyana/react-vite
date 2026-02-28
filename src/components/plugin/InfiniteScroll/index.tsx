@@ -18,7 +18,7 @@ import styles from './index.module.scss';
  * @param height 盒子高度
  * @param loadMoreDataApi 获取数据方法
  */
-interface IinfiniteScrollProps {
+interface InfiniteScrollProps {
 	children: ReactNode;
 	height: number;
 	current: number;

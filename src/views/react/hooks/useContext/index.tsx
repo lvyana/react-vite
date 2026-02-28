@@ -22,27 +22,28 @@ import IcodeEditor from '@/components/plugin/CodeEditor';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseContext = () => {
+const UseContext = () => {
 	const [parentValue, setParentValue] = useState(0);
+
+	const add = () => {
+		setParentValue(parentValue + 1);
+	};
 
 	return (
 		<Icard>
-			{parentValue}
-
-			<Button type="link" onClick={() => setParentValue(parentValue + 1)}>
+			<Button type="link" onClick={add}>
 				+1
 			</Button>
-
+			{parentValue}
 			<Icontext>
-				<ChildMemo></ChildMemo>
+				<Son></Son>
 			</Icontext>
-
-			<Code></Code>
+			<Imarkdown url={'useContext.md'}></Imarkdown>
 		</Icard>
 	);
 };
 
-export default IuseContext;
+export default UseContext;
 
 const ChildMemo = memo(() => {
 	return (

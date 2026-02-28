@@ -16,7 +16,7 @@ export interface DispatchParam {
 	value: number;
 }
 
-interface IuseContextComProps {
+interface UseContextComProps {
 	children?: React.ReactNode;
 }
 
@@ -29,7 +29,7 @@ type MyContextParam = {
 
 export const Context = React.createContext<MyContextParam | null>(null);
 
-const Icontext: FC<IuseContextComProps> = ({ children }) => {
+const ContextProvider: FC<UseContextComProps> = ({ children }) => {
 	const [sum, dispatch] = useContextReducer();
 	console.log('Icontext');
 
@@ -38,4 +38,4 @@ const Icontext: FC<IuseContextComProps> = ({ children }) => {
 	return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
-export default Icontext;
+export default ContextProvider;

@@ -15,18 +15,18 @@ import Title from './components/Title';
 import { Router } from './routerData';
 import { useTranslation } from 'react-i18next';
 
-type CradMenuProps = {
+type CardMenuProps = {
 	children: React.ReactNode;
 };
 
 type MenuProps = {
-	onHideCradMenu: () => void;
+	onHideCardMenu: () => void;
 };
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const CradMenu: FC<CradMenuProps> = ({ children }) => {
+const CardMenu: FC<CardMenuProps> = ({ children }) => {
 	const [open, setOpen] = useState(false);
-	const onHideCradMenu = () => {
+	const onHideCardMenu = () => {
 		setOpen(false);
 	};
 
@@ -37,7 +37,7 @@ const CradMenu: FC<CradMenuProps> = ({ children }) => {
 		<Popover
 			open={open}
 			onOpenChange={handleOpenChange}
-			content={<Menu onHideCradMenu={onHideCradMenu}></Menu>}
+			content={<Menu onHideCardMenu={onHideCardMenu}></Menu>}
 			overlayStyle={{ width: 336 }}
 			arrow={false}
 			placement="bottomLeft"
@@ -47,7 +47,7 @@ const CradMenu: FC<CradMenuProps> = ({ children }) => {
 	);
 };
 
-const Menu: FC<MenuProps> = ({ onHideCradMenu }) => {
+const Menu: FC<MenuProps> = ({ onHideCardMenu }) => {
 	let { t } = useTranslation();
 	const navigate = useNavigate();
 
@@ -98,7 +98,7 @@ const Menu: FC<MenuProps> = ({ onHideCradMenu }) => {
 			setCurrentMenu(nextMenu);
 		} else {
 			navigate(menu.path);
-			onHideCradMenu();
+			onHideCardMenu();
 		}
 	};
 
@@ -142,4 +142,4 @@ const Menu: FC<MenuProps> = ({ onHideCradMenu }) => {
 	);
 };
 
-export default CradMenu;
+export default CardMenu;

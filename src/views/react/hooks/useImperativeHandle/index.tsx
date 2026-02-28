@@ -10,19 +10,20 @@ import { Button } from 'antd';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseImperativeHandle = () => {
+const UseImperativeHandle = () => {
 	const navigate = useNavigate();
 	const onToForwardRef = () => {
 		navigate('/react/hooks/forwardRef');
 	};
+
 	return (
 		<Icard>
-			示例详情见:
 			<Button type="link" onClick={onToForwardRef}>
-				跳转
+				forwardRef
 			</Button>
+			<Imarkdown url={'useImperativeHandle.md'}></Imarkdown>
 		</Icard>
 	);
 };
 
-export default IuseImperativeHandle;
+export default UseImperativeHandle;

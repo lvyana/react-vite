@@ -92,46 +92,173 @@ const list = [
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseEffect = () => {
+const UseEffect = () => {
 	const [value, setValue] = useState(0);
 
-	useEffect(() => {
-		// console.log('我没有参数', value);
-		return () => {
-			// console.log('return我没有参数', value);
-		};
-	});
+	const [first, setfirst] = useState(0);
 
-	useEffect(() => {
-		// console.log('我的参数[]', value);
-		return () => {
-			// console.log('return我的参数[]', value);
-		};
-	}, []);
+	const [second, setsecond] = useState(0);
 
-	useEffect(() => {
-		// console.log('我的参数[value]', value);
-		return () => {
-			// console.log('return我的参数[value]', value);
-		};
-	}, [value]);
+	const [third, setthird] = useState(0);
+
+	const [fourth, setfourth] = useState(0);
+
+	const [fifth, setfifth] = useState(0);
+
+	const [sixth, setsixth] = useState(0);
+
+	const [seventh, setseventh] = useState(0);
+
+	const [eighth, seteighth] = useState(0);
+
+	const [ninth, setninth] = useState(0);
+
+	const [tenth, settenth] = useState(0);
+
+	const [eleventh, seteleventh] = useState(0);
+
+	const [twelfth, settwelfth] = useState(0);
+
+	const [thirteenth, setthirteenth] = useState(0);
+
+	const [fourteenth, setfourteenth] = useState(0);
+
+	const [fifteenth, setfifteenth] = useState(0);
+
+	const [sixteenth, setsixteenth] = useState(0);
+
+	const [seventeenth, setseventeenth] = useState(0);
+
+	const [eighteenth, seteighteenth] = useState(0);
+
+	const [nineteenth, setnineteenth] = useState(0);
+
+	const [twentieth, settwentieth] = useState(0);
+
+	const [twentyfirst, settwentyfirst] = useState(0);
+
+	const [twentysecond, settwentysecond] = useState(0);
+
+	const [twentythird, settwentythird] = useState(0);
+
+	const [twentyfourth, settwentyfourth] = useState(0);
+
+	const [twentyfifth, settwentyfifth] = useState(0);
+
+	const [twentysixth, settwentysixth] = useState(0);
+
+	const [twentyseventh, settwentyseventh] = useState(0);
+
+	const [twentyeighth, settwentyeighth] = useState(0);
+
+	const [twentyninth, settwentyninth] = useState(0);
+
+	const [thirtieth, setthirtieth] = useState(0);
+
+	const [thirtyfirst, setthirtyfirst] = useState(0);
+
+	const [thirtysecond, setthirtysecond] = useState(0);
+
+	const [thirtythird, setthirtythird] = useState(0);
+
+	const [thirtyfourth, setthirtyfourth] = useState(0);
+
+	const [thirtyfifth, setthirtyfifth] = useState(0);
+
+	const [thirtysixth, setthirtysixth] = useState(0);
+
+	const [thirtyseventh, setthirtyseventh] = useState(0);
+
+	const [thirtyeighth, setthirtyeighth] = useState(0);
+
+	const [thirtyninth, setthirtyninth] = useState(0);
+
+	const [fortieth, setfortieth] = useState(0);
+
+	const [fortyfirst, setfortyfirst] = useState(0);
+
+	const [fortysecond, setfortysecond] = useState(0);
+
+	const [fortythird, setfortythird] = useState(0);
+
+	const [fortyfourth, setfortyfourth] = useState(0);
+
+	const [fortyfifth, setfortyfifth] = useState(0);
+
+	const [fortysixth, setfortysixth] = useState(0);
+
+	const [fortyseventh, setfortyseventh] = useState(0);
+
+	const [fortyeighth, setfortyeighth] = useState(0);
+
+	const [fortyninth, setfortyninth] = useState(0);
+
+	const [fiftieth, setfiftieth] = useState(0);
 
 	const add = () => {
 		setValue(value + 1);
 	};
+
+	useEffect(() => {
+		console.log('useEffect');
+	});
+
+	useEffect(() => {
+		console.log('useEffect1');
+	}, []);
+
+	useEffect(() => {
+		console.log('useEffect2');
+	}, [value]);
+
+	useEffect(() => {
+		console.log('useEffect3');
+		return () => {
+			console.log('useEffect3 return');
+		};
+	}, [value]);
+
+	const list = [
+		{
+			label: 'useEffect在组件式编程里的基本用处',
+			children: <div>useEffect 是一个组件定义副作用,所谓"副作用",就是该组件任意时刻都存放的各种数据</div>,
+			key: '0'
+		},
+		{
+			label: 'useEffect更新',
+			children: (
+				<>
+					<div>1、当组件更新state时,会触发组件的重新渲染,可以认为发生了局部刷新</div>
+					<div>2、在函数内多次更新,会合并处理</div>
+					<div>3、18之前手动合并处理unstable_batchedUpdates,18之后自动合并处理就不需要了</div>
+				</>
+			),
+			key: '1'
+		},
+		{
+			label: '代码示例',
+			children: (
+				<>
+					<IcodeEditor initCode={initCode}></IcodeEditor>
+				</>
+			),
+			key: '2'
+		}
+	];
 
 	return (
 		<Icard>
 			<Button type="link" onClick={add}>
 				+1
 			</Button>
-			<Son value={value}></Son>
+			{value}
 			<Icollapse styleConfig="1" defaultActiveKey={['0']} items={list}></Icollapse>
+			<Imarkdown url={'useEffect.md'}></Imarkdown>
 		</Icard>
 	);
 };
 
-export default IuseEffect;
+export default UseEffect;
 
 const Son: FC<SonProps> = ({ value }) => {
 	useEffect(() => {

@@ -16,7 +16,7 @@ import Icard from '@/components/antd/AppCard';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IcreatePortal = () => {
+const CreatePortal = () => {
 	return (
 		<Icard>
 			<DynamicText></DynamicText>
@@ -48,7 +48,7 @@ const Child: FC<{ children: React.ReactNode }> = ({ children }) => {
 		</>
 	);
 };
-export default IcreatePortal;
+export default CreatePortal;
 
 const DynamicText = () => {
 	const { output } = useEasyTyper('createPortal(child, container)的入参： child：任何可渲染的子元素 container：是一个DOM元素');

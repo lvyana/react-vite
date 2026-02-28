@@ -15,7 +15,7 @@ interface TestProps {
 }
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Isuspense = () => {
+const Suspense = () => {
 	/* 需要每一次在组件内部声明，保证每次父组件挂载，都会重新请求数据 ，防止内存泄漏。 */
 	const LazyTest = AysncComponent(Test, getData);
 
@@ -69,4 +69,4 @@ const AysncComponent = (
 	};
 	return React.lazy(AysncComponentPromise);
 };
-export default Isuspense;
+export default Suspense;

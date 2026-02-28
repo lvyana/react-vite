@@ -14,17 +14,17 @@ const numbers = [...new Array(20000).keys()];
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseDeferredValue = () => {
+const UseDeferredValue = () => {
 	const [query, setQuery] = useState('');
-
-	const handleChange = (e: { target: { value: React.SetStateAction<string> } }) => {
-		setQuery(e.target.value);
-	};
+	const deferredQuery = useDeferredValue(query);
 
 	return (
 		<Icard>
-			<Input type="number" onChange={handleChange} value={query} />
-			<List query={query} />
+			<Input value={query} onChange={(e) => setQuery(e.target.value)} />
+			<Suspense fallback={<div>Loading...</div>}>
+				<SearchResults query={deferredQuery} />
+			</Suspense>
+			<Imarkdown url={'useDeferredValue.md'}></Imarkdown>
 		</Icard>
 	);
 };
@@ -40,4 +40,4 @@ const List: FC<ListProps> = ({ query }) => {
 	return <div>{list}</div>;
 };
 
-export default IuseDeferredValue;
+export default UseDeferredValue;

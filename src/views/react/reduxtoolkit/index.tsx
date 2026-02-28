@@ -8,7 +8,7 @@ import { useLog } from '@/store';
 import Icard from '@/components/antd/AppCard';
 import Ibutton from '@/components/antd/AppButton';
 
-const Ireduxtoolkit = () => {
+const ReduxToolkit = () => {
 	const { list, setList, getMovieData } = useLog();
 
 	useEffect(() => {
@@ -31,4 +31,4 @@ const Ireduxtoolkit = () => {
 	);
 };
 
-export default Ireduxtoolkit;
+export default ReduxToolkit;

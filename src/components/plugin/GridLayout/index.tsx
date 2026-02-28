@@ -11,7 +11,7 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import { v4 as uuidv4 } from 'uuid';
 
-interface IgridLayoutProps {
+interface GridLayoutProps {
 	layout?: LayoutsParams[];
 	onLayoutChange?: (layout: LayoutsParams[]) => void;
 	cols?: number;

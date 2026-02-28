@@ -17,7 +17,7 @@ export type HeaderType = 'seachForm';
  * @param open 开关
  * @param closeHeader 关闭表头
  */
-interface IheaderConfigProps {
+interface HeaderConfigProps {
 	type: HeaderType;
 	onCallbackData: CallbackDataType;
 }

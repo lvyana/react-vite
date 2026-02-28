@@ -19,39 +19,33 @@ const getTime = () => {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseCallback = () => {
+const UseCallback = () => {
 	const [count, setCount] = useState<string>(getTime());
 
-	const [callbackCount, setCallbackCount] = useState<string>(getTime());
+	const [value, setValue] = useState(0);
 
-	const onCallbackClick = useCallback(() => {
-		setCallbackCount(getTime());
-	}, []);
-
-	const onClick = () => {
-		setCount(getTime());
+	const add = () => {
+		setValue(value + 1);
 	};
+
+	const getCount = useCallback(() => {
+		console.log('useCallback');
+		return count;
+	}, [count]);
 
 	return (
 		<Icard>
-			<div>
-				<Button type="link" onClick={onClick}>
-					普通点击
-				</Button>
-				<Button type="link" onClick={onCallbackClick}>
-					useCallback点击
-				</Button>
-			</div>
-
-			<div>
-				<MyItem item={count} addFunc={onClick}></MyItem>
-				<MyUseCallbackItem item={callbackCount} addFunc={onCallbackClick}></MyUseCallbackItem>
-			</div>
+			<Button type="link" onClick={add}>
+				+1
+			</Button>
+			{value}
+			<Son getCount={getCount}></Son>
+			<Imarkdown url={'useCallback.md'}></Imarkdown>
 		</Icard>
 	);
 };
 
-export default IuseCallback;
+export default UseCallback;
 
 const MyItem = ({ item, addFunc }: MyUseCallbackItemProps) => {
 	// console.log('普通子组件我更新了');

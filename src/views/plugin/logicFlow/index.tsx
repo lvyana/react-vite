@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import App from './approve';
-const index = () => {
+const LogicFlow = () => {
 	return (
 		<div>
 			<App></App>
@@ -14,4 +14,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default LogicFlow;

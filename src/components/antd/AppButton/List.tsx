@@ -15,7 +15,7 @@ import Ibutton, { IbuttonItemProps } from './index';
  * @method onClick 点击事件
  * @param style 样式
  */
-export interface IbuttonListProps<T = string> {
+export interface ButtonListProps<T = string> {
 	options?: ButtonItemParams<T>[];
 	loadingName?: T;
 	style?: React.CSSProperties;

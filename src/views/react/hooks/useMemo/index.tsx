@@ -14,29 +14,38 @@ const getTime = () => {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseMemo = () => {
+const UseMemo = () => {
 	const [value, setValue] = useState(0);
 
-	const [num, setNum] = useState(0);
+	const [first, setfirst] = useState(0);
 
-	const date = useMemo(() => getTime(), [num]);
+	const add = () => {
+		setValue(value + 1);
+	};
+
+	const addFirst = () => {
+		setfirst(first + 1);
+	};
+
+	const memoValue = useMemo(() => {
+		console.log('useMemo');
+		return value;
+	}, [value]);
 
 	return (
 		<Icard>
-			<div>
-				<Button type="link" onClick={() => setValue(value + 1)}>
-					value
-				</Button>
-				{value}
-			</div>
-			<div>
-				<Button type="link" onClick={() => setNum(num + 1)}>
-					更新时间戳
-				</Button>
-				{date}
-			</div>
+			<Button type="link" onClick={add}>
+				+1
+			</Button>
+			<Button type="link" onClick={addFirst}>
+				+1
+			</Button>
+			{value}
+			{first}
+			{memoValue}
+			<Imarkdown url={'useMemo.md'}></Imarkdown>
 		</Icard>
 	);
 };
 
-export default IuseMemo;
+export default UseMemo;

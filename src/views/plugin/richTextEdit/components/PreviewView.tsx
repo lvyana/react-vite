@@ -7,7 +7,7 @@ export type RefParam = {
 	onOpen: () => void;
 };
 
-interface Iprops {
+interface PreviewViewProps {
 	content: string;
 	comRef: ComRef<RefParam>;
 }

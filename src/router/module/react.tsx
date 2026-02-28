@@ -8,86 +8,86 @@ import { Navigate } from 'react-router-dom';
 import suspenseLoad from '../suspenseLoad';
 
 // react use
-const IuseState = () => import(/* webpackChunkName: "useState" */ '@/views/react/hooks/useState');
-const IuseEffect = () => import(/* webpackChunkName: "useEffect" */ '@/views/react/hooks/useEffect');
-const IuseLayoutEffect = () => import(/* webpackChunkName: "useLayoutEffect" */ '@/views/react/hooks/useLayoutEffect');
-const IuseInsertionEffect = () => import(/* webpackChunkName: "useInsertionEffect" */ '@/views/react/hooks/useInsertionEffect');
-const IuseReducer = () => import(/* webpackChunkName: "useReducer" */ '@/views/react/hooks/useReducer');
-const IuseContext = () => import(/* webpackChunkName: "useContext" */ '@/views/react/hooks/useContext');
-const IuseMemo = () => import(/* webpackChunkName: "useMemo" */ '@/views/react/hooks/useMemo');
-const IuseCallback = () => import(/* webpackChunkName: "useCallback" */ '@/views/react/hooks/useCallback');
-const IuseRef = () => import(/* webpackChunkName: "useRef" */ '@/views/react/hooks/useRef');
-const Isuspense = () => import(/* webpackChunkName: "suspense" */ '@/views/react/reactDom/suspense');
-const IforwardRef = () => import(/* webpackChunkName: "forwardRef" */ '@/views/react/hooks/forwardRef');
-const IuseImperativeHandle = () => import(/* webpackChunkName: "useImperativeHandle" */ '@/views/react/hooks/useImperativeHandle');
-const IuseTransition = () => import(/* webpackChunkName: "useTransition" */ '@/views/react/hooks/useTransition');
-const IuseDeferredValue = () => import(/* webpackChunkName: "useDeferredValue" */ '@/views/react/hooks/useDeferredValue');
-const IuseSyncExternalStore = () => import(/* webpackChunkName: "IuseSyncExternalStore" */ '@/views/react/hooks/useSyncExternalStore');
+const UseState = () => import(/* webpackChunkName: "useState" */ '@/views/react/hooks/useState');
+const UseEffect = () => import(/* webpackChunkName: "useEffect" */ '@/views/react/hooks/useEffect');
+const UseLayoutEffect = () => import(/* webpackChunkName: "useLayoutEffect" */ '@/views/react/hooks/useLayoutEffect');
+const UseInsertionEffect = () => import(/* webpackChunkName: "useInsertionEffect" */ '@/views/react/hooks/useInsertionEffect');
+const UseReducer = () => import(/* webpackChunkName: "useReducer" */ '@/views/react/hooks/useReducer');
+const UseContext = () => import(/* webpackChunkName: "useContext" */ '@/views/react/hooks/useContext');
+const UseMemo = () => import(/* webpackChunkName: "useMemo" */ '@/views/react/hooks/useMemo');
+const UseCallback = () => import(/* webpackChunkName: "useCallback" */ '@/views/react/hooks/useCallback');
+const UseRef = () => import(/* webpackChunkName: "useRef" */ '@/views/react/hooks/useRef');
+const Suspense = () => import(/* webpackChunkName: "suspense" */ '@/views/react/reactDom/suspense');
+const ForwardRef = () => import(/* webpackChunkName: "forwardRef" */ '@/views/react/hooks/forwardRef');
+const UseImperativeHandle = () => import(/* webpackChunkName: "useImperativeHandle" */ '@/views/react/hooks/useImperativeHandle');
+const UseTransition = () => import(/* webpackChunkName: "useTransition" */ '@/views/react/hooks/useTransition');
+const UseDeferredValue = () => import(/* webpackChunkName: "useDeferredValue" */ '@/views/react/hooks/useDeferredValue');
+const UseSyncExternalStore = () => import(/* webpackChunkName: "IuseSyncExternalStore" */ '@/views/react/hooks/useSyncExternalStore');
 // reactDom
-const IcreatePortal = () => import(/* webpackChunkName: "MyCreatePortal" */ '@/views/react/reactDom/createPortal');
-const IflushSync = () => import(/* webpackChunkName: "IflushSync" */ '@/views/react/reactDom/flushSync');
+const CreatePortal = () => import(/* webpackChunkName: "MyCreatePortal" */ '@/views/react/reactDom/createPortal');
+const FlushSync = () => import(/* webpackChunkName: "IflushSync" */ '@/views/react/reactDom/flushSync');
 
-const Ireduxtoolkit = () => import(/* webpackChunkName: "Ireduxtoolkit" */ '@/views/react/reduxtoolkit'); // RTK
+const ReduxToolkit = () => import(/* webpackChunkName: "Ireduxtoolkit" */ '@/views/react/reduxtoolkit'); // RTK
 
 // hooks
 const reactHooks = [
 	{ index: true, element: <Navigate to="useReducer" /> },
 	{
 		path: 'useState',
-		element: suspenseLoad(IuseState)
+		element: suspenseLoad(UseState)
 	},
 	{
 		path: 'useInsertionEffect',
-		element: suspenseLoad(IuseInsertionEffect)
+		element: suspenseLoad(UseInsertionEffect)
 	},
 	{
 		path: 'useLayoutEffect',
-		element: suspenseLoad(IuseLayoutEffect)
+		element: suspenseLoad(UseLayoutEffect)
 	},
 	{
 		path: 'useEffect',
-		element: suspenseLoad(IuseEffect)
+		element: suspenseLoad(UseEffect)
 	},
 
 	{
 		path: 'useReducer',
-		element: suspenseLoad(IuseReducer)
+		element: suspenseLoad(UseReducer)
 	},
 	{
 		path: 'useContext',
-		element: suspenseLoad(IuseContext)
+		element: suspenseLoad(UseContext)
 	},
 	{
 		path: 'useMemo',
-		element: suspenseLoad(IuseMemo)
+		element: suspenseLoad(UseMemo)
 	},
 	{
 		path: 'useCallback',
-		element: suspenseLoad(IuseCallback)
+		element: suspenseLoad(UseCallback)
 	},
 	{
 		path: 'useRef',
-		element: suspenseLoad(IuseRef)
+		element: suspenseLoad(UseRef)
 	},
 	{
 		path: 'forwardRef',
-		element: suspenseLoad(IforwardRef)
+		element: suspenseLoad(ForwardRef)
 	},
 	{
 		path: 'useImperativeHandle',
-		element: suspenseLoad(IuseImperativeHandle)
+		element: suspenseLoad(UseImperativeHandle)
 	},
 	{
 		path: 'useTransition',
-		element: suspenseLoad(IuseTransition)
+		element: suspenseLoad(UseTransition)
 	},
 	{
 		path: 'useDeferredValue',
-		element: suspenseLoad(IuseDeferredValue)
+		element: suspenseLoad(UseDeferredValue)
 	},
 	{
 		path: 'useSyncExternalStore',
-		element: suspenseLoad(IuseSyncExternalStore)
+		element: suspenseLoad(UseSyncExternalStore)
 	}
 ];
 
@@ -96,15 +96,15 @@ const reactDom = [
 	{ index: true, element: <Navigate to="createPortal" /> },
 	{
 		path: 'createPortal',
-		element: suspenseLoad(IcreatePortal)
+		element: suspenseLoad(CreatePortal)
 	},
 	{
 		path: 'flushSync',
-		element: suspenseLoad(IflushSync)
+		element: suspenseLoad(FlushSync)
 	},
 	{
 		path: 'suspense',
-		element: suspenseLoad(Isuspense)
+		element: suspenseLoad(Suspense)
 	}
 ];
 
@@ -118,7 +118,7 @@ const reactCom = [
 		path: 'reactDom',
 		children: [...reactDom]
 	},
-	{ path: 'reduxtoolkit', element: suspenseLoad(Ireduxtoolkit) }
+	{ path: 'reduxtoolkit', element: suspenseLoad(ReduxToolkit) }
 ];
 
 export default reactCom;

@@ -113,7 +113,7 @@ type ReaderUrlArrParams = LayoutsParams & { url: string };
 
 // export default DemoGridLayout;
 
-const ImgGrid = () => {
+const GridLayout = () => {
 	const { resize } = useResize(document.getElementById('DemoGridLayout'));
 
 	const width = useMemo(() => resize?.width, [resize?.width]) || 1000;
@@ -204,4 +204,4 @@ const ImgGrid = () => {
 		</Icard>
 	);
 };
-export default ImgGrid;
+export default GridLayout;

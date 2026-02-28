@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 import { useLog } from '@/store';
 import Icard from '@/components/antd/AppCard';
 
-const Ireduxtoolkit = () => {
+const Rtk = () => {
 	const { list, getMovieData } = useLog();
 
 	useEffect(() => {
@@ -23,4 +23,4 @@ const Ireduxtoolkit = () => {
 	);
 };
 
-export default Ireduxtoolkit;
+export default Rtk;

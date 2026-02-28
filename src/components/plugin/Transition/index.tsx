@@ -13,7 +13,7 @@ import { DownOutlined, UpOutlined } from '@ant-design/icons';
  * @param minHeight 最小高度
  * @param maxHeight 最大高度
  */
-interface ItransitionProps {
+interface TransitionProps {
 	children: ReactNode;
 	title: string;
 	minHeight?: string | number;

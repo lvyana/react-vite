@@ -20,7 +20,7 @@ type Ordinary = {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IforwardRef = () => {
+const ForwardRef = () => {
 	const ordinaryRef = useRef<Ordinary | null>(null);
 
 	const onOrdinary = () => {
@@ -47,7 +47,7 @@ const IforwardRef = () => {
 	);
 };
 
-export default IforwardRef;
+export default ForwardRef;
 
 // 普通转发
 const OrdinaryForWard = forwardRef<Ordinary | null>((props, ref) => {
@@ -80,20 +80,16 @@ const hocLoginComponent = (Component: FC<{ onLoginHandler: Ref<OnLoginHandler> }
 const Login: FC<{ onLoginHandler: Ref<OnLoginHandler> }> = ({ onLoginHandler }) => {
 	const el = useRef<HTMLDivElement | null>(null);
 
-	useImperativeHandle(
-		onLoginHandler,
-		() => {
-			return {
-				login: () => {
-					// console.log(el.current?.innerText);
-					if (el.current) {
-						el.current.innerText = '登录中....';
-					}
+	useImperativeHandle(onLoginHandler, () => {
+		return {
+			login: () => {
+				// console.log(el.current?.innerText);
+				if (el.current) {
+					el.current.innerText = '登录中....';
 				}
-			};
-		},
-		[]
-	);
+			}
+		};
+	}, []);
 	return <div ref={el}>未登录</div>;
 };
 

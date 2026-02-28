@@ -30,7 +30,7 @@ export default function Counter() {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IuseState = () => {
+const UseState = () => {
 	const init = 0;
 
 	const [value, setValue] = useState(init);
@@ -61,7 +61,7 @@ const IuseState = () => {
 	const list = [
 		{
 			label: 'useState在组件式编程里的基本用处',
-			children: <div>useState 是一个组件定义状态信息,所谓“状态”,就是该组件任意时刻都存放的各种数据</div>,
+			children: <div>useState 是一个组件定义状态信息,所谓"状态",就是该组件任意时刻都存放的各种数据</div>,
 			key: '0'
 		},
 		{
@@ -100,4 +100,4 @@ const IuseState = () => {
 	);
 };
 
-export default IuseState;
+export default UseState;
