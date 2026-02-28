@@ -10,7 +10,7 @@ import type { InputNumberProps, InputProps, TextAreaProps } from '../AppInput';
 import type { SelectType } from '../AppSelect';
 import type { CascaderType } from '../AppCascader';
 import type { SwitchProps } from '../AppSwitch';
-import type { IbuttonListProps } from '../AppButton/List';
+import type { ButtonListProps } from '../AppButton/List';
 import type { CheckboxGroupProps, CheckboxProps } from '../AppCheckbox';
 import type { RateType } from '../AppRate';
 import type { SliderSingleProps, SliderRangeProps } from '../AppSlider';
@@ -155,7 +155,7 @@ export type FormButtonType = {
 	span?: number;
 	key: string | number;
 	show?: boolean;
-	comConfig?: IbuttonListProps;
+	comConfig?: ButtonListProps;
 	formItemProps?: FormItemProps;
 };
 
@@ -254,7 +254,7 @@ export interface FormItemMap {
 	timeRangePicker: (item: TimeRangePickerProps) => JSX.Element;
 	inputNumber: (item: InputNumberProps) => JSX.Element;
 	switch: (item: SwitchProps) => JSX.Element;
-	button: (item: IbuttonListProps) => JSX.Element;
+	button: (item: ButtonListProps) => JSX.Element;
 	radio: (item: RadioType) => JSX.Element;
 	checkboxGroup: (item: CheckboxGroupProps) => JSX.Element;
 	checkbox: (item: CheckboxProps) => JSX.Element;

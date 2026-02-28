@@ -17,7 +17,7 @@ import getTreeSelect from '../../AppTreeSelect';
 import getSlider from '../../AppSlider';
 import setSlot from './Slot';
 import getUpload from '../../AppUpload';
-import IbuttonList from '@/components/antd/AppButton/List';
+import AppButtonList from '@/components/antd/AppButton/List';
 
 // 策略模式
 const FORM_ITEM_MAP: FormItemMap = {
@@ -31,7 +31,7 @@ const FORM_ITEM_MAP: FormItemMap = {
 	timeRangePicker: getTimeRangePicker,
 	inputNumber: getNumber,
 	switch: getSwitch,
-	button: (item) => <IbuttonList {...item} />,
+	button: (item) => <AppButtonList {...item} />,
 	radio: getRadio,
 	checkboxGroup: getCheckboxGroup,
 	checkbox: getCheckbox,
@@ -39,7 +39,7 @@ const FORM_ITEM_MAP: FormItemMap = {
 	textArea: getTextArea,
 	slider: getSlider,
 	upload: getUpload,
-	slot: setSlot,
+	slot: setSlot
 };
 
 export default FORM_ITEM_MAP;

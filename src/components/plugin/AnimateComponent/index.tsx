@@ -8,7 +8,7 @@ import { Button, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Point, motion } from 'framer-motion';
 import { UpOutlined } from '@ant-design/icons';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 /**
  * @param children 子组件
@@ -79,7 +79,7 @@ const AnimateComponent: FC<AnimateComponentProps> = ({ children }) => {
 			{!flag && (
 				<div style={animateComponentPosition}>
 					<motion.div style={{ opacity: 0 }} animate={{ opacity: 1, y: 'auto' }} transition={{ ease: 'linear', duration: 0.3 }}>
-						<Icard className={`shadow-2xl`}>
+						<AppCard className={`shadow-2xl`}>
 							{children}
 							<div>
 								<Button
@@ -88,7 +88,7 @@ const AnimateComponent: FC<AnimateComponentProps> = ({ children }) => {
 									style={{ position: 'sticky', bottom: 0, left: '50%', transform: 'translate(-50%, 0)' }}
 									icon={<UpOutlined />}></Button>
 							</div>
-						</Icard>
+						</AppCard>
 					</motion.div>
 				</div>
 			)}

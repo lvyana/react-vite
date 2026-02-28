@@ -30,7 +30,7 @@ interface InfiniteScrollProps {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IinfiniteScroll: FC<IinfiniteScrollProps> = ({ children, current, total, loading, setLoading, height, loadMoreDataApi }) => {
+const IinfiniteScroll: FC<InfiniteScrollProps> = ({ children, current, total, loading, setLoading, height, loadMoreDataApi }) => {
 	// 懒加载
 	const loadMoreData = () => {
 		if (loading) {

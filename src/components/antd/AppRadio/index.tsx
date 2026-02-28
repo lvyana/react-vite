@@ -36,7 +36,7 @@ const setOption = (option?: (RadioOptionType | string | number)[]) => {
 						<IconFont type={item.icon} />
 						{item.label}
 					</>
-				),
+				)
 			};
 		}
 		return item;

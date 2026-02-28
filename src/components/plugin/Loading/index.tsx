@@ -8,7 +8,7 @@ import style from './index.module.scss';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Iloading = () => {
+const Loading = () => {
 	return (
 		<div className={style['cssload-loader']}>
 			<div className={`${style['cssload-inner']} ${style['cssload-one']}`}></div>
@@ -18,4 +18,4 @@ const Iloading = () => {
 	);
 };
 
-export default Iloading;
+export default Loading;

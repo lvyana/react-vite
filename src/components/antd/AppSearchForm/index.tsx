@@ -4,10 +4,10 @@
  * @createDate 2020年4月27日
  */
 import React from 'react';
-import Iform, { FormItemParams, FormProps } from '@/components/antd/AppForm';
+import AppForm, { FormItemParams, AppFormProps } from '@/components/antd/AppForm';
 import AnimateComponent from '@/components/plugin/AnimateComponent';
 import { IresponsiveMin, IresponsiveMax } from '@/components/plugin/Responsive';
-import Icard from '@/components/antd/AppCard';
+import AppCard from '@/components/antd/AppCard';
 
 /**
  * 响应式表单props
@@ -15,28 +15,28 @@ import Icard from '@/components/antd/AppCard';
  * @param formList 表单集合类型
  */
 interface SearchFormProps<P> {
-	formProps: FormProps<P>;
+	formProps: AppFormProps<P>['formProps'];
 	formList: FormItemParams[];
 }
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IsearchForm = <P extends object>({ formProps, formList }: IsearchFormProps<P>) => {
+const AppSearchForm = <P extends object>({ formProps, formList }: SearchFormProps<P>) => {
 	return (
 		<>
 			<IresponsiveMax maxWidth={1540}>
 				<AnimateComponent>
-					<Iform formProps={formProps} formList={formList}></Iform>
+					<AppForm formProps={formProps} formList={formList}></AppForm>
 				</AnimateComponent>
 			</IresponsiveMax>
 
 			<IresponsiveMin minWidth={1540}>
-				<Icard styles={{ body: { paddingBottom: 0 } }}>
-					<Iform formProps={formProps} formList={formList}></Iform>
-				</Icard>
+				<AppCard styles={{ body: { paddingBottom: 0 } }}>
+					<AppForm formProps={formProps} formList={formList}></AppForm>
+				</AppCard>
 			</IresponsiveMin>
 		</>
 	);
 };
 
-export default IsearchForm;
+export default AppSearchForm;

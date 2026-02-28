@@ -17,7 +17,7 @@ export type HeaderType = 'seachForm';
  * @param open 开关
  * @param closeHeader 关闭表头
  */
-interface HeaderConfigProps {
+interface EditHeaderProps {
 	type: HeaderType;
 	onCallbackData: CallbackDataType;
 }
@@ -30,7 +30,7 @@ export type SelectAllParam = '0' | '1' | '2';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IheaderConfig: FC<IheaderConfigProps> = ({ type, onCallbackData }) => {
+const AppEditHeader: FC<EditHeaderProps> = ({ type, onCallbackData }) => {
 	// 初始化数据
 	const { headerConfigItem: initHeaderConfigItem, checkedKeys: initCheckedKeys } = useHeaderConfigItem(type);
 
@@ -113,4 +113,4 @@ const IheaderConfig: FC<IheaderConfigProps> = ({ type, onCallbackData }) => {
 	);
 };
 
-export default memo(IheaderConfig);
+export default memo(AppEditHeader);

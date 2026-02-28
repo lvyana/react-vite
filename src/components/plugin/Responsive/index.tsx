@@ -55,3 +55,6 @@ const useResponsiveMin = (MinWidth: number) => {
 };
 
 export { ResponsiveMax, useResponsiveMax, ResponsiveMin, useResponsiveMin };
+
+// Keep legacy names for backward compatibility
+export { ResponsiveMax as IresponsiveMax, ResponsiveMin as IresponsiveMin };

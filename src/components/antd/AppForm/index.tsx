@@ -4,12 +4,12 @@
  * @createDate 2020年4月27日
  */
 import React, { useMemo } from 'react';
-import { Form, Row, Col, FormProps } from 'antd';
+import { Form, Row, Col, FormProps as AntdFormProps } from 'antd';
 import type { FormItemParams } from './type';
 import FormItem, { FormItemProps } from './FormItem';
 export * from './type';
 
-export type OnValuesChange<F> = (changedValues: F, values: F) => void;
+export type OnValuesChange<F> = (changedValues: Partial<F>, values: F) => void;
 
 type LayoutParams = {
 	formItem: React.FC<FormItemProps>;
@@ -32,9 +32,9 @@ type LayoutMode =
  * @param onValuesChange 表单发生变化
  * @param formLayout 表单格式
  */
-interface FormProps<F = any> {
+export interface AppFormProps<F = any> {
 	formList: FormItemParams[];
-	formProps: FormProps<F>;
+	formProps: AntdFormProps<F>;
 	mode?: LayoutMode;
 }
 
@@ -73,9 +73,9 @@ const RowLayout: React.FC<{ formList: FormItemParams[]; self?: boolean }> = ({ f
 	</Row>
 );
 
-const IForm = <F = any,>({ formList, mode, formProps }: IFormProps<F>) => {
+const AppForm = <F = any,>({ formList, mode, formProps }: AppFormProps<F>) => {
 	// 过滤掉不显示的项
-	const visibleFormList = useMemo(() => formList.filter((item) => item.show !== false), [formList]);
+	const visibleFormList = useMemo(() => formList.filter((item: FormItemParams) => item.show !== false), [formList]);
 
 	const formLayout = useMemo(() => {
 		if (mode?.type === 'default') {
@@ -93,5 +93,5 @@ const IForm = <F = any,>({ formList, mode, formProps }: IFormProps<F>) => {
 	return <Form {...formProps}>{formLayout}</Form>;
 };
 
-export type { FormProps };
-export default IForm;
+export type { AppFormProps as FormProps };
+export default AppForm;

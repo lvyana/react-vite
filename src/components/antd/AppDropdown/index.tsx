@@ -7,10 +7,10 @@ import React, { createElement, FC, isValidElement, Key } from 'react';
 import type { MenuProps } from 'antd';
 import { Dropdown, Button } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
-import Ibutton from '@/components/antd/AppButton';
+import AppButton from '@/components/antd/AppButton';
 import { DropdownProps } from 'antd/lib';
 
-const defaultButton = <Ibutton {...{ type: 'link', icon: <EllipsisOutlined /> }} />;
+const defaultButton = <AppButton {...{ type: 'link', icon: <EllipsisOutlined /> }} />;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 

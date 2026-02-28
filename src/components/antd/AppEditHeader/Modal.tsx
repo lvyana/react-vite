@@ -6,8 +6,8 @@
 import React, { FC, ReactNode, useCallback, useState } from 'react';
 import { Button, Col, Row } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
-import IheaderConfig, { CallbackDataType, HeaderType } from '@/components/antd/AppEditHeader';
-import Imodal from '../AppModal';
+import AppEditHeader, { CallbackDataType, HeaderType } from '@/components/antd/AppEditHeader';
+import AppModal from '../AppModal';
 
 /**
  * @param children 子级
@@ -70,9 +70,9 @@ const HeaderEdit: FC<HeaderEditProps> = ({ children, type }) => {
 					</Row>
 				</Col>
 			</Row>
-			<Imodal title={'编辑表头'} open={headerOpen} onOk={handleOk} onCancel={handleCancel} confirmLoading={confirmLoading}>
-				<IheaderConfig type={type} onCallbackData={onCallbackData}></IheaderConfig>{' '}
-			</Imodal>
+			<AppModal title={'编辑表头'} open={headerOpen} onOk={handleOk} onCancel={handleCancel} confirmLoading={confirmLoading}>
+				<AppEditHeader type={type} onCallbackData={onCallbackData}></AppEditHeader>{' '}
+			</AppModal>
 		</>
 	);
 };

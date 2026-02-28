@@ -22,7 +22,7 @@ interface LoadingProps {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Iloading: FC<SpinProps> = ({ ...config }) => {
+const AppLoading: FC<SpinProps> = ({ ...config }) => {
 	const { spinning, children, delay = 200, ...rest } = config;
 	if (typeof spinning === 'boolean') {
 		return (
@@ -39,4 +39,4 @@ const Iloading: FC<SpinProps> = ({ ...config }) => {
 	}
 };
 
-export default Iloading;
+export default AppLoading;

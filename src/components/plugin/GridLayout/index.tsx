@@ -49,7 +49,7 @@ const LAYOUT_WIDTH = 1200;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const IgridLayout: FC<IgridLayoutProps> = ({ layout = layouts, onLayoutChange, cols = CLOS, width = LAYOUT_WIDTH }) => {
+const IgridLayout: FC<GridLayoutProps> = ({ layout = layouts, onLayoutChange, cols = CLOS, width = LAYOUT_WIDTH }) => {
 	const children = React.useMemo(() => {
 		return layout.map((val, i) => {
 			const { x, y, w, h, id } = val;

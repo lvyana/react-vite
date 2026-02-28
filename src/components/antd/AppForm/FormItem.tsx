@@ -36,12 +36,12 @@ const trimInputValue = (e: React.ChangeEvent<HTMLInputElement>) => e.target.valu
 // 额外属性配置映射（避免每次渲染都创建新对象）
 const EXTRA_PROPS_MAP = {
 	input: {
-		getValueFromEvent: trimInputValue,
+		getValueFromEvent: trimInputValue
 	},
 	upload: {
 		valuePropName: 'fileList' as const,
-		getValueFromEvent: normFile,
-	},
+		getValueFromEvent: normFile
+	}
 } as const;
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

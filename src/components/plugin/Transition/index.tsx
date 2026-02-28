@@ -22,7 +22,7 @@ interface TransitionProps {
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Itransition: FC<ItransitionProps> = ({ children, title, minHeight, maxHeight }) => {
+const Itransition: FC<TransitionProps> = ({ children, title, minHeight, maxHeight }) => {
 	// 动画效果
 	const [height, setHeight] = useState(minHeight);
 	const [expand, setExpand] = useState(false);

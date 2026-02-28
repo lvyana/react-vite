@@ -10,7 +10,7 @@ import { TooltipPlacement, TooltipProps } from 'antd/es/tooltip';
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
 
-const Itooltip: FC<TooltipProps> = ({ ...item }) => {
+const AppTooltip: FC<TooltipProps> = ({ ...item }) => {
 	const { token } = useThemeHooks();
 	const { children, color = token.colorPrimary, ...config } = item;
 	return (
@@ -22,4 +22,4 @@ const Itooltip: FC<TooltipProps> = ({ ...item }) => {
 	);
 };
 
-export default Itooltip;
+export default AppTooltip;

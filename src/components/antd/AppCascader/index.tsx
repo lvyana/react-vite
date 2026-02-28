@@ -6,7 +6,9 @@
 import React from 'react';
 import { Cascader, CascaderProps } from 'antd';
 import { BaseOptionType } from 'antd/es/select';
-import { SingleValueType } from 'rc-cascader/lib/Cascader';
+
+// 使用 any 类型替代 rc-cascader 的类型
+type SingleValueType = any;
 
 /**
  * 联级选择

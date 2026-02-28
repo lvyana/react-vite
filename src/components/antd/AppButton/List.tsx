@@ -6,7 +6,7 @@
 import React, { Fragment } from 'react';
 import { Col, Row } from 'antd';
 import authButtonPermissionHoc from '@/hoc/authButtonPermissionHoc';
-import Ibutton, { ButtonItemProps } from './index';
+import AppButton, { ButtonItemProps } from './index';
 
 /**
  * 按钮集合
@@ -43,7 +43,7 @@ const IbuttonList = <T = string,>({ options, loadingName, style }: ButtonListPro
 		const loading = loadingName === tag;
 		const IbuttonItemCol = (
 			<Col span={item.span}>
-				<Ibutton {...comConfig} loading={loading} />
+				<AppButton {...comConfig} loading={loading} />
 			</Col>
 		);
 
