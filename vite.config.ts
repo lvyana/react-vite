@@ -269,13 +269,19 @@ export default defineConfig(({ mode }) => {
 				'react-router-dom',
 				'antd',
 				'@ant-design/happy-work-theme',
+				'@ant-design/x',
+				'@ant-design/x-markdown',
 				'axios',
 				'dayjs',
 				'zustand',
 				'@tanstack/react-query',
-				'lodash'
+				'lodash',
+				'ahooks',
+				'prismjs'
 			],
-			exclude: ['@logicflow/core', '@logicflow/extension']
+			exclude: ['@logicflow/core', '@logicflow/extension'],
+			// 强制预构建某些 CJS 模块
+			force: false
 		},
 		// 定义全局常量替换
 		define: {
