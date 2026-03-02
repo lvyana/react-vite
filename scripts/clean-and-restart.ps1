@@ -1,28 +1,27 @@
-# 清理缓存并重启开发服务器
-# 执行时间: 2026-02-28
+# Clean cache and restart dev server
+# Date: 2026-02-28
 
-Write-Host "=== 清理项目缓存 ===" -ForegroundColor Green
+Write-Host "=== Cleaning project cache ===" -ForegroundColor Green
 
-# 1. 删除 Vite 缓存
+# 1. Delete Vite cache
 if (Test-Path "node_modules/.vite") {
-    Write-Host "`n删除 Vite 缓存..." -ForegroundColor Yellow
+    Write-Host "`nDeleting Vite cache..." -ForegroundColor Yellow
     Remove-Item -Recurse -Force "node_modules/.vite"
-    Write-Host "  ✓ node_modules/.vite 已删除" -ForegroundColor Green
+    Write-Host "  OK node_modules/.vite deleted" -ForegroundColor Green
 }
 
-# 2. 删除 dist 目录
+# 2. Delete dist directory
 if (Test-Path "dist") {
-    Write-Host "`n删除构建目录..." -ForegroundColor Yellow
+    Write-Host "`nDeleting build directory..." -ForegroundColor Yellow
     Remove-Item -Recurse -Force "dist"
-    Write-Host "  ✓ dist 已删除" -ForegroundColor Green
+    Write-Host "  OK dist deleted" -ForegroundColor Green
 }
 
-# 3. 删除 TypeScript 缓存
+# 3. Delete TypeScript cache
 if (Test-Path "tsconfig.tsbuildinfo") {
     Remove-Item -Force "tsconfig.tsbuildinfo"
-    Write-Host "  ✓ TypeScript 缓存已删除" -ForegroundColor Green
+    Write-Host "  OK TypeScript cache deleted" -ForegroundColor Green
 }
 
-Write-Host "`n=== 缓存清理完成 ===" -ForegroundColor Green
-Write-Host "`n提示: 请运行以下命令重启开发服务器:" -ForegroundColor Cyan
-Write-Host "  npm run dev" -ForegroundColor White
+Write-Host "`n=== Cache cleanup complete ===" -ForegroundColor Green
+Write-Host "`nTip: Run npm run dev to restart dev server" -ForegroundColor Cyan
