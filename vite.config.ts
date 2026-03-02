@@ -277,9 +277,11 @@ export default defineConfig(({ mode }) => {
 				'@tanstack/react-query',
 				'lodash',
 				'ahooks',
-				'prismjs'
+				'prismjs',
+				// LogicFlow 包含 CommonJS 依赖，需要预构建转换为 ESM
+				'@logicflow/core',
+				'@logicflow/extension'
 			],
-			exclude: ['@logicflow/core', '@logicflow/extension'],
 			// 强制预构建某些 CJS 模块
 			force: false
 		},
